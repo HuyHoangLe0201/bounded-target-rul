@@ -1,0 +1,820 @@
+{
+ "pronostia/all": {
+  "MAE": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "IGauss",
+     "Weibull",
+     "LogNormal",
+     "BS",
+     "BS-t",
+     "Gaussian"
+    ],
+    "32-16": [
+     "IGauss",
+     "Weibull",
+     "LogNormal",
+     "BS",
+     "BS-t",
+     "Gaussian"
+    ],
+    "48-24": [
+     "IGauss",
+     "Weibull",
+     "LogNormal",
+     "BS",
+     "BS-t",
+     "Gaussian"
+    ],
+    "96-48": [
+     "IGauss",
+     "LogNormal",
+     "Weibull",
+     "BS-t",
+     "Gaussian",
+     "BS"
+    ],
+    "128-64-32": [
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "LogNormal",
+     "BS-t",
+     "BS"
+    ],
+    "256-128": [
+     "IGauss",
+     "Gaussian",
+     "Weibull",
+     "BS",
+     "BS-t",
+     "LogNormal"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "IGauss",
+    "32-16": "IGauss",
+    "48-24": "IGauss",
+    "96-48": "IGauss",
+    "128-64-32": "IGauss",
+    "256-128": "IGauss"
+   },
+   "tau_min": 0.06666666666666667,
+   "tau_mean": 0.5288888888888889,
+   "n_distinct_winners": 1,
+   "winners": [
+    "IGauss"
+   ]
+  },
+  "CRPS": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "IGauss",
+     "Weibull",
+     "LogNormal",
+     "Gaussian",
+     "BS-t",
+     "BS"
+    ],
+    "32-16": [
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "LogNormal",
+     "BS",
+     "BS-t"
+    ],
+    "48-24": [
+     "IGauss",
+     "Weibull",
+     "LogNormal",
+     "Gaussian",
+     "BS-t",
+     "BS"
+    ],
+    "96-48": [
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "LogNormal",
+     "BS-t",
+     "BS"
+    ],
+    "128-64-32": [
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "BS-t",
+     "LogNormal",
+     "BS"
+    ],
+    "256-128": [
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "BS",
+     "LogNormal",
+     "BS-t"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "IGauss",
+    "32-16": "IGauss",
+    "48-24": "IGauss",
+    "96-48": "IGauss",
+    "128-64-32": "IGauss",
+    "256-128": "IGauss"
+   },
+   "tau_min": 0.6,
+   "tau_mean": 0.7688888888888888,
+   "n_distinct_winners": 1,
+   "winners": [
+    "IGauss"
+   ]
+  },
+  "cov95": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "BS-t",
+     "Weibull",
+     "IGauss",
+     "BS",
+     "LogNormal",
+     "Gaussian"
+    ],
+    "32-16": [
+     "Weibull",
+     "IGauss",
+     "BS",
+     "BS-t",
+     "LogNormal",
+     "Gaussian"
+    ],
+    "48-24": [
+     "BS-t",
+     "Weibull",
+     "IGauss",
+     "BS",
+     "LogNormal",
+     "Gaussian"
+    ],
+    "96-48": [
+     "BS",
+     "Weibull",
+     "BS-t",
+     "IGauss",
+     "LogNormal",
+     "Gaussian"
+    ],
+    "128-64-32": [
+     "BS-t",
+     "Weibull",
+     "BS",
+     "LogNormal",
+     "IGauss",
+     "Gaussian"
+    ],
+    "256-128": [
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "BS",
+     "BS-t",
+     "LogNormal"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "BS-t",
+    "32-16": "Weibull",
+    "48-24": "BS-t",
+    "96-48": "BS",
+    "128-64-32": "BS-t",
+    "256-128": "IGauss"
+   },
+   "tau_min": -0.2,
+   "tau_mean": 0.4311111111111111,
+   "n_distinct_winners": 4,
+   "winners": [
+    "BS",
+    "BS-t",
+    "IGauss",
+    "Weibull"
+   ]
+  },
+  "PIT_KS": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "LogNormal",
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "BS",
+     "BS-t"
+    ],
+    "32-16": [
+     "IGauss",
+     "Gaussian",
+     "Weibull",
+     "BS",
+     "LogNormal",
+     "BS-t"
+    ],
+    "48-24": [
+     "LogNormal",
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "BS",
+     "BS-t"
+    ],
+    "96-48": [
+     "IGauss",
+     "Gaussian",
+     "LogNormal",
+     "BS-t",
+     "Weibull",
+     "BS"
+    ],
+    "128-64-32": [
+     "IGauss",
+     "Gaussian",
+     "LogNormal",
+     "BS",
+     "Weibull",
+     "BS-t"
+    ],
+    "256-128": [
+     "IGauss",
+     "BS",
+     "Weibull",
+     "LogNormal",
+     "BS-t",
+     "Gaussian"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "LogNormal",
+    "32-16": "IGauss",
+    "48-24": "LogNormal",
+    "96-48": "IGauss",
+    "128-64-32": "IGauss",
+    "256-128": "IGauss"
+   },
+   "tau_min": -0.2,
+   "tau_mean": 0.3777777777777778,
+   "n_distinct_winners": 2,
+   "winners": [
+    "IGauss",
+    "LogNormal"
+   ]
+  }
+ },
+ "pronostia/official": {
+  "MAE": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "IGauss",
+     "LogNormal",
+     "Weibull",
+     "BS",
+     "Gaussian",
+     "BS-t"
+    ],
+    "32-16": [
+     "IGauss",
+     "BS",
+     "Weibull",
+     "LogNormal",
+     "Gaussian",
+     "BS-t"
+    ],
+    "48-24": [
+     "IGauss",
+     "LogNormal",
+     "Weibull",
+     "BS",
+     "Gaussian",
+     "BS-t"
+    ],
+    "96-48": [
+     "IGauss",
+     "LogNormal",
+     "Gaussian",
+     "BS-t",
+     "Weibull",
+     "BS"
+    ],
+    "128-64-32": [
+     "IGauss",
+     "BS",
+     "LogNormal",
+     "Gaussian",
+     "Weibull",
+     "BS-t"
+    ],
+    "256-128": [
+     "BS",
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "LogNormal",
+     "BS-t"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "IGauss",
+    "32-16": "IGauss",
+    "48-24": "IGauss",
+    "96-48": "IGauss",
+    "128-64-32": "IGauss",
+    "256-128": "BS"
+   },
+   "tau_min": -0.2,
+   "tau_mean": 0.4755555555555555,
+   "n_distinct_winners": 2,
+   "winners": [
+    "BS",
+    "IGauss"
+   ]
+  },
+  "CRPS": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "IGauss",
+     "Weibull",
+     "LogNormal",
+     "Gaussian",
+     "BS",
+     "BS-t"
+    ],
+    "32-16": [
+     "IGauss",
+     "Weibull",
+     "BS",
+     "Gaussian",
+     "LogNormal",
+     "BS-t"
+    ],
+    "48-24": [
+     "IGauss",
+     "Weibull",
+     "LogNormal",
+     "Gaussian",
+     "BS",
+     "BS-t"
+    ],
+    "96-48": [
+     "IGauss",
+     "Gaussian",
+     "LogNormal",
+     "Weibull",
+     "BS-t",
+     "BS"
+    ],
+    "128-64-32": [
+     "IGauss",
+     "Weibull",
+     "Gaussian",
+     "BS",
+     "LogNormal",
+     "BS-t"
+    ],
+    "256-128": [
+     "IGauss",
+     "BS",
+     "Weibull",
+     "LogNormal",
+     "Gaussian",
+     "BS-t"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "IGauss",
+    "32-16": "IGauss",
+    "48-24": "IGauss",
+    "96-48": "IGauss",
+    "128-64-32": "IGauss",
+    "256-128": "IGauss"
+   },
+   "tau_min": 0.06666666666666667,
+   "tau_mean": 0.5911111111111111,
+   "n_distinct_winners": 1,
+   "winners": [
+    "IGauss"
+   ]
+  },
+  "cov95": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "LogNormal",
+     "BS",
+     "BS-t",
+     "Weibull",
+     "IGauss",
+     "Gaussian"
+    ],
+    "32-16": [
+     "BS-t",
+     "LogNormal",
+     "BS",
+     "Weibull",
+     "IGauss",
+     "Gaussian"
+    ],
+    "48-24": [
+     "LogNormal",
+     "BS",
+     "BS-t",
+     "Weibull",
+     "IGauss",
+     "Gaussian"
+    ],
+    "96-48": [
+     "BS",
+     "BS-t",
+     "LogNormal",
+     "IGauss",
+     "Weibull",
+     "Gaussian"
+    ],
+    "128-64-32": [
+     "BS",
+     "BS-t",
+     "LogNormal",
+     "IGauss",
+     "Weibull",
+     "Gaussian"
+    ],
+    "256-128": [
+     "Weibull",
+     "IGauss",
+     "BS",
+     "BS-t",
+     "LogNormal",
+     "Gaussian"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "LogNormal",
+    "32-16": "BS-t",
+    "48-24": "LogNormal",
+    "96-48": "BS",
+    "128-64-32": "BS",
+    "256-128": "Weibull"
+   },
+   "tau_min": -0.06666666666666667,
+   "tau_mean": 0.4666666666666667,
+   "n_distinct_winners": 4,
+   "winners": [
+    "BS",
+    "BS-t",
+    "LogNormal",
+    "Weibull"
+   ]
+  },
+  "PIT_KS": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "LogNormal",
+     "Weibull",
+     "Gaussian",
+     "IGauss",
+     "BS",
+     "BS-t"
+    ],
+    "32-16": [
+     "Gaussian",
+     "Weibull",
+     "IGauss",
+     "BS",
+     "LogNormal",
+     "BS-t"
+    ],
+    "48-24": [
+     "LogNormal",
+     "Weibull",
+     "Gaussian",
+     "IGauss",
+     "BS",
+     "BS-t"
+    ],
+    "96-48": [
+     "IGauss",
+     "LogNormal",
+     "BS",
+     "BS-t",
+     "Weibull",
+     "Gaussian"
+    ],
+    "128-64-32": [
+     "BS",
+     "IGauss",
+     "LogNormal",
+     "Gaussian",
+     "Weibull",
+     "BS-t"
+    ],
+    "256-128": [
+     "BS",
+     "IGauss",
+     "LogNormal",
+     "Weibull",
+     "BS-t",
+     "Gaussian"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "LogNormal",
+    "32-16": "Gaussian",
+    "48-24": "LogNormal",
+    "96-48": "IGauss",
+    "128-64-32": "BS",
+    "256-128": "BS"
+   },
+   "tau_min": -0.3333333333333333,
+   "tau_mean": 0.18222222222222223,
+   "n_distinct_winners": 4,
+   "winners": [
+    "BS",
+    "Gaussian",
+    "IGauss",
+    "LogNormal"
+   ]
+  }
+ },
+ "xjtu/all": {
+  "MAE": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "Weibull",
+     "Gaussian",
+     "IGauss",
+     "BS-t",
+     "LogNormal",
+     "BS"
+    ],
+    "32-16": [
+     "IGauss",
+     "BS",
+     "Gaussian",
+     "BS-t",
+     "Weibull",
+     "LogNormal"
+    ],
+    "48-24": [
+     "Gaussian",
+     "Weibull",
+     "IGauss",
+     "BS-t",
+     "LogNormal",
+     "BS"
+    ],
+    "96-48": [
+     "BS-t",
+     "Gaussian",
+     "IGauss",
+     "Weibull",
+     "BS",
+     "LogNormal"
+    ],
+    "128-64-32": [
+     "IGauss",
+     "BS-t",
+     "BS",
+     "Gaussian",
+     "Weibull",
+     "LogNormal"
+    ],
+    "256-128": [
+     "Gaussian",
+     "Weibull",
+     "BS",
+     "LogNormal",
+     "BS-t",
+     "IGauss"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "Weibull",
+    "32-16": "IGauss",
+    "48-24": "Gaussian",
+    "96-48": "BS-t",
+    "128-64-32": "IGauss",
+    "256-128": "Gaussian"
+   },
+   "tau_min": -0.4666666666666667,
+   "tau_mean": 0.16444444444444445,
+   "n_distinct_winners": 4,
+   "winners": [
+    "BS-t",
+    "Gaussian",
+    "IGauss",
+    "Weibull"
+   ]
+  },
+  "CRPS": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "Gaussian",
+     "IGauss",
+     "Weibull",
+     "BS",
+     "LogNormal",
+     "BS-t"
+    ],
+    "32-16": [
+     "IGauss",
+     "BS",
+     "BS-t",
+     "Weibull",
+     "Gaussian",
+     "LogNormal"
+    ],
+    "48-24": [
+     "Gaussian",
+     "IGauss",
+     "Weibull",
+     "BS",
+     "LogNormal",
+     "BS-t"
+    ],
+    "96-48": [
+     "Gaussian",
+     "BS-t",
+     "IGauss",
+     "Weibull",
+     "BS",
+     "LogNormal"
+    ],
+    "128-64-32": [
+     "IGauss",
+     "Gaussian",
+     "BS-t",
+     "BS",
+     "Weibull",
+     "LogNormal"
+    ],
+    "256-128": [
+     "Gaussian",
+     "Weibull",
+     "BS",
+     "LogNormal",
+     "BS-t",
+     "IGauss"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "Gaussian",
+    "32-16": "IGauss",
+    "48-24": "Gaussian",
+    "96-48": "Gaussian",
+    "128-64-32": "IGauss",
+    "256-128": "Gaussian"
+   },
+   "tau_min": -0.4666666666666667,
+   "tau_mean": 0.28888888888888886,
+   "n_distinct_winners": 2,
+   "winners": [
+    "Gaussian",
+    "IGauss"
+   ]
+  },
+  "cov95": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "IGauss",
+     "BS",
+     "LogNormal",
+     "BS-t",
+     "Gaussian",
+     "Weibull"
+    ],
+    "32-16": [
+     "IGauss",
+     "BS",
+     "BS-t",
+     "LogNormal",
+     "Weibull",
+     "Gaussian"
+    ],
+    "48-24": [
+     "IGauss",
+     "BS",
+     "LogNormal",
+     "BS-t",
+     "Gaussian",
+     "Weibull"
+    ],
+    "96-48": [
+     "BS",
+     "IGauss",
+     "Gaussian",
+     "BS-t",
+     "LogNormal",
+     "Weibull"
+    ],
+    "128-64-32": [
+     "IGauss",
+     "BS",
+     "BS-t",
+     "LogNormal",
+     "Gaussian",
+     "Weibull"
+    ],
+    "256-128": [
+     "LogNormal",
+     "Gaussian",
+     "BS",
+     "Weibull",
+     "IGauss",
+     "BS-t"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "IGauss",
+    "32-16": "IGauss",
+    "48-24": "IGauss",
+    "96-48": "BS",
+    "128-64-32": "IGauss",
+    "256-128": "LogNormal"
+   },
+   "tau_min": -0.3333333333333333,
+   "tau_mean": 0.4222222222222222,
+   "n_distinct_winners": 3,
+   "winners": [
+    "BS",
+    "IGauss",
+    "LogNormal"
+   ]
+  },
+  "PIT_KS": {
+   "orders": {
+    "48-24 (reported, 250 ep)": [
+     "BS-t",
+     "Gaussian",
+     "Weibull",
+     "IGauss",
+     "LogNormal",
+     "BS"
+    ],
+    "32-16": [
+     "Weibull",
+     "IGauss",
+     "BS-t",
+     "LogNormal",
+     "Gaussian",
+     "BS"
+    ],
+    "48-24": [
+     "BS-t",
+     "Gaussian",
+     "LogNormal",
+     "Weibull",
+     "IGauss",
+     "BS"
+    ],
+    "96-48": [
+     "Gaussian",
+     "BS-t",
+     "Weibull",
+     "IGauss",
+     "LogNormal",
+     "BS"
+    ],
+    "128-64-32": [
+     "IGauss",
+     "BS-t",
+     "LogNormal",
+     "Weibull",
+     "Gaussian",
+     "BS"
+    ],
+    "256-128": [
+     "Gaussian",
+     "Weibull",
+     "LogNormal",
+     "BS-t",
+     "BS",
+     "IGauss"
+    ]
+   },
+   "tops": {
+    "48-24 (reported, 250 ep)": "BS-t",
+    "32-16": "Weibull",
+    "48-24": "BS-t",
+    "96-48": "Gaussian",
+    "128-64-32": "IGauss",
+    "256-128": "Gaussian"
+   },
+   "tau_min": -0.4666666666666667,
+   "tau_mean": 0.2977777777777778,
+   "n_distinct_winners": 4,
+   "winners": [
+    "BS-t",
+    "Gaussian",
+    "IGauss",
+    "Weibull"
+   ]
+  }
+ }
+}

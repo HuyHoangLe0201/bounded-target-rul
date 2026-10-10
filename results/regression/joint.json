@@ -1,0 +1,67 @@
+{
+ "n_clusters": 26,
+ "CRPS": {
+  "p_rank_first": {
+   "IGauss": 0.6912,
+   "Weibull": 0.3019,
+   "Gaussian": 0.0064,
+   "LogNormal": 0.0005
+  },
+  "p_std_first": {
+   "Gaussian": 0.1521,
+   "IGauss": 0.5318,
+   "Weibull": 0.3153,
+   "LogNormal": 0.0006,
+   "BS-t": 0.0002
+  },
+  "ig_minus_weibull": {
+   "mean": -0.2016871360102506,
+   "ci": [
+    -1.2310220133842413,
+    0.8119445716972896
+   ]
+  }
+ },
+ "p_rank_first": {
+  "IGauss": 0.6912,
+  "Weibull": 0.3019,
+  "Gaussian": 0.0064,
+  "LogNormal": 0.0005
+ },
+ "p_std_first": {
+  "Gaussian": 0.1521,
+  "IGauss": 0.5318,
+  "Weibull": 0.3153,
+  "LogNormal": 0.0006,
+  "BS-t": 0.0002
+ },
+ "ig_minus_weibull": {
+  "mean": -0.2016871360102506,
+  "ci": [
+   -1.2310220133842413,
+   0.8119445716972896
+  ]
+ },
+ "absolute error": {
+  "p_rank_first": {
+   "IGauss": 0.4081,
+   "Weibull": 0.5889,
+   "LogNormal": 0.0028,
+   "Gaussian": 0.0002
+  },
+  "p_std_first": {
+   "Weibull": 0.7226,
+   "IGauss": 0.2686,
+   "Gaussian": 0.0055,
+   "LogNormal": 0.0029,
+   "BS": 0.0004
+  },
+  "ig_minus_weibull": {
+   "mean": 0.30444473344028505,
+   "ci": [
+    -0.8416911922722993,
+    1.1402955167596682
+   ]
+  }
+ }
+}

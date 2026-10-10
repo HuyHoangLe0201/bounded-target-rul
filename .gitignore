@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+results/features/
+results/features_xjtu/
+data/
+*.log
