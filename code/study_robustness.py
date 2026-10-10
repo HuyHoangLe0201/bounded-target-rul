@@ -27,7 +27,14 @@ import study_review_p2 as S
 NB, SEED = 10000, 5
 RUNS = {"main": "results_both_causal.json", "grid": "results_both_grid.json",
         "seeds5": "results_both_seeds5.json", "lr1e-3": "results_both_lr1e-3.json",
-        "lr1e-2": "results_both_lr1e-2.json"}
+        "lr1e-2": "results_both_lr1e-2.json",
+        #  backbone sweep: the six conventional heads of each arm, paired with the
+        #  four bounded heads run afterwards on the same backbone and settings
+        "w32": ["results_both_w32.json", "results_both_w32b.json"],
+        "w48": ["results_both_w48.json", "results_both_w48b.json"],
+        "w96": ["results_both_w96.json", "results_both_w96b.json"],
+        "big": ["results_both_big.json", "results_both_bigb.json"],
+        "w256": ["results_both_w256.json", "results_both_w256b.json"]}
 CONV = ["BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian"]
 FAMILIES = {
     "vs_conventional": [(a, b) for a in ("BS-trunc", "IGauss-trunc") for b in CONV],
@@ -36,8 +43,19 @@ FAMILIES = {
 }
 
 
-def analyse(path, rng):
-    d = json.load(open(path))
+def load_merged(paths):
+    """Rows and tables of one or several runs; several runs are concatenated."""
+    d = {"rows": [], "tables": {}}
+    for p in paths:
+        x = json.load(open(p))
+        d["rows"] += x["rows"]
+        for k, v in x["tables"].items():
+            d["tables"].setdefault(k, {}).update(v)
+    return d
+
+
+def analyse(paths, rng):
+    d = load_merged(paths)
     c = {}
     for r in d["rows"]:
         if r["q"] is None:
@@ -80,11 +98,11 @@ def main():
     rng = np.random.default_rng(SEED)
     res = {}
     for name, f in RUNS.items():
-        p = os.path.join(S.RES, f)
-        if not os.path.exists(p):
+        ps = [os.path.join(S.RES, x) for x in ([f] if isinstance(f, str) else f)]
+        if not all(os.path.exists(x) for x in ps):
             print(f"skip {name} ({f} missing)")
             continue
-        res[name] = analyse(p, rng)
+        res[name] = analyse(ps, rng)
         n_sig = sum(v["pooled"]["p_holm"] < 0.05 and v["pooled"]["margin"] < 0
                     for k, v in res[name]["pairs"].items() if v["family"] == "vs_conventional")
         print(f"{name:7s} points {res[name]['n_points']}  truncated heads beat conventional "

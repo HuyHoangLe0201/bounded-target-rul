@@ -3,7 +3,7 @@
 Code and stored results for
 
 > H. H. Le and K.-A. Nguyen, *Bounded Target, Truncated Likelihood: A Controlled
-> Comparison of Predictive Distributions for Bearing Remaining Useful Life*
+> Comparison of Predictive Distributions for the Remaining-Life Fraction of Bearings*
 > (submitted).
 
 Ten likelihood heads predict the remaining fraction of a bearing's life,
@@ -85,6 +85,9 @@ GBS_BOUNDED=1 GBS_EVAL=grid GBS_TAG=_grid python study_regression.py both
 GBS_BOUNDED=1 GBS_SEED0=5 GBS_TAG=_seeds5 python study_regression.py both
 GBS_BOUNDED=1 GBS_LR=1e-3 GBS_TAG=_lr1e-3 python study_regression.py both
 GBS_BOUNDED=1 GBS_LR=1e-2 GBS_TAG=_lr1e-2 python study_regression.py both
+#  the four bounded heads on each backbone of the sweep (paired with results_both_w*.json)
+GBS_HEADS=LogitNormal,Beta,BS-trunc,IGauss-trunc GBS_HIDDEN=32,16 GBS_EPOCHS=300 GBS_TAG=_w32b python study_regression.py both
+#  ... likewise 48,24 -> _w48b, 96,48 -> _w96b, 256,128 -> _w256b, 128,64,32 -> _bigb
 python study_robustness.py
 ```
 

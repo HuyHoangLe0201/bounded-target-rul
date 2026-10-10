@@ -196,24 +196,34 @@ BLOCK = {0: r"\emph{Truncated heads against the conventional heads as fitted (Ho
 
 
 def margins_table(b):
-    """Paired CRPS margins per benchmark and pooled, for every comparison claimed."""
+    """Paired CRPS margins per benchmark and pooled, for every comparison claimed,
+    with the pooled margin at inspections fixed in operating time beside them."""
     ci = lambda x: f"${x['margin']:+.3f}$ [${x['ci95'][0]:+.3f}$, ${x['ci95'][1]:+.3f}$]"
+    rp = os.path.join(RES, "robustness.json")
+    grid = json.load(open(rp))["grid"]["pairs"] if os.path.exists(rp) else None
+    ncol = 5 if grid else 4
     L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
          r"\caption{Paired CRPS margins, row head minus rival, with $95\,\%$ bootstrap intervals over"
          r" bearings. Pooled: the $26$ bearings weighted equally, with the Holm-adjusted $p$."
-         r" Negative favours the row head.}",
+         r" Fixed-time: the pooled margin at inspections fixed in operating time"
+         r" (\Cref{sec:robust}). Negative favours the row head.}",
          r"\label{tab:margins}",
          r"\begin{adjustbox}{max width=\linewidth}",
-         r"\begin{tabular}{@{}l l l l@{}}", r"\toprule",
-         r"comparison & PRONOSTIA ($11$) & XJTU-SY ($15$) & pooled ($26$), Holm $p$\\", r"\midrule"]
+         r"\begin{tabular}{@{}l " + "l" * (ncol - 1) + r"@{}}", r"\toprule",
+         r"comparison & PRONOSTIA ($11$) & XJTU-SY ($15$) & pooled ($26$), Holm $p$"
+         + (r" & fixed-time, Holm $p$" if grid else "") + r"\\", r"\midrule"]
     for i, (a, r_) in enumerate(PAIR_ORDER):
         if i in BLOCK:
             if i:
                 L.append(r"\addlinespace")
-            L.append(r"\multicolumn{4}{@{}l}{" + BLOCK[i] + r"}\\")
+            L.append(r"\multicolumn{" + str(ncol) + r"}{@{}l}{" + BLOCK[i] + r"}\\")
         v = b["pairs"][f"{a} - {r_}"]
-        L.append(f"\\quad {SH[a]} $-$ {SH[r_]} & {ci(v['pronostia'])} & {ci(v['xjtu'])}"
-                 f" & {ci(v['pooled'])} ({pfmt(v['pooled']['p_holm'])})\\\\")
+        row = (f"\\quad {SH[a]} $-$ {SH[r_]} & {ci(v['pronostia'])} & {ci(v['xjtu'])}"
+               f" & {ci(v['pooled'])} ({pfmt(v['pooled']['p_holm'])})")
+        if grid:
+            g = grid[f"{a} - {r_}"]["pooled"]
+            row += f" & {ci(g)} ({pfmt(g['p_holm'])})"
+        L.append(row + r"\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_margins", L)
 
@@ -264,6 +274,28 @@ def robustness_table():
                  + " & ".join(ci(r[c]["pairs"][f"{a} - {r_}"]["pooled"]) for c, _ in COLS) + r"\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_robust_ci", L)
+
+    #  the same comparisons across the backbone sweep
+    BB = [("main", "48--24, reported"), ("w32", "32--16"), ("w48", "48--24"), ("w96", "96--48"),
+          ("big", "128--64--32"), ("w256", "256--128")]
+    if not all(k in r for k, _ in BB):
+        return
+    L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
+         r"\caption{Pooled CRPS margins across backbones; $^{\ast}$: Holm-adjusted $p<0.05$ within the"
+         r" block. All but the reported backbone are trained for $300$ epochs.}",
+         r"\label{tab:robust_bb}",
+         r"\begin{adjustbox}{max width=\linewidth}",
+         r"\begin{tabular}{@{}l " + "r" * len(BB) + r"@{}}", r"\toprule",
+         "comparison & " + " & ".join(c[1] for c in BB) + r"\\", r"\midrule"]
+    for i, (a, r_) in enumerate(PAIR_ORDER):
+        if i in BLOCK:
+            if i:
+                L.append(r"\addlinespace")
+            L.append(r"\multicolumn{" + str(len(BB) + 1) + r"}{@{}l}{" + BLOCK[i] + r"}\\")
+        L.append(f"\\quad {SH[a]} $-$ {SH[r_]} & "
+                 + " & ".join(cell(r[c]["pairs"][f"{a} - {r_}"]["pooled"]) for c, _ in BB) + r"\\")
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
+    w("tab_robust_bb", L)
 
 
 def hours_table():

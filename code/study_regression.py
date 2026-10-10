@@ -35,6 +35,11 @@ HEAD_ORDER = ["BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian"]
 #  GBS_BOUNDED=1 adds the four heads that respect the (0,1] target in training
 if os.environ.get("GBS_BOUNDED", "0") == "1":
     HEAD_ORDER = HEAD_ORDER + ["LogitNormal", "Beta", "BS-trunc", "IGauss-trunc"]
+#  GBS_HEADS (comma-separated) fits only the named heads. Each head is trained
+#  independently with its own seeds, so a run of the four bounded heads can be
+#  paired with an earlier run of the six conventional heads on the same settings.
+if os.environ.get("GBS_HEADS"):
+    HEAD_ORDER = os.environ["GBS_HEADS"].split(",")
 N_ENSEMBLE = 5
 EVAL_FRACS = (0.4, 0.5, 0.6, 0.7, 0.8, 0.9)
 EPOCHS = int(os.environ.get("GBS_EPOCHS", 250))
