@@ -246,6 +246,25 @@ def robustness_table():
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_robust", L)
 
+    #  the same comparisons with their bootstrap intervals, for the appendix
+    ci = lambda v: f"[${v['ci95'][0]:+.3f}$, ${v['ci95'][1]:+.3f}$]"
+    L = [r"\begin{table}[htbp]", r"\centering\scriptsize",
+         r"\caption{The pooled margins of \Cref{tab:robust} with their $95\,\%$ bootstrap intervals"
+         r" over bearings, by protocol.}",
+         r"\label{tab:robust_ci}",
+         r"\begin{adjustbox}{max width=\linewidth}",
+         r"\begin{tabular}{@{}l " + "c" * len(COLS) + r"@{}}", r"\toprule",
+         "comparison & " + " & ".join(c[1] for c in COLS) + r"\\", r"\midrule"]
+    for i, (a, r_) in enumerate(PAIR_ORDER):
+        if i in BLOCK:
+            if i:
+                L.append(r"\addlinespace")
+            L.append(r"\multicolumn{" + str(len(COLS) + 1) + r"}{@{}l}{" + BLOCK[i] + r"}\\")
+        L.append(f"\\quad {SH[a]} $-$ {SH[r_]} & "
+                 + " & ".join(ci(r[c]["pairs"][f"{a} - {r_}"]["pooled"]) for c, _ in COLS) + r"\\")
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
+    w("tab_robust_ci", L)
+
 
 def hours_table():
     """Absolute error of the predictive median in hours of remaining life."""
