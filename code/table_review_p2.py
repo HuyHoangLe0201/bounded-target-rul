@@ -131,7 +131,8 @@ def main():
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_b14", L)
     bounded_table()
-    print("wrote tab_support, tab_calib_ci, tab_points, tab_eropt, tab_b14, tab_bounded")
+    print("wrote tab_support, tab_calib_ci, tab_points, tab_eropt, tab_b14, tab_bounded,"
+          " tab_margins, tab_robust, tab_hours")
 
 
 def bounded_table():
@@ -175,33 +176,101 @@ def bounded_table():
         L.append(f"{NM[h]} & " + " & ".join(cells) + r"\\")
         if h == "LogitNormal":
             L.append(r"\midrule")
-    L += [r"\midrule",
-          r"\multicolumn{9}{@{}l}{\emph{Pooled CRPS margin, 26 bearings: $95\,\%$ bootstrap interval"
-          r" and Holm-adjusted $p$ within each block}}\\"]
-    SH = {"IGauss-trunc": "IG$_{\\rm tr}$", "BS-trunc": "BS$_{\\rm tr}$", "Beta": "Beta",
-          "LogitNormal": "logit-normal", "IGauss": "IG", "Weibull": "Weibull", "Gaussian": "Gaussian",
-          "IGauss@post": "IG restricted", "BS@post": "BS restricted",
-          "BS": "BS", "BS-t": "BS-$t$", "LogNormal": "lognormal"}
-    cell = lambda p: (f"${p['margin']:+.3f}$ [${p['ci95'][0]:+.3f}$, ${p['ci95'][1]:+.3f}$]"
-                      f" ({pfmt(p['p_holm'])})")
-    last = None
-    for k, v in b["pairs"].items():
-        if v["family"] == "vs_unbounded":
-            continue
-        if v["family"] != last and last is not None:
-            L.append(r"\addlinespace")
-        last = v["family"]
-        a, r_ = k.split(" - ")
-        L.append(f"\\quad {SH[a]} $-$ {SH[r_]} & \\multicolumn{{8}}{{l}}{{{cell(v['pooled'])}}}\\\\")
-    #  the twelve comparisons with the conventional heads, one row per rival
-    L += [r"\addlinespace",
-          r"\quad rival as fitted & \multicolumn{4}{l}{IG$_{\rm tr}$ $-$ rival}"
-          r" & \multicolumn{4}{l}{BS$_{\rm tr}$ $-$ rival}\\"]
-    for r_ in ("BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian"):
-        L.append(f"\\quad {SH[r_]} & \\multicolumn{{4}}{{l}}{{{cell(b['pairs'][f'IGauss-trunc - {r_}']['pooled'])}}}"
-                 f" & \\multicolumn{{4}}{{l}}{{{cell(b['pairs'][f'BS-trunc - {r_}']['pooled'])}}}\\\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_bounded", L)
+    margins_table(b)
+    robustness_table()
+    hours_table()
+
+
+SH = {"IGauss-trunc": r"IG$_{\rm tr}$", "BS-trunc": r"BS$_{\rm tr}$", "Beta": "Beta",
+      "LogitNormal": "logit-normal", "IGauss": "IG", "Weibull": "Weibull", "Gaussian": "Gaussian",
+      "IGauss@post": "IG restricted", "BS@post": "BS restricted",
+      "BS": "BS", "BS-t": "BS-$t$", "LogNormal": "lognormal"}
+PAIR_ORDER = ([("IGauss-trunc", r) for r in ("BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian")]
+              + [("BS-trunc", r) for r in ("BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian")]
+              + [("IGauss-trunc", "BS-trunc"), ("IGauss-trunc", "Beta"), ("IGauss-trunc", "LogitNormal"),
+                 ("BS-trunc", "Beta"), ("BS-trunc", "LogitNormal")])
+BLOCK = {0: r"\emph{Truncated heads against the conventional heads as fitted (Holm over 12)}",
+         12: r"\emph{Among the support-respecting heads (Holm over 6)}"}
+
+
+def margins_table(b):
+    """Paired CRPS margins per benchmark and pooled, for every comparison claimed."""
+    ci = lambda x: f"${x['margin']:+.3f}$ [${x['ci95'][0]:+.3f}$, ${x['ci95'][1]:+.3f}$]"
+    L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
+         r"\caption{Paired CRPS margins, row head minus rival, with $95\,\%$ bootstrap intervals over"
+         r" bearings. Pooled: the $26$ bearings weighted equally, with the Holm-adjusted $p$."
+         r" Negative favours the row head.}",
+         r"\label{tab:margins}",
+         r"\begin{adjustbox}{max width=\linewidth}",
+         r"\begin{tabular}{@{}l l l l@{}}", r"\toprule",
+         r"comparison & PRONOSTIA ($11$) & XJTU-SY ($15$) & pooled ($26$), Holm $p$\\", r"\midrule"]
+    for i, (a, r_) in enumerate(PAIR_ORDER):
+        if i in BLOCK:
+            if i:
+                L.append(r"\addlinespace")
+            L.append(r"\multicolumn{4}{@{}l}{" + BLOCK[i] + r"}\\")
+        v = b["pairs"][f"{a} - {r_}"]
+        L.append(f"\\quad {SH[a]} $-$ {SH[r_]} & {ci(v['pronostia'])} & {ci(v['xjtu'])}"
+                 f" & {ci(v['pooled'])} ({pfmt(v['pooled']['p_holm'])})\\\\")
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
+    w("tab_margins", L)
+
+
+def robustness_table():
+    """Pooled margins under each change of protocol; * marks Holm-adjusted p < 0.05."""
+    path = os.path.join(RES, "robustness.json")
+    if not os.path.exists(path):
+        return
+    r = json.load(open(path))
+    COLS = [("main", "reported"), ("grid", "fixed-time points"), ("seeds5", "seeds 5--9"),
+            ("lr1e-3", r"lr $10^{-3}$"), ("lr1e-2", r"lr $10^{-2}$")]
+    COLS = [c for c in COLS if c[0] in r]
+    cell = lambda v: (f"${v['margin']:+.3f}" + (r"^{\ast}" if v["p_holm"] < 0.05 else r"\phantom{^{\ast}}") + "$")
+    L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
+         r"\caption{Pooled CRPS margins under changes of protocol; $^{\ast}$: Holm-adjusted $p<0.05$"
+         r" within the block. Fixed-time points: every $50$th (PRONOSTIA) or $10$th (XJTU-SY)"
+         r" acquisition after the healthy window.}",
+         r"\label{tab:robust}",
+         r"\begin{adjustbox}{max width=\linewidth}",
+         r"\begin{tabular}{@{}l " + "r" * len(COLS) + r"@{}}", r"\toprule",
+         "comparison & " + " & ".join(c[1] for c in COLS) + r"\\", r"\midrule"]
+    for i, (a, r_) in enumerate(PAIR_ORDER):
+        if i in BLOCK:
+            if i:
+                L.append(r"\addlinespace")
+            L.append(r"\multicolumn{" + str(len(COLS) + 1) + r"}{@{}l}{" + BLOCK[i] + r"}\\")
+        L.append(f"\\quad {SH[a]} $-$ {SH[r_]} & "
+                 + " & ".join(cell(r[c]["pairs"][f"{a} - {r_}"]["pooled"]) for c, _ in COLS) + r"\\")
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
+    w("tab_robust", L)
+
+
+def hours_table():
+    """Absolute error of the predictive median in hours of remaining life."""
+    path = os.path.join(RES, "hours.json")
+    if not os.path.exists(path):
+        return
+    h = json.load(open(path))
+    NMH = {"BS": "BS, restricted", "BS-t": "BS-$t$, restricted", "Weibull": "Weibull, restricted",
+           "LogNormal": "lognormal, restricted", "IGauss": "IG, restricted", "Gaussian": "Gaussian, restricted",
+           "LogitNormal": "logit-normal", "Beta": "Beta", "BS-trunc": "BS, truncated at one",
+           "IGauss-trunc": "IG, truncated at one"}
+    L = [r"\begin{table}[htbp]", r"\centering\small",
+         r"\caption{Mean absolute error of the predictive median in hours, after mapping each law"
+         r" to remaining life by $R=t_k\,y/(1-y)$. Coverage and PIT are unchanged by the map.}",
+         r"\label{tab:hours}",
+         r"\begin{tabular}{@{}l rr@{}}", r"\toprule",
+         r"head & PRONOSTIA & XJTU-SY\\", r"\midrule"]
+    for k in ("BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian", "LogitNormal", "Beta",
+              "BS-trunc", "IGauss-trunc"):
+        L.append(f"{NMH[k]} & {h['heads']['pronostia/' + k]['MAE_h']:.2f}"
+                 f" & {h['heads']['xjtu/' + k]['MAE_h']:.2f}\\\\")
+        if k == "Gaussian":
+            L.append(r"\midrule")
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
+    w("tab_hours", L)
 
 
 if __name__ == "__main__":

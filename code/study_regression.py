@@ -46,6 +46,18 @@ EPOCHS = int(os.environ.get("GBS_EPOCHS", 250))
 HIDDEN = tuple(int(h) for h in os.environ.get("GBS_HIDDEN", "48,24").split(","))
 RES_TAG = os.environ.get("GBS_TAG", "")
 
+#  Robustness options; the defaults reproduce the reported run exactly.
+#    GBS_SEED0  first ensemble seed (members use SEED0 .. SEED0+4)
+#    GBS_LR     learning rate of every head, the point head included
+#    GBS_EVAL   "fractions" (40..90 % of life, plus the official PHM 2012 point)
+#               or "grid": every STRIDE-th acquisition after the healthy window,
+#               a set of inspections known in operation, chosen without the
+#               bearing's total life
+SEED0 = int(os.environ.get("GBS_SEED0", 0))
+LR = float(os.environ.get("GBS_LR", 3e-3))
+EVAL = os.environ.get("GBS_EVAL", "fractions")
+STRIDE = {"pronostia": 50, "xjtu": 10}      # 500 s and 10 min
+
 
 def make_head(name):
     if name == "BS-t":
@@ -55,7 +67,7 @@ def make_head(name):
 
 def _fit_ensemble(head, Xtr, ytr, wtr, Xva, yva, epochs=EPOCHS, n=N_ENSEMBLE):
     return [R.train_head(head, Xtr, ytr, wtr, Xva, yva,
-                         R.TrainCfg(epochs=epochs, seed=s, hidden=HIDDEN))[0]
+                         R.TrainCfg(epochs=epochs, seed=SEED0 + s, hidden=HIDDEN, lr=LR))[0]
             for s in range(n)]
 
 
@@ -67,15 +79,15 @@ def _fit_point(Xtr, ytr, wtr, Xva, yva, epochs=EPOCHS, n=N_ENSEMBLE):
     """
     models = []
     for s in range(n):
-        torch.manual_seed(s)
+        torch.manual_seed(SEED0 + s)
         m = R.MLP(Xtr.shape[1], hidden=HIDDEN)
-        opt = torch.optim.AdamW(m.parameters(), lr=3e-3, weight_decay=1e-3)
+        opt = torch.optim.AdamW(m.parameters(), lr=LR, weight_decay=1e-3)
         sch = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=epochs)
         Xt, yt = torch.tensor(Xtr), torch.tensor(ytr)
         wt = torch.tensor(wtr)
         Xv, yv = torch.tensor(Xva), torch.tensor(yva)
         best, state, bad = np.inf, None, 0
-        g = torch.Generator().manual_seed(s)
+        g = torch.Generator().manual_seed(SEED0 + s)
         for ep in range(epochs):
             m.train()
             perm = torch.randperm(len(yt), generator=g)
@@ -169,6 +181,9 @@ def _metrics(point, S, y, v_al=None, v_ep=None, extra_lo=None, extra_hi=None):
 
 def _eval_points(rec, dataset, bearing):
     n = rec["n"]
+    if EVAL == "grid":
+        k0 = max(20, rec.get("nh", 0))
+        return list(range(k0, n - 1, STRIDE[dataset])), None
     pts = {int(f * (n - 1)) for f in EVAL_FRACS}
     official = None
     if dataset == "pronostia" and bearing in D.PHM12_TRUNC_N:

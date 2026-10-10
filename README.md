@@ -47,9 +47,11 @@ tables can be checked without retraining:
   and the point head (101 predictive quantiles each), with the summary tables.
 * `results_both_causal.json`: the same run including the four bounded heads.
 * `results_both_{w32,w48,w96,w256,big}.json`: the backbone sweep.
+* `results_both_{grid,seeds5,lr1e-3,lr1e-2}.json`: the robustness runs (prediction
+  points fixed in operating time; seeds 5–9; learning rates 1e-3 and 1e-2).
 * the analysis outputs (`uncertainty`, `joint`, `bounded`, `review_p2`,
   `review_p2_trunc`, `crps_grid`, `head_shape`, `rho`, `weibull_members`,
-  `backbone`).
+  `backbone`, `hours`, `robustness`).
 
 ## Reproducing
 
@@ -58,7 +60,8 @@ Tables and figures from the stored results (minutes, no data needed):
 ```bash
 cd code
 python make_tables_p2.py        # tab_regression, tab_uncertainty
-python table_review_p2.py       # tab_support, tab_bounded, tab_calib_ci, tab_points, tab_eropt, tab_b14
+python table_review_p2.py       # tab_support, tab_bounded, tab_margins, tab_robust, tab_hours,
+                                # tab_calib_ci, tab_points, tab_eropt, tab_b14
 python table_backbone.py
 python table_headshape.py
 python make_figures_p2.py       # fig_calibration, fig_pit
@@ -75,9 +78,20 @@ GBS_BOUNDED=1 GBS_TAG=_causal python study_regression.py both    # all ten heads
 #  results_both.json is the six conventional heads and the point head of that run
 python study_uncertainty.py; python study_joint.py; python study_rho.py
 python study_review_p2.py; python study_review_p2_trunc.py; python study_crps_grid.py
-python study_bounded.py; python study_weibull_members.py
+python study_bounded.py; python study_weibull_members.py; python study_hours.py
 python run_backbone_sweep.py; python study_backbone.py
+#  robustness: one element of the protocol changed at a time
+GBS_BOUNDED=1 GBS_EVAL=grid GBS_TAG=_grid python study_regression.py both
+GBS_BOUNDED=1 GBS_SEED0=5 GBS_TAG=_seeds5 python study_regression.py both
+GBS_BOUNDED=1 GBS_LR=1e-3 GBS_TAG=_lr1e-3 python study_regression.py both
+GBS_BOUNDED=1 GBS_LR=1e-2 GBS_TAG=_lr1e-2 python study_regression.py both
+python study_robustness.py
 ```
+
+The target `y = R/T_total` is an exact reparametrisation of the RUL at a known
+elapsed time `t`: `R = t*y/(1-y)`. `study_hours.py` maps every predictive law to
+hours; coverage and PIT are unchanged by the map, the CRPS is not (it is infinite
+in hours for any law with positive density at `y = 1`).
 
 Seeds are fixed (ensemble members use seeds 0–4); on CPU the refit in
 `study_weibull_members.py` reproduces the stored predictive medians exactly.
