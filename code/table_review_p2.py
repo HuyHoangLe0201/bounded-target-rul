@@ -17,6 +17,11 @@ NAME = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull", "LogNormal": "lognor
 DS = {"pronostia": "PRONOSTIA", "xjtu": "XJTU-SY"}
 
 
+def pfmt(p):
+    """A bootstrap p-value: below 0.001 it is reported as a bound, never as 0.000."""
+    return "$<0.001$" if p < 0.001 else f"{p:.3f}"
+
+
 def w(name, lines):
     open(os.path.join(TAB, name + ".tex"), "w", encoding="utf-8", newline="\n").write("\n".join(lines) + "\n")
 
@@ -48,7 +53,7 @@ def main():
                         ("BS", "Weibull"), ("BS", "LogNormal")]:
         a, b = t[f"raw/{lead}-{rival}"]["pooled"], t[f"trunc/{lead}-{rival}"]["pooled"]
         f = lambda x: (f"${x['margin']:+.3f}$ [${x['ci95'][0]:+.3f}$, ${x['ci95'][1]:+.3f}$]"
-                       f" ({x['p_holm']:.3f})")
+                       f" ({pfmt(x['p_holm'])})")
         L.append(f"\\quad {SH[lead]} $-$ {NAME[rival]} & & \\multicolumn{{3}}{{l}}{{{f(a)}}}"
                  f" & \\multicolumn{{3}}{{l}}{{{f(b)}}}\\\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
@@ -178,7 +183,7 @@ def bounded_table():
           "IGauss@post": "IG restricted", "BS@post": "BS restricted",
           "BS": "BS", "BS-t": "BS-$t$", "LogNormal": "lognormal"}
     cell = lambda p: (f"${p['margin']:+.3f}$ [${p['ci95'][0]:+.3f}$, ${p['ci95'][1]:+.3f}$]"
-                      f" ({p['p_holm']:.3f})")
+                      f" ({pfmt(p['p_holm'])})")
     last = None
     for k, v in b["pairs"].items():
         if v["family"] == "vs_unbounded":
