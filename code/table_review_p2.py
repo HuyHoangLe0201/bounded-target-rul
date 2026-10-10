@@ -1,7 +1,7 @@
 """LaTeX tables for the paper-2 review analyses (results/regression/review_p2*.json).
 
   tab_support      CRPS, MAE and coverage before and after restricting each
-                   predictive law to the target's support (0,1]
+                   predictive law to the target's support (0,1)
   tab_calib_ci     bearing-level bootstrap intervals for coverage and PIT-KS
   tab_points       prediction points per held-out bearing
 """
@@ -32,7 +32,7 @@ def main():
 
     L = [r"\begin{table}[htbp]", r"\centering\small",
          r"\caption{Each predictive law before and after restriction to the target's support"
-         r" $(0,1]$, applied after fitting. Outside: mean predictive mass outside $(0,1]$.}",
+         r" $(0,1)$, applied after fitting. Outside: mean predictive mass outside $(0,1)$.}",
          r"\label{tab:support}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l r rr rr rr@{}}", r"\toprule",
@@ -159,7 +159,7 @@ def bounded_table():
         return np.quantile(bs, 0.025), np.quantile(bs, 0.975)
 
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{Heads trained on a likelihood that respects the target's support $(0,1]$,"
+         r"\caption{Heads trained on a likelihood that respects the target's support $(0,1)$,"
          r" beside the strongest heads as fitted. cov$_{95}$ with its bearing-level $95\,\%$ interval.}",
          r"\label{tab:bounded}",
          r"\begin{adjustbox}{max width=\linewidth}",
