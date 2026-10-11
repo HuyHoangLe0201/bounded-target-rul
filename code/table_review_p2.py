@@ -176,6 +176,10 @@ def bounded_table():
         L.append(f"{NM[h]} & " + " & ".join(cells) + r"\\")
         if h == "LogitNormal":
             L.append(r"\midrule")
+    #  the point head, so that the comparison on its own loss can be read off directly
+    pm = [c["tables"][k]["Point(MAE)"]["MAE"] for k in ("pronostia/all", "xjtu/all")]
+    L.append(r"\midrule")
+    L.append(f"point head (MAE loss) & {pm[0]:.3f} & --- & --- & --- & {pm[1]:.3f} & --- & --- & ---\\\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_bounded", L)
     margins_table(b)
