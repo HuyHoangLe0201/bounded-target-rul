@@ -31,8 +31,7 @@ def main():
     t = json.load(open(os.path.join(RES, "review_p2_trunc.json")))
 
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{Each predictive law before and after restriction to the target's support"
-         r" $(0,1)$, applied after fitting. Outside: mean predictive mass outside $(0,1)$.}",
+         r"\caption{Each law before and after restriction to $(0,1)$ after fitting; outside: mean mass outside $(0,1)$.}",
          r"\label{tab:support}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l r rr rr rr@{}}", r"\toprule",
@@ -60,8 +59,7 @@ def main():
     w("tab_support", L)
 
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{Calibration summaries with $95\,\%$ intervals from resampling held-out bearings"
-         r" ($10\,000$ resamples). Nominal coverage is $0.95$.}",
+         r"\caption{Calibration summaries with bearing-level $95\,\%$ bootstrap intervals; nominal coverage $0.95$.}",
          r"\label{tab:calib_ci}",
          r"\begin{tabular}{@{}l rr rr@{}}", r"\toprule",
          r"& \multicolumn{2}{c}{PRONOSTIA} & \multicolumn{2}{c}{XJTU-SY}\\",
@@ -77,9 +75,7 @@ def main():
     w("tab_calib_ci", L)
 
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{Prediction points per held-out bearing, as fractions of the bearing's life;"
-         r" $^{\ast}$ marks the official IEEE PHM 2012 truncation point. On Bearing1\_4 it falls"
-         r" three acquisitions before the $80\,\%$ point; both are kept.}",
+         r"\caption{Prediction points per held-out bearing, as fractions of life; $^{\ast}$: official truncation point.}",
          r"\label{tab:points}",
          r"\begin{tabular}{@{}l l@{}}", r"\toprule", r"bearing & life fractions\\", r"\midrule"]
     for ds, lab in DS.items():
@@ -90,8 +86,7 @@ def main():
     L += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
     w("tab_points", L)
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{Mean $|\mathrm{Er}|$ [\%] and PHM score at the predictive median and at the"
-         r" summary that optimises each criterion in expectation. ---: undefined (see text).}",
+         r"\caption{Mean $|\mathrm{Er}|$ [\%] and PHM score at the median and at each criterion's optimal summary; ---: undefined.}",
          r"\label{tab:eropt}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l rr rr rr rr@{}}", r"\toprule",
@@ -114,8 +109,7 @@ def main():
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_eropt", L)
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{The eleven official truncation points scored with the archive RUL of"
-         r" Bearing1\_4 and with the published one; every other bearing is unchanged.}",
+         r"\caption{Official truncation points scored with the archive and the published RUL of Bearing1\_4.}",
          r"\label{tab:b14}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l rr rr rr rr rr@{}}", r"\toprule",
@@ -159,8 +153,7 @@ def bounded_table():
         return np.quantile(bs, 0.025), np.quantile(bs, 0.975)
 
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{Heads trained on a likelihood that respects the target's support $(0,1)$,"
-         r" beside the strongest heads as fitted. cov$_{95}$ with its bearing-level $95\,\%$ interval.}",
+         r"\caption{Heads trained on the support $(0,1)$, beside the best heads as fitted; cov$_{95}$ with its bearing-level $95\,\%$ interval.}",
          r"\label{tab:bounded}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l rrrr rrrr@{}}", r"\toprule",
@@ -232,10 +225,7 @@ def margins_table(b):
     grid = json.load(open(rp))["grid"]["pairs"] if os.path.exists(rp) else None
     ncol = 5 if grid else 4
     L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
-         r"\caption{Paired CRPS margins, row head minus rival, with $95\,\%$ bootstrap intervals over"
-         r" bearings. Pooled: the $26$ bearings weighted equally, with the Holm-adjusted $p$."
-         r" Fixed-time: the pooled margin at inspections fixed in operating time"
-         r" (\Cref{sec:robust}). Negative favours the row head.}",
+         r"\caption{Paired CRPS margins, row head minus rival, with bootstrap intervals and Holm-adjusted $p$; negative favours the row head.}",
          r"\label{tab:margins}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l " + "l" * (ncol - 1) + r"@{}}", r"\toprule",
@@ -275,10 +265,7 @@ def robustness_table():
     COLS = [c for c in COLS if c[0] in r]
     cell = lambda v: (f"${v['margin']:+.3f}" + (r"^{\ast}" if v["p_holm"] < 0.05 else r"\phantom{^{\ast}}") + "$")
     L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
-         r"\caption{Pooled CRPS margins under changes of protocol; $^{\ast}$: Holm-adjusted $p<0.05$"
-         r" within the block. Fixed-time points: every $50$th (PRONOSTIA) or $10$th (XJTU-SY)"
-         r" acquisition after the healthy window. Lr per head: each head's learning rate chosen from"
-         r" $\{10^{-3},3\times10^{-3},10^{-2}\}$ by its CRPS on the validation bearing.}",
+         r"\caption{Pooled CRPS margins under changes of protocol; $^{\ast}$: Holm-adjusted $p<0.05$.}",
          r"\label{tab:robust}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l " + "r" * len(COLS) + r"@{}}", r"\toprule",
@@ -296,8 +283,7 @@ def robustness_table():
     #  the same comparisons with their bootstrap intervals, for the appendix
     ci = lambda v: f"[${v['ci95'][0]:+.3f}$, ${v['ci95'][1]:+.3f}$]"
     L = [r"\begin{table}[htbp]", r"\centering\scriptsize",
-         r"\caption{The pooled margins of \Cref{tab:robust} with their $95\,\%$ bootstrap intervals"
-         r" over bearings, by protocol.}",
+         r"\caption{The margins of \Cref{tab:robust} with $95\,\%$ bootstrap intervals.}",
          r"\label{tab:robust_ci}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l " + "c" * len(COLS) + r"@{}}", r"\toprule",
@@ -318,8 +304,7 @@ def robustness_table():
     if not all(k in r for k, _ in BB):
         return
     L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
-         r"\caption{Pooled CRPS margins across backbones; $^{\ast}$: Holm-adjusted $p<0.05$ within the"
-         r" block. All but the reported backbone are trained for $300$ epochs.}",
+         r"\caption{Pooled CRPS margins across backbones; $^{\ast}$: Holm-adjusted $p<0.05$.}",
          r"\label{tab:robust_bb}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l " + "r" * len(BB) + r"@{}}", r"\toprule",
@@ -346,10 +331,7 @@ def resplit_table():
     BLOCK_R = {0: r"\emph{Truncated heads against the conventional heads as fitted (Holm over 12)}",
                12: r"\emph{Among the support-respecting heads (the pair alone; then Holm over 4)}"}
     L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
-         r"\caption{CRPS margins on PRONOSTIA under five other partitions of its seventeen records,"
-         r" two training bearings per operating condition, each over its eleven held-out bearings;"
-         r" $^{\ast}$: Holm-adjusted $p<0.05$ within the block. Last column: splits, of five, in"
-         r" which the margin favours the row head.}",
+         r"\caption{CRPS margins on PRONOSTIA under five other partitions of its bearings; $^{\ast}$: Holm-adjusted $p<0.05$.}",
          r"\label{tab:resplit}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l " + "r" * len(names) + r" c@{}}", r"\toprule",
@@ -385,9 +367,7 @@ def ratio_table():
            "IGauss": "IG", "Gaussian": "Gaussian", "Gaussian-trunc0": "Gaussian, truncated at zero",
            "BS-trunc": "BS", "IGauss-trunc": "IG"}
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{CRPS on the fraction ($y$) and integral CRPS in hours ($h$, from the exact laws) for the heads trained on"
-         r" $w=R/t$, the heads truncated at one and the conventional heads restricted to $(0,1)$ after"
-         r" fitting. Coverage and PIT are the same on both scales. Reported prediction points.}",
+         r"\caption{CRPS on the fraction ($y$) and in hours ($h$) for heads trained on $w=R/t$, truncated at one, or restricted after fitting.}",
          r"\label{tab:ratio}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l rrrr rrrr@{}}", r"\toprule",
@@ -428,10 +408,7 @@ def ratio_table():
                       f" ({pfmt(v['p_holm'])})")
     nm = lambda k: NMR[k.split("@")[0]] + (r"$_{\rm tr}$" if k.split("@")[0].endswith("trunc") else "")
     L = [r"\begin{table}[htbp]", r"\centering\scriptsize",
-         r"\caption{Pooled margins for the time-scale comparison, with $95\,\%$ bootstrap intervals over"
-         r" bearings and Holm-adjusted $p$ within each block. On the fraction: CRPS, at the reported and"
-         r" the fixed-time points. In hours: integral CRPS \eqref{eq:crpsh} from the exact predictive laws,"
-         r" likewise.}",
+         r"\caption{Pooled margins of the time-scale comparison, with bootstrap intervals and Holm-adjusted $p$ within each block.}",
          r"\label{tab:ratio_pairs}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l l l@{}}", r"\toprule",
@@ -467,9 +444,7 @@ def quantile_table():
     NMQ = {"BS-trunc": r"BS$_{\rm tr}$", "IGauss-trunc": r"IG$_{\rm tr}$",
            "Quantile": "QR", "Quantile-logit": r"QR$_{(0,1)}$"}
     L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
-         r"\caption{CRPS margins against the quantile-regression (QR) heads: QR unconstrained, QR$_{(0,1)}$ kept in"
-         r" $(0,1)$ by a logit link. Holm over the four truncated-minus-quantile margins of each"
-         r" protocol; the last row is a single comparison.}",
+         r"\caption{CRPS margins against the quantile-regression (QR) heads, unconstrained and kept in $(0,1)$, with Holm-adjusted $p$.}",
          r"\label{tab:quantile}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l llll@{}}", r"\toprule",
@@ -497,8 +472,7 @@ def hours_table():
            "LogitNormal": "logit-normal", "Beta": "Beta", "BS-trunc": "BS, truncated at one",
            "IGauss-trunc": "IG, truncated at one"}
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{Mean absolute error of the predictive median in hours, after mapping each law"
-         r" to remaining life by $R=t_k\,y/(1-y)$. Coverage and PIT are unchanged by the map.}",
+         r"\caption{Mean absolute error of the predictive median in hours, via $R=t_k\,y/(1-y)$.}",
          r"\label{tab:hours}",
          r"\begin{tabular}{@{}l rr@{}}", r"\toprule",
          r"head & PRONOSTIA & XJTU-SY\\", r"\midrule"]

@@ -20,9 +20,9 @@ RNAME = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull",
          "Gaussian": "Gaussian", "Point(MAE)": "point head (MAE loss)"}
 
 
-RSUB = {"pronostia/all": "PRONOSTIA, all prediction points",
-        "pronostia/official": "PRONOSTIA, official IEEE PHM 2012 truncation points",
-        "xjtu/all": "XJTU-SY, leave-one-operating-condition-out"}
+RSUB = {"pronostia/all": "Scores on PRONOSTIA at all prediction points",
+        "pronostia/official": "Scores on PRONOSTIA at the official IEEE PHM 2012 truncation points",
+        "xjtu/all": "Scores on XJTU-SY, each operating condition predicted from the other two"}
 
 
 def _fmt(v, k):
@@ -61,15 +61,7 @@ def t_regression():
         n = int(next(iter(d[key].values()))["n"])
         out += f"""\\begin{{table}}[htbp]
 \\centering\\footnotesize
-\\caption{{{label}; $n={n}$ prediction points. All heads share one backbone,
-feature set, schedule and set of seeds. Mean absolute error (MAE), root mean squared
-error (RMSE), continuous ranked probability score (CRPS) and mean prediction
-interval width (MPIW) are on the normalised
-scale (fraction of life); $|\\mathrm{{Er}}|$ and the prognostics and health
-management (PHM) challenge score are scale-invariant
-and therefore comparable with the IEEE PHM 2012 challenge. cov$_{{95}}$ is the
-empirical coverage of the nominal 95\\,\\% interval; PIT-KS is the Kolmogorov--Smirnov
-distance of the probability integral transform from uniformity (0 is perfect).}}
+\\caption{{{label} ($n={n}$).}}
 \\label{{tab:reg_{tag}}}
 \\begin{{tabular}}{{@{{}}l rr rr rr rr r@{{}}}}
 \\toprule

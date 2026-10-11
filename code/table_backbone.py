@@ -36,15 +36,8 @@ def build():
         rows += r"\addlinespace" "\n"
     return f"""\\begin{{table}}[htbp]
 \\centering\\small
-\\caption{{Is the ordering a property of the families or of the network? The whole
-protocol --- features, splits, seeds, schedule, heads --- is re-run on six
-backbones ($32$--$16$, $48$--$24$, $96$--$48$, $128$--$64$--$32$, $256$--$128$,
-all at a common epoch budget, plus the reported configuration), and the six
-orderings of the distributional heads are compared pairwise by Kendall's
-$\\tau$. Absolute accuracy improves with capacity and is not the question. The
-last column reports how many different heads come first across the six.
-Coverage is ranked by distance from nominal rather than magnitude, since a head
-can reach high coverage by being wide.}}
+\\caption{{Orderings of the heads across six backbones, compared by Kendall's
+$\\tau$; coverage is ranked by distance from nominal.}}
 \\label{{tab:backbone}}
 \\begin{{adjustbox}}{{max width=\\linewidth}}
 \\begin{{tabular}}{{@{{}}l l r r l@{{}}}}

@@ -19,11 +19,8 @@ NAME = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull",
         "Gaussian": "Gaussian"}
 
 CAPTION = (
-    "Shape of the fitted predictive distributions, read from the stored "
-    "quantiles. ``IQR/med'' is the interquartile range (IQR) in units of the "
-    "predictive median; ``$>1$ mass'' is the average predictive probability "
-    "placed on a remaining life longer than the whole test, which the target "
-    "cannot take. Both are medians over prediction points."
+    "Shape of the fitted laws, medians over prediction points: interquartile "
+    "range (IQR) over the median, and mass above $y=1$."
 )
 
 

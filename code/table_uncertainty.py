@@ -18,14 +18,9 @@ NAME = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull",
         "Gaussian": "Gaussian", "Point(MAE)": "point head (MAE loss)"}
 
 CAPTION = (
-    "How much of the ordering survives the sample size. Cluster bootstrap over "
-    "bearings ({nb:,} resamples), every head evaluated on the identical "
-    "resampled bearings so that the comparisons are paired. "
-    "P(first) is the bootstrap probability that a head attains the lowest mean "
-    "absolute error, which is what the claim that one head wins amounts to. "
-    "The bracketed interval is the paired 95\\,\\% percentile interval on the "
-    "difference from the leading head, and $\\dagger$ marks a head that is "
-    "not separated from the leader at that level."
+    "Paired cluster bootstrap over bearings: P(first), probability of the "
+    "lowest MAE; brackets, 95\\,\\% interval on the gap to the leader; "
+    "$\\dagger$, not separated from it."
 )
 
 
