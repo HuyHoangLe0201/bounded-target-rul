@@ -191,6 +191,16 @@ def bounded_table():
             lo, hi = cov_ci(ds, "Quantile")
             cells.append(f"{v['MAE']:.3f} & {v['CRPS']:.3f} & {v['cov95']:.2f} [{lo:.2f}, {hi:.2f}] & {v['PIT_KS']:.3f}")
         L.append("quantile regression & " + " & ".join(cells) + r"\\")
+    qlp = os.path.join(RES, "results_both_quantl.json")
+    if os.path.exists(qlp):
+        dq = json.load(open(qlp))
+        rows += [r for r in dq["rows"] if r["head"] == "Quantile-logit"]
+        cells = []
+        for ds, key in (("pronostia", "pronostia/all"), ("xjtu", "xjtu/all")):
+            v = dq["tables"][key]["Quantile-logit"]
+            lo, hi = cov_ci(ds, "Quantile-logit")
+            cells.append(f"{v['MAE']:.3f} & {v['CRPS']:.3f} & {v['cov95']:.2f} [{lo:.2f}, {hi:.2f}] & {v['PIT_KS']:.3f}")
+        L.append(r"quantile regression in $(0,1)$ & " + " & ".join(cells) + r"\\")
     L.append(f"point head (MAE loss) & {pm[0]:.3f} & --- & --- & --- & {pm[1]:.3f} & --- & --- & ---\\\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_bounded", L)
@@ -198,6 +208,7 @@ def bounded_table():
     robustness_table()
     hours_table()
     ratio_table()
+    quantile_table()
 
 
 SH = {"IGauss-trunc": r"IG$_{\rm tr}$", "BS-trunc": r"BS$_{\rm tr}$", "Beta": "Beta",
@@ -382,6 +393,36 @@ def ratio_table():
                      f" & {cell(g['pooled']) if g else '---'}\\\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_ratio_pairs", L)
+
+
+def quantile_table():
+    """Truncated heads against the two quantile heads, per benchmark and pooled,
+    at the reported and at the fixed-time prediction points."""
+    path = os.path.join(RES, "quantile.json")
+    if not os.path.exists(path):
+        return
+    q = json.load(open(path))
+    ci = lambda x: f"${x['margin']:+.3f}$ [${x['ci95'][0]:+.3f}$, ${x['ci95'][1]:+.3f}$]"
+    NMQ = {"BS-trunc": r"BS$_{\rm tr}$", "IGauss-trunc": r"IG$_{\rm tr}$",
+           "Quantile": "QR", "Quantile-logit": r"QR$_{(0,1)}$"}
+    L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
+         r"\caption{CRPS margins against the quantile heads: QR unconstrained, QR$_{(0,1)}$ kept in"
+         r" $(0,1)$ by a logit link. Holm over the four truncated-minus-quantile margins of each"
+         r" protocol; the last row is a single comparison.}",
+         r"\label{tab:quantile}",
+         r"\begin{adjustbox}{max width=\linewidth}",
+         r"\begin{tabular}{@{}l llll@{}}", r"\toprule",
+         r"comparison & PRONOSTIA & XJTU-SY & pooled, Holm $p$ & fixed-time pooled, Holm $p$\\", r"\midrule"]
+    for k, v in q["main"]["pairs"].items():
+        a, b = k.split(" - ")
+        if v["family"] != "truncated_vs_quantile":
+            L.append(r"\addlinespace")
+        g = q.get("grid", {}).get("pairs", {}).get(k)
+        L.append(f"{NMQ[a]} $-$ {NMQ[b]} & {ci(v['pronostia'])} & {ci(v['xjtu'])}"
+                 f" & {ci(v['pooled'])} ({pfmt(v['pooled']['p_holm'])})"
+                 f" & {(ci(g['pooled']) + ' (' + pfmt(g['pooled']['p_holm']) + ')') if g else '---'}\\\\")
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
+    w("tab_quantile", L)
 
 
 def hours_table():

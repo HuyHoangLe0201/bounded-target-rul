@@ -133,18 +133,27 @@ def _fit_point(Xtr, ytr, wtr, Xva, yva, epochs=EPOCHS, n=N_ENSEMBLE):
 
 # ── distribution-free baseline: an ensemble of quantile-regression heads ──
 QLEV = np.linspace(0.005, 0.995, 101)
+#  unconstrained quantile head, and the same head kept inside (0,1) by a logit link
+QUANTILE_HEADS = {"Quantile": None, "Quantile-logit": "logit"}
 
 
-def _quantiles(out):
+def _quantiles(out, link=None):
     """Monotone quantile function: a base value plus positive increments.
-    The offset of -4.6 makes each increment start near 0.01, so that the
-    initial spread is about the width of the target's range."""
-    q0 = out[:, :1]
-    inc = torch.nn.functional.softplus(out[:, 1:] - 4.6)
-    return torch.cat([q0, q0 + torch.cumsum(inc, dim=1)], dim=1)
+    Unconstrained (link=None), the offset of -4.6 makes each increment start near
+    0.01, so that the initial spread is about the width of the target's range.
+    With link="logit" the quantiles live on the logit scale and are mapped to
+    (0,1) by the logistic function, so every quantile respects the target's
+    support; the map is increasing, so they remain quantiles of the fraction.
+    The lowest one starts at logit 0.01 (-4.6) and the increments near 0.092
+    (offset -2.34), so the initial quantiles span about 0.01 to 0.99."""
+    q0 = out[:, :1] - (4.6 if link == "logit" else 0.0)
+    off = 2.34 if link == "logit" else 4.6
+    inc = torch.nn.functional.softplus(out[:, 1:] - off)
+    q = torch.cat([q0, q0 + torch.cumsum(inc, dim=1)], dim=1)
+    return torch.sigmoid(q) if link == "logit" else q
 
 
-def _fit_quantile(Xtr, ytr, wtr, Xva, yva, epochs=EPOCHS, n=N_ENSEMBLE):
+def _fit_quantile(Xtr, ytr, wtr, Xva, yva, epochs=EPOCHS, n=N_ENSEMBLE, link=None):
     """Quantile head: identical backbone, schedule and seeds; the network emits
     101 monotone quantiles and is trained by the pinball loss averaged over them."""
     tau = torch.tensor(QLEV, dtype=torch.float32)[None, :]
@@ -164,13 +173,13 @@ def _fit_quantile(Xtr, ytr, wtr, Xva, yva, epochs=EPOCHS, n=N_ENSEMBLE):
             perm = torch.randperm(len(yt), generator=g)
             for i in range(0, len(yt), 256):
                 idx = perm[i:i + 256]
-                loss = (pin(_quantiles(m(Xt[idx])), yt[idx]) * wt[idx]).sum() / wt[idx].sum()
+                loss = (pin(_quantiles(m(Xt[idx]), link), yt[idx]) * wt[idx]).sum() / wt[idx].sum()
                 opt.zero_grad(); loss.backward()
                 torch.nn.utils.clip_grad_norm_(m.parameters(), 5.0); opt.step()
             sch.step()
             m.eval()
             with torch.no_grad():
-                v = pin(_quantiles(m(Xv)), yv).mean().item()
+                v = pin(_quantiles(m(Xv), link), yv).mean().item()
             if v < best - 1e-6:
                 best, bad = v, 0
                 state = {k: t.clone() for k, t in m.state_dict().items()}
@@ -185,7 +194,7 @@ def _fit_quantile(Xtr, ytr, wtr, Xva, yva, epochs=EPOCHS, n=N_ENSEMBLE):
     return models
 
 
-def _quantile_predict(models, X, n_samp=400, seed=0):
+def _quantile_predict(models, X, n_samp=400, seed=0, link=None):
     """Draws from each member's quantile function by inverse transform, pooled
     into the ensemble mixture, in the format of rulreg.predict."""
     Xt = torch.tensor(X)
@@ -194,7 +203,7 @@ def _quantile_predict(models, X, n_samp=400, seed=0):
     samples, means, varis = [], [], []
     with torch.no_grad():
         for m in models:
-            Q = _quantiles(m(Xt)).numpy()
+            Q = _quantiles(m(Xt), link).numpy()
             u = rng.uniform(QLEV[0], QLEV[-1], size=(Q.shape[0], per))
             S = np.stack([np.interp(u[i], QLEV, Q[i]) for i in range(Q.shape[0])])
             samples.append(S)
@@ -206,15 +215,15 @@ def _quantile_predict(models, X, n_samp=400, seed=0):
 
 
 def _fit_head(h, Xtr, ytr, wtr, Xva, yva):
-    if h == "Quantile":
-        return None, _fit_quantile(Xtr, ytr, wtr, Xva, yva)
+    if h in QUANTILE_HEADS:
+        return None, _fit_quantile(Xtr, ytr, wtr, Xva, yva, link=QUANTILE_HEADS[h])
     head = make_head(h)
     return head, _fit_ensemble(head, Xtr, ytr, wtr, Xva, yva)
 
 
 def _predict_head(h, head, models, X):
-    if h == "Quantile":
-        return _quantile_predict(models, X)
+    if h in QUANTILE_HEADS:
+        return _quantile_predict(models, X, link=QUANTILE_HEADS[h])
     return R.predict(head, models, X)
 
 
