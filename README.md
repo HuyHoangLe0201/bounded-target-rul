@@ -94,6 +94,9 @@ GBS_TARGET=ratio GBS_HEADS=BS,BS-t,Weibull,LogNormal,IGauss,Gaussian GBS_TAG=_ra
 GBS_TARGET=ratio GBS_HEADS=Gaussian-trunc0 GBS_TAG=_ratio_g0 python study_regression.py both   # Gaussian truncated at 0
 #  ... and both again with GBS_EVAL=grid (tags _ratio_grid, _ratio_grid_g0)
 python study_ratio.py          # CRPS on the fraction, on w and in hours (t_k * CRPS on w)
+#  distribution-free baseline: an ensemble of quantile-regression heads (pinball loss)
+GBS_HEADS=Quantile GBS_TAG=_quant python study_regression.py both     # and with GBS_EVAL=grid, tag _quant_grid
+python study_quantile.py
 ```
 
 The target `y = R/T_total` is an exact reparametrisation of the RUL at a known

@@ -496,13 +496,13 @@ class MLP(nn.Module):
     """Small MLP shared by every head. Deliberately small: the effective sample
     size is the number of run-to-failure records, not the number of time points."""
 
-    def __init__(self, d_in, hidden=(48, 24), p_drop=0.10):
+    def __init__(self, d_in, hidden=(48, 24), p_drop=0.10, n_out=2):
         super().__init__()
         layers, d = [], d_in
         for h in hidden:
             layers += [nn.Linear(d, h), nn.SiLU(), nn.Dropout(p_drop)]
             d = h
-        layers += [nn.Linear(d, 2)]
+        layers += [nn.Linear(d, n_out)]
         self.net = nn.Sequential(*layers)
         with torch.no_grad():                       # start near the data scale
             self.net[-1].weight.mul_(0.1)

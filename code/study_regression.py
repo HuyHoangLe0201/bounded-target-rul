@@ -131,6 +131,93 @@ def _fit_point(Xtr, ytr, wtr, Xva, yva, epochs=EPOCHS, n=N_ENSEMBLE):
     return models
 
 
+# ── distribution-free baseline: an ensemble of quantile-regression heads ──
+QLEV = np.linspace(0.005, 0.995, 101)
+
+
+def _quantiles(out):
+    """Monotone quantile function: a base value plus positive increments.
+    The offset of -4.6 makes each increment start near 0.01, so that the
+    initial spread is about the width of the target's range."""
+    q0 = out[:, :1]
+    inc = torch.nn.functional.softplus(out[:, 1:] - 4.6)
+    return torch.cat([q0, q0 + torch.cumsum(inc, dim=1)], dim=1)
+
+
+def _fit_quantile(Xtr, ytr, wtr, Xva, yva, epochs=EPOCHS, n=N_ENSEMBLE):
+    """Quantile head: identical backbone, schedule and seeds; the network emits
+    101 monotone quantiles and is trained by the pinball loss averaged over them."""
+    tau = torch.tensor(QLEV, dtype=torch.float32)[None, :]
+    models = []
+    for s in range(n):
+        torch.manual_seed(SEED0 + s)
+        m = R.MLP(Xtr.shape[1], hidden=HIDDEN, n_out=len(QLEV))
+        opt = torch.optim.AdamW(m.parameters(), lr=LR, weight_decay=1e-3)
+        sch = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=epochs)
+        Xt, yt, wt = torch.tensor(Xtr), torch.tensor(ytr), torch.tensor(wtr)
+        Xv, yv = torch.tensor(Xva), torch.tensor(yva)
+        pin = lambda q, y: torch.maximum(tau * (y[:, None] - q), (tau - 1.0) * (y[:, None] - q)).mean(1)
+        best, state, bad = np.inf, None, 0
+        g = torch.Generator().manual_seed(SEED0 + s)
+        for ep in range(epochs):
+            m.train()
+            perm = torch.randperm(len(yt), generator=g)
+            for i in range(0, len(yt), 256):
+                idx = perm[i:i + 256]
+                loss = (pin(_quantiles(m(Xt[idx])), yt[idx]) * wt[idx]).sum() / wt[idx].sum()
+                opt.zero_grad(); loss.backward()
+                torch.nn.utils.clip_grad_norm_(m.parameters(), 5.0); opt.step()
+            sch.step()
+            m.eval()
+            with torch.no_grad():
+                v = pin(_quantiles(m(Xv)), yv).mean().item()
+            if v < best - 1e-6:
+                best, bad = v, 0
+                state = {k: t.clone() for k, t in m.state_dict().items()}
+            else:
+                bad += 1
+                if bad >= 40:
+                    break
+        if state is not None:
+            m.load_state_dict(state)
+        m.eval()
+        models.append(m)
+    return models
+
+
+def _quantile_predict(models, X, n_samp=400, seed=0):
+    """Draws from each member's quantile function by inverse transform, pooled
+    into the ensemble mixture, in the format of rulreg.predict."""
+    Xt = torch.tensor(X)
+    rng = np.random.default_rng(seed)
+    per = n_samp // len(models)
+    samples, means, varis = [], [], []
+    with torch.no_grad():
+        for m in models:
+            Q = _quantiles(m(Xt)).numpy()
+            u = rng.uniform(QLEV[0], QLEV[-1], size=(Q.shape[0], per))
+            S = np.stack([np.interp(u[i], QLEV, Q[i]) for i in range(Q.shape[0])])
+            samples.append(S)
+            means.append(S.mean(1))
+            varis.append(S.var(1))
+    M, V = np.stack(means), np.stack(varis)
+    return {"samples": np.concatenate(samples, axis=1), "mean": M.mean(0),
+            "v_aleatory": V.mean(0), "v_epistemic": M.var(0)}
+
+
+def _fit_head(h, Xtr, ytr, wtr, Xva, yva):
+    if h == "Quantile":
+        return None, _fit_quantile(Xtr, ytr, wtr, Xva, yva)
+    head = make_head(h)
+    return head, _fit_ensemble(head, Xtr, ytr, wtr, Xva, yva)
+
+
+def _predict_head(h, head, models, X):
+    if h == "Quantile":
+        return _quantile_predict(models, X)
+    return R.predict(head, models, X)
+
+
 def _point_predict(models, X):
     Xt = torch.tensor(X)
     with torch.no_grad():
@@ -218,15 +305,13 @@ def _fold(data, tr_b, va_b, te_b, dataset):
     rows = []
     fits = {}
     for h in HEAD_ORDER:
-        head = make_head(h)
-        fits[h] = (head, _fit_ensemble(head, f32(Xtr_s), f32(ytr), f32(wtr),
-                                       f32(Xva_s), f32(yva)))
+        fits[h] = _fit_head(h, f32(Xtr_s), f32(ytr), f32(wtr), f32(Xva_s), f32(yva))
     point_models = _fit_point(f32(Xtr_s), f32(ytr), f32(wtr), f32(Xva_s), f32(yva))
 
     # calibration set for split conformal: the validation bearing
     cal = {}
     for h, (head, models) in fits.items():
-        pc = R.predict(head, models, f32(Xva_s))
+        pc = _predict_head(h, head, models, f32(Xva_s))
         if TARGET == "ratio":
             cal[h] = (_to_fraction(pc["samples"]), _to_fraction(yva))
         else:
@@ -240,7 +325,7 @@ def _fold(data, tr_b, va_b, te_b, dataset):
         Xe = f32((rec["X"][pts] - mu) / sd)
         T = max(rec["t"][-1], 1e-9)
         for h, (head, models) in fits.items():
-            pr = R.predict(head, models, Xe)
+            pr = _predict_head(h, head, models, Xe)
             qw = None
             if TARGET == "ratio":
                 qw = np.quantile(pr["samples"], np.linspace(0.005, 0.995, 101), axis=1).T

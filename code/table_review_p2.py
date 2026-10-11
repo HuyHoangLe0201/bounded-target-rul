@@ -179,6 +179,18 @@ def bounded_table():
     #  the point head, so that the comparison on its own loss can be read off directly
     pm = [c["tables"][k]["Point(MAE)"]["MAE"] for k in ("pronostia/all", "xjtu/all")]
     L.append(r"\midrule")
+    #  the distribution-free baseline, bootstrapped after the heads above so that
+    #  their intervals are unchanged
+    qp = os.path.join(RES, "results_both_quant.json")
+    if os.path.exists(qp):
+        dq = json.load(open(qp))
+        rows += [r for r in dq["rows"] if r["head"] == "Quantile"]
+        cells = []
+        for ds, key in (("pronostia", "pronostia/all"), ("xjtu", "xjtu/all")):
+            v = dq["tables"][key]["Quantile"]
+            lo, hi = cov_ci(ds, "Quantile")
+            cells.append(f"{v['MAE']:.3f} & {v['CRPS']:.3f} & {v['cov95']:.2f} [{lo:.2f}, {hi:.2f}] & {v['PIT_KS']:.3f}")
+        L.append("quantile regression & " + " & ".join(cells) + r"\\")
     L.append(f"point head (MAE loss) & {pm[0]:.3f} & --- & --- & --- & {pm[1]:.3f} & --- & --- & ---\\\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_bounded", L)
