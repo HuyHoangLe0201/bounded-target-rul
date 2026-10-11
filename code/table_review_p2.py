@@ -185,6 +185,7 @@ def bounded_table():
     margins_table(b)
     robustness_table()
     hours_table()
+    ratio_table()
 
 
 SH = {"IGauss-trunc": r"IG$_{\rm tr}$", "BS-trunc": r"BS$_{\rm tr}$", "Beta": "Beta",
@@ -300,6 +301,46 @@ def robustness_table():
                  + " & ".join(cell(r[c]["pairs"][f"{a} - {r_}"]["pooled"]) for c, _ in BB) + r"\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_robust_bb", L)
+
+
+def ratio_table():
+    """Heads trained on w = R/t, scored on the fraction and on w, beside the
+    truncated heads trained on the fraction."""
+    path = os.path.join(RES, "ratio.json")
+    if not os.path.exists(path):
+        return
+    r = json.load(open(path))
+    c = json.load(open(os.path.join(RES, "results_both_causal.json")))["tables"]
+    NMR = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull", "LogNormal": "lognormal",
+           "IGauss": "IG", "Gaussian": "Gaussian"}
+    L = [r"\begin{table}[htbp]", r"\centering\small",
+         r"\caption{Heads trained on $w=R/t$, scored on the fraction $y=w/(1+w)$ and on $w$, beside the"
+         r" truncated heads trained on the fraction, whose CRPS on $w$ is infinite. Coverage and PIT are"
+         r" the same on both scales.}",
+         r"\label{tab:ratio}",
+         r"\begin{adjustbox}{max width=\linewidth}",
+         r"\begin{tabular}{@{}l rrrr rrrr@{}}", r"\toprule",
+         r"& \multicolumn{4}{c}{PRONOSTIA} & \multicolumn{4}{c}{XJTU-SY}\\",
+         r"\cmidrule(lr){2-5}\cmidrule(lr){6-9}",
+         r"head & CRPS$_y$ & CRPS$_w$ & cov$_{95}$ & PIT-KS & CRPS$_y$ & CRPS$_w$ & cov$_{95}$ & PIT-KS\\",
+         r"\midrule",
+         r"\multicolumn{9}{@{}l}{\emph{trained on $w$}}\\"]
+    for h in ("BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian"):
+        cells = []
+        for ds, key in (("pronostia", "pronostia/all"), ("xjtu", "xjtu/all")):
+            t = r["tables"][key][h]
+            cells.append(f"{r['heads'][f'{ds}/{h}@ratio']:.3f} & {r['heads'][f'{ds}/{h}@ratio_w']:.3f}"
+                         f" & {t['cov95']:.2f} & {t['PIT_KS']:.3f}")
+        L.append(f"\\quad {NMR[h]} & " + " & ".join(cells) + r"\\")
+    L.append(r"\multicolumn{9}{@{}l}{\emph{trained on $y$, truncated at one}}\\")
+    for h, nm in (("BS-trunc", "BS"), ("IGauss-trunc", "IG")):
+        cells = []
+        for ds, key in (("pronostia", "pronostia/all"), ("xjtu", "xjtu/all")):
+            t = c[key][h]
+            cells.append(f"{r['heads'][f'{ds}/{h}']:.3f} & $\\infty$ & {t['cov95']:.2f} & {t['PIT_KS']:.3f}")
+        L.append(f"\\quad {nm} & " + " & ".join(cells) + r"\\")
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
+    w("tab_ratio", L)
 
 
 def hours_table():

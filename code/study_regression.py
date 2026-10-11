@@ -62,6 +62,17 @@ SEED0 = int(os.environ.get("GBS_SEED0", 0))
 LR = float(os.environ.get("GBS_LR", 3e-3))
 EVAL = os.environ.get("GBS_EVAL", "fractions")
 STRIDE = {"pronostia": 50, "xjtu": 10}      # 500 s and 10 min
+#    GBS_TARGET "fraction" (y = R/T, the reported target) or "ratio" (w = R/t on
+#               (0, inf)). Under "ratio" every predictive law is also stored on
+#               the fraction scale through y = w/(1+w), so that all scoring code
+#               applies unchanged; the w-quantiles are kept as q_w.
+TARGET = os.environ.get("GBS_TARGET", "fraction")
+
+
+def _to_fraction(w):
+    """y = w/(1+w); w <= 0 (failure now) maps to y = 0, as in eq. (Rext)."""
+    w = np.clip(np.asarray(w, dtype=float), 0.0, None)
+    return w / (1.0 + w)
 
 
 def make_head(name):
@@ -199,8 +210,8 @@ def _eval_points(rec, dataset, bearing):
 
 def _fold(data, tr_b, va_b, te_b, dataset):
     """Fit every head on one fold and evaluate on the held-out bearings."""
-    Xtr, ytr, wtr, _ = D.stack(data, tr_b)
-    Xva, yva, _, _ = D.stack(data, [va_b])
+    Xtr, ytr, wtr, _ = D.stack(data, tr_b, target=TARGET)
+    Xva, yva, _, _ = D.stack(data, [va_b], target=TARGET)
     Xtr_s, Xva_s, (mu, sd) = D.standardise(Xtr, Xva)
     f32 = lambda a: a.astype(np.float32)
 
@@ -216,7 +227,10 @@ def _fold(data, tr_b, va_b, te_b, dataset):
     cal = {}
     for h, (head, models) in fits.items():
         pc = R.predict(head, models, f32(Xva_s))
-        cal[h] = (pc["samples"], yva)
+        if TARGET == "ratio":
+            cal[h] = (_to_fraction(pc["samples"]), _to_fraction(yva))
+        else:
+            cal[h] = (pc["samples"], yva)
 
     for b in te_b:
         rec = data[b]
@@ -227,6 +241,11 @@ def _fold(data, tr_b, va_b, te_b, dataset):
         T = max(rec["t"][-1], 1e-9)
         for h, (head, models) in fits.items():
             pr = R.predict(head, models, Xe)
+            qw = None
+            if TARGET == "ratio":
+                qw = np.quantile(pr["samples"], np.linspace(0.005, 0.995, 101), axis=1).T
+                pr["samples"] = _to_fraction(pr["samples"])
+                pr["mean"] = pr["samples"].mean(axis=1)
             clo, chi = conformal_widen(pr["samples"], cal[h][0], cal[h][1])
             for j, k in enumerate(pts):
                 y = float(rec["rul"][k] / T)
@@ -244,8 +263,11 @@ def _fold(data, tr_b, va_b, te_b, dataset):
                     "v_ep": float(pr["v_epistemic"][j]),
                     "conf_lo": float(clo[j]), "conf_hi": float(chi[j]),
                     "samples": pr["samples"][j].tolist(),
+                    **({"q_w": qw[j].tolist()} if qw is not None else {}),
                 })
         pm, pv = _point_predict(point_models, Xe)
+        if TARGET == "ratio":
+            pm = _to_fraction(pm)
         for j, k in enumerate(pts):
             y = float(rec["rul"][k] / T)
             if y <= 0:

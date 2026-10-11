@@ -130,7 +130,7 @@ def load(dataset, t_scale=None):
     return out
 
 
-def stack(data, names, warmup=0.05, stride=1, normalised=True):
+def stack(data, names, warmup=0.05, stride=1, normalised=True, target="fraction"):
     """Concatenate training bearings, weighting each record equally.
 
     With `normalised=True` the target is the fraction of life remaining,
@@ -154,7 +154,10 @@ def stack(data, names, warmup=0.05, stride=1, normalised=True):
         if len(idx) == 0:
             continue
         y = d["rul"][idx]
-        if normalised:
+        if target == "ratio":
+            #  remaining-to-elapsed ratio w = R/t, on (0, inf): known t, no bound
+            y = y / np.maximum(d["t"][idx], 1e-9)
+        elif normalised:
             y = y / max(d["t"][-1], 1e-9)
         Xs.append(d["X"][idx])
         ys.append(y)

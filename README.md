@@ -89,6 +89,9 @@ GBS_BOUNDED=1 GBS_LR=1e-2 GBS_TAG=_lr1e-2 python study_regression.py both
 GBS_HEADS=LogitNormal,Beta,BS-trunc,IGauss-trunc GBS_HIDDEN=32,16 GBS_EPOCHS=300 GBS_TAG=_w32b python study_regression.py both
 #  ... likewise 48,24 -> _w48b, 96,48 -> _w96b, 256,128 -> _w256b, 128,64,32 -> _bigb
 python study_robustness.py
+#  the six conventional heads trained on w = R/t (support (0, inf), no truncation)
+GBS_TARGET=ratio GBS_HEADS=BS,BS-t,Weibull,LogNormal,IGauss,Gaussian GBS_TAG=_ratio python study_regression.py both
+python study_ratio.py
 ```
 
 The target `y = R/T_total` is an exact reparametrisation of the RUL at a known
