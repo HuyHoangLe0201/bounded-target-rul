@@ -330,20 +330,20 @@ def ratio_table():
     """The time-scale comparison: CRPS on the fraction and the integral CRPS in
     hours for the heads trained on w, the truncated heads and the conventional
     heads restricted after fitting; and the paired margins."""
-    rp, hp = os.path.join(RES, "ratio.json"), os.path.join(RES, "hours_crps.json")
+    rp, hp = os.path.join(RES, "ratio.json"), os.path.join(RES, "hours_exact.json")
     if not (os.path.exists(rp) and os.path.exists(hp)):
         return
     rr = json.load(open(rp))
     r = rr["main"]
-    hj = json.load(open(hp))
-    hc, hg = hj["main"]["uniform"], hj["grid"]["uniform_excl"]
+    hj = json.load(open(hp))           # integral CRPS in hours from the exact laws
+    hc, hg = hj["main"], hj["grid"]
     c = json.load(open(os.path.join(RES, "results_both_causal.json")))["tables"]
     tr = json.load(open(os.path.join(RES, "review_p2.json")))["trunc"]
     NMR = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull", "LogNormal": "lognormal",
            "IGauss": "IG", "Gaussian": "Gaussian", "Gaussian-trunc0": "Gaussian, truncated at zero",
            "BS-trunc": "BS", "IGauss-trunc": "IG"}
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{CRPS on the fraction ($y$) and integral CRPS in hours ($h$) for the heads trained on"
+         r"\caption{CRPS on the fraction ($y$) and integral CRPS in hours ($h$, from the exact laws) for the heads trained on"
          r" $w=R/t$, the heads truncated at one and the conventional heads restricted to $(0,1)$ after"
          r" fitting. Coverage and PIT are the same on both scales. Reported prediction points.}",
          r"\label{tab:ratio}",
@@ -388,8 +388,8 @@ def ratio_table():
     L = [r"\begin{table}[htbp]", r"\centering\scriptsize",
          r"\caption{Pooled margins for the time-scale comparison, with $95\,\%$ bootstrap intervals over"
          r" bearings and Holm-adjusted $p$ within each block. On the fraction: CRPS, at the reported and"
-         r" the fixed-time points. In hours: integral CRPS, at the fixed-time points without the three"
-         r" inspections at which a truncated head collapses onto the bound (\Cref{sec:hours}).}",
+         r" the fixed-time points. In hours: integral CRPS \eqref{eq:crpsh} from the exact predictive laws,"
+         r" likewise.}",
          r"\label{tab:ratio_pairs}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l l l@{}}", r"\toprule",

@@ -98,7 +98,9 @@ python study_ratio.py          # CRPS on the fraction, on w and in hours (t_k * 
 GBS_HEADS=Quantile GBS_TAG=_quant python study_regression.py both     # and with GBS_EVAL=grid, tag _quant_grid
 GBS_HEADS=Quantile-logit GBS_TAG=_quantl python study_regression.py both   # kept in (0,1); and _quantl_grid
 python study_quantile.py
-python study_hours_crps.py     # integral CRPS in hours for every head, both protocols
+python study_hours_crps.py     # integral CRPS in hours from the stored quantiles (cross-check)
+python study_hours_exact.py fit     # refit every head, keep member parameters (about 30 min)
+python study_hours_exact.py score   # integral CRPS in hours from the exact laws (the paper's values)
 ```
 
 The target `y = R/T_total` is an exact reparametrisation of the RUL at a known
@@ -107,13 +109,17 @@ hours; coverage and PIT are unchanged by the map, the CRPS is not. A law with
 positive density at `y = 1` implies an RUL with infinite mean, so the kernel form
 `E|X-x| - E|X-X'|/2` does not apply, but the integral form
 `int (F(r) - 1{r >= x})^2 dr = t * int_0^1 (F_Y(y) - 1{y >= y*})^2 / (1-y)^2 dy`
-is finite for any law with bounded density near one. `study_hours_crps.py`
-evaluates it from the 101 stored quantiles of every head (truncated, bounded,
-conventional restricted to (0,1), and trained on w), with a trimmed and a uniform
-upper tail, and writes `hours_crps.json`. Where an ensemble member's truncated
-law collapses onto the bound (the 0.995 quantile within 1e-6 of one), the value
-is set by the clip at 1 - 1e-7 and is a lower bound; the script also reports the
-fixed-time comparison without those inspections.
+is finite for any law with bounded density near one (and infinite for a Beta
+member with second shape parameter <= 1/2). `study_hours_exact.py` refits every
+head with the folds, seeds and settings of `study_regression.py` (the refit
+reproduces every stored predictive median exactly), keeps each member's
+parameters (`hours_exact_params.json`), and integrates the exact mixture CDF in
+double precision over s = -log(1-y); it writes `hours_exact.json`, the values the
+paper reports. The stored draws are not exact near y = 1: a truncated head samples
+its quantile function at levels clamped to [1e-6, 1-1e-6], so a member with less
+than 1e-6 of its mass below one returns draws of exactly one (three fixed-time
+inspections). `study_hours_crps.py` integrates from the 101 stored quantiles with
+a trimmed and a uniform upper tail, as a cross-check (`hours_crps.json`).
 
 `study_ratio.py` scores the heads trained on w by the kernel form, which their
 finite means allow; the paper reports the integral form from `study_hours_crps.py`.
