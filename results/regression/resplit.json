@@ -1,0 +1,1465 @@
+{
+ "splits": [
+  {
+   "train": [
+    "Bearing1_2",
+    "Bearing1_6",
+    "Bearing2_3",
+    "Bearing2_4",
+    "Bearing3_1",
+    "Bearing3_2"
+   ],
+   "validation": "Bearing2_4",
+   "test": [
+    "Bearing1_1",
+    "Bearing1_3",
+    "Bearing1_4",
+    "Bearing1_5",
+    "Bearing1_7",
+    "Bearing2_1",
+    "Bearing2_2",
+    "Bearing2_5",
+    "Bearing2_6",
+    "Bearing2_7",
+    "Bearing3_3"
+   ]
+  },
+  {
+   "train": [
+    "Bearing1_3",
+    "Bearing1_6",
+    "Bearing2_5",
+    "Bearing2_7",
+    "Bearing3_1",
+    "Bearing3_3"
+   ],
+   "validation": "Bearing2_7",
+   "test": [
+    "Bearing1_1",
+    "Bearing1_2",
+    "Bearing1_4",
+    "Bearing1_5",
+    "Bearing1_7",
+    "Bearing2_1",
+    "Bearing2_2",
+    "Bearing2_3",
+    "Bearing2_4",
+    "Bearing2_6",
+    "Bearing3_2"
+   ]
+  },
+  {
+   "train": [
+    "Bearing1_1",
+    "Bearing1_3",
+    "Bearing2_6",
+    "Bearing2_7",
+    "Bearing3_1",
+    "Bearing3_2"
+   ],
+   "validation": "Bearing2_7",
+   "test": [
+    "Bearing1_2",
+    "Bearing1_4",
+    "Bearing1_5",
+    "Bearing1_6",
+    "Bearing1_7",
+    "Bearing2_1",
+    "Bearing2_2",
+    "Bearing2_3",
+    "Bearing2_4",
+    "Bearing2_5",
+    "Bearing3_3"
+   ]
+  },
+  {
+   "train": [
+    "Bearing1_1",
+    "Bearing1_5",
+    "Bearing2_4",
+    "Bearing2_6",
+    "Bearing3_1",
+    "Bearing3_2"
+   ],
+   "validation": "Bearing2_6",
+   "test": [
+    "Bearing1_2",
+    "Bearing1_3",
+    "Bearing1_4",
+    "Bearing1_6",
+    "Bearing1_7",
+    "Bearing2_1",
+    "Bearing2_2",
+    "Bearing2_3",
+    "Bearing2_5",
+    "Bearing2_7",
+    "Bearing3_3"
+   ]
+  },
+  {
+   "train": [
+    "Bearing1_1",
+    "Bearing1_2",
+    "Bearing2_2",
+    "Bearing2_6",
+    "Bearing3_1",
+    "Bearing3_2"
+   ],
+   "validation": "Bearing2_6",
+   "test": [
+    "Bearing1_3",
+    "Bearing1_4",
+    "Bearing1_5",
+    "Bearing1_6",
+    "Bearing1_7",
+    "Bearing2_1",
+    "Bearing2_3",
+    "Bearing2_4",
+    "Bearing2_5",
+    "Bearing2_7",
+    "Bearing3_3"
+   ]
+  }
+ ],
+ "per_split": {
+  "official": {
+   "pairs": {
+    "BS-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.14143045336413038,
+     "ci95": [
+      -0.16244091927232,
+      -0.1211605891859321
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.13562388867286373,
+     "ci95": [
+      -0.16240500844335262,
+      -0.11178249298572707
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.013232413320719364,
+     "ci95": [
+      -0.029973496305995963,
+      0.0021939572303338165
+     ],
+     "p_boot": 0.0946,
+     "p_holm": 0.2838
+    },
+    "BS-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": -0.05898840904910762,
+     "ci95": [
+      -0.10092822732105414,
+      -0.025556298151396917
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.009522412452540987,
+     "ci95": [
+      -0.018531354549395897,
+      -0.0011420339314221842
+     ],
+     "p_boot": 0.027,
+     "p_holm": 0.108
+    },
+    "BS-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.08922822580888695,
+     "ci95": [
+      -0.14940420814847238,
+      -0.037880777259661394
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.13437087360787617,
+     "ci95": [
+      -0.15269516428479055,
+      -0.11720287930168927
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.12856430891660955,
+     "ci95": [
+      -0.15421998074748158,
+      -0.10146662183369448
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.0061728335644651725,
+     "ci95": [
+      -0.015396165884595402,
+      0.0026284536336962762
+     ],
+     "p_boot": 0.1792,
+     "p_holm": 0.3584
+    },
+    "IGauss-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": -0.05192882929285341,
+     "ci95": [
+      -0.08724631945495923,
+      -0.024714734314473474
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.0024628326962867955,
+     "ci95": [
+      -0.011796546025950962,
+      0.010426193871580993
+     ],
+     "p_boot": 0.6244,
+     "p_holm": 0.6244
+    },
+    "IGauss-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.08216864605263276,
+     "ci95": [
+      -0.13733311914732385,
+      -0.03639006733025327
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - Beta": {
+     "family": "bounded",
+     "margin": -0.023892261403492508,
+     "ci95": [
+      -0.056043152186817734,
+      0.0019359684980726826
+     ],
+     "p_boot": 0.0718,
+     "p_holm": 0.1698
+    },
+    "IGauss-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": -0.007564922122536692,
+     "ci95": [
+      -0.028214736696893165,
+      0.007930810558486164
+     ],
+     "p_boot": 0.4512,
+     "p_holm": 0.4512
+    },
+    "BS-trunc - Beta": {
+     "family": "bounded",
+     "margin": -0.030951841159746696,
+     "ci95": [
+      -0.05937172120886119,
+      -0.01279246325969108
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": -0.014624501878790884,
+     "ci95": [
+      -0.03326284789910777,
+      0.00033985081703029346
+     ],
+     "p_boot": 0.0566,
+     "p_holm": 0.1698
+    },
+    "IGauss-trunc - BS-trunc": {
+     "family": "pair",
+     "margin": 0.007059579756254191,
+     "ci95": [
+      -0.002930417257576866,
+      0.01979759776090548
+     ],
+     "p_boot": 0.2122,
+     "p_holm": 0.2122
+    }
+   },
+   "crps": {
+    "BS": 0.2546807776645241,
+    "BS-t": 0.24887421297325749,
+    "Weibull": 0.1264827376211131,
+    "LogNormal": 0.17223873334950135,
+    "IGauss": 0.12277273675293471,
+    "Gaussian": 0.2024785501092807,
+    "LogitNormal": 0.12787482617918464,
+    "Beta": 0.14420216546014042,
+    "BS-trunc": 0.11325032430039374,
+    "IGauss-trunc": 0.12030990405664793
+   }
+  },
+  "0": {
+   "pairs": {
+    "BS-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.1679353412806617,
+     "ci95": [
+      -0.21299097662259675,
+      -0.13017586894316788
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.15044608918690314,
+     "ci95": [
+      -0.17544655564140746,
+      -0.12356804008232146
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.15055090356485853,
+     "ci95": [
+      -0.2711470545254315,
+      -0.0481508539622775
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": -0.14668996909194582,
+     "ci95": [
+      -0.17770932384271373,
+      -0.1161880951462438
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.03941235163507696,
+     "ci95": [
+      -0.05634406069422567,
+      -0.022053179528314665
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.07559458202292793,
+     "ci95": [
+      -0.11867881649705139,
+      -0.034919759218911654
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.15088831091838203,
+     "ci95": [
+      -0.191405696225444,
+      -0.11605202743196386
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.13339905882462347,
+     "ci95": [
+      -0.1608006370612565,
+      -0.10390488967430403
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.13350387320257887,
+     "ci95": [
+      -0.24838992966136741,
+      -0.03627466791023693
+     ],
+     "p_boot": 0.0002,
+     "p_holm": 0.0006000000000000001
+    },
+    "IGauss-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": -0.12964293872966617,
+     "ci95": [
+      -0.1611583544888266,
+      -0.09711899249779221
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.0223653212727973,
+     "ci95": [
+      -0.0357307385594123,
+      -0.009448752623975192
+     ],
+     "p_boot": 0.0006,
+     "p_holm": 0.0008
+    },
+    "IGauss-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.05854755166064827,
+     "ci95": [
+      -0.09771916930867872,
+      -0.022684121862835648
+     ],
+     "p_boot": 0.0004,
+     "p_holm": 0.0008
+    },
+    "IGauss-trunc - Beta": {
+     "family": "bounded",
+     "margin": -0.06122873217542412,
+     "ci95": [
+      -0.09624817437412006,
+      -0.02536896844413012
+     ],
+     "p_boot": 0.0002,
+     "p_holm": 0.0006000000000000001
+    },
+    "IGauss-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": 0.0032820944861120705,
+     "ci95": [
+      -0.011249841862085011,
+      0.018381250405609062
+     ],
+     "p_boot": 0.6818,
+     "p_holm": 0.6818
+    },
+    "BS-trunc - Beta": {
+     "family": "bounded",
+     "margin": -0.07827576253770378,
+     "ci95": [
+      -0.12101738305498559,
+      -0.035723198478275306
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": -0.013764935876167589,
+     "ci95": [
+      -0.02468967543201373,
+      -0.00338595195859407
+     ],
+     "p_boot": 0.006,
+     "p_holm": 0.012
+    },
+    "IGauss-trunc - BS-trunc": {
+     "family": "pair",
+     "margin": 0.01704703036227966,
+     "ci95": [
+      0.007105021023001743,
+      0.02739068975144002
+     ],
+     "p_boot": 0.0004,
+     "p_holm": 0.0004
+    }
+   },
+   "crps": {
+    "BS": 0.277506676324495,
+    "BS-t": 0.2600174242307365,
+    "Weibull": 0.2601222386086918,
+    "LogNormal": 0.25626130413577913,
+    "IGauss": 0.14898368667891024,
+    "Gaussian": 0.18516591706676125,
+    "LogitNormal": 0.1233362709200009,
+    "Beta": 0.1878470975815371,
+    "BS-trunc": 0.10957133504383333,
+    "IGauss-trunc": 0.126618365406113
+   }
+  },
+  "1": {
+   "pairs": {
+    "BS-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.2221188689736825,
+     "ci95": [
+      -0.24700255780437727,
+      -0.19610339083843656
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.1158915908079809,
+     "ci95": [
+      -0.15847366933172027,
+      -0.07047535918293235
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.031476535205004035,
+     "ci95": [
+      -0.048826136165808824,
+      -0.013253602867804389
+     ],
+     "p_boot": 0.0002,
+     "p_holm": 0.0006000000000000001
+    },
+    "BS-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": -0.1220405668540621,
+     "ci95": [
+      -0.15390412989092292,
+      -0.08742412214413432
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.03948360551330895,
+     "ci95": [
+      -0.05719180528790518,
+      -0.02204303769406539
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.040005461840233375,
+     "ci95": [
+      -0.06437259556912253,
+      -0.014025243672745644
+     ],
+     "p_boot": 0.002,
+     "p_holm": 0.002
+    },
+    "IGauss-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.22362436793060725,
+     "ci95": [
+      -0.25100715211081304,
+      -0.19540724042266314
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.11739708976490558,
+     "ci95": [
+      -0.15809542338774402,
+      -0.07496735840288589
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.032982034161928735,
+     "ci95": [
+      -0.046887053182405214,
+      -0.018341315658117634
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": -0.12354606581098682,
+     "ci95": [
+      -0.15405794577735754,
+      -0.09114687589402132
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.04098910447023365,
+     "ci95": [
+      -0.05534315836600485,
+      -0.02736901388797056
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.041510960797158075,
+     "ci95": [
+      -0.06519019609839184,
+      -0.01794587432768528
+     ],
+     "p_boot": 0.0002,
+     "p_holm": 0.0006000000000000001
+    },
+    "IGauss-trunc - Beta": {
+     "family": "bounded",
+     "margin": -0.025434837468109293,
+     "ci95": [
+      -0.04936112895538255,
+      -0.002782699969777509
+     ],
+     "p_boot": 0.0282,
+     "p_holm": 0.0846
+    },
+    "IGauss-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": 0.0004475656355489627,
+     "ci95": [
+      -0.01080462478442766,
+      0.012281956354541306
+     ],
+     "p_boot": 0.9662,
+     "p_holm": 1.0
+    },
+    "BS-trunc - Beta": {
+     "family": "bounded",
+     "margin": -0.023929338511184586,
+     "ci95": [
+      -0.044736129244765215,
+      -0.005215455230522172
+     ],
+     "p_boot": 0.0078,
+     "p_holm": 0.0312
+    },
+    "BS-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": 0.0019530645924736654,
+     "ci95": [
+      -0.00905265865733171,
+      0.01578964489641692
+     ],
+     "p_boot": 0.8164,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - BS-trunc": {
+     "family": "pair",
+     "margin": -0.0015054989569247028,
+     "ci95": [
+      -0.007900334690941934,
+      0.0057269783209854715
+     ],
+     "p_boot": 0.6508,
+     "p_holm": 0.6508
+    }
+   },
+   "crps": {
+    "BS": 0.3389485510771893,
+    "BS-t": 0.2327212729114877,
+    "Weibull": 0.14830621730851085,
+    "LogNormal": 0.2388702489575689,
+    "IGauss": 0.15631328761681573,
+    "Gaussian": 0.15683514394374018,
+    "LogitNormal": 0.11487661751103313,
+    "Beta": 0.1407590206146914,
+    "BS-trunc": 0.1168296821035068,
+    "IGauss-trunc": 0.1153241831465821
+   }
+  },
+  "2": {
+   "pairs": {
+    "BS-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.12383955733634816,
+     "ci95": [
+      -0.1400027309261026,
+      -0.10632367697464563
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.10297075771113152,
+     "ci95": [
+      -0.13014338504029188,
+      -0.07538443440003952
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.0393319912525728,
+     "ci95": [
+      -0.051779097120577273,
+      -0.024589971914952324
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": -0.09080096648437229,
+     "ci95": [
+      -0.1051378172873369,
+      -0.07470193013643509
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": 0.0005159396796399536,
+     "ci95": [
+      -0.010191115100198725,
+      0.011126378464444094
+     ],
+     "p_boot": 0.9094,
+     "p_holm": 1.0
+    },
+    "BS-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.027555160362464883,
+     "ci95": [
+      -0.044273165652285965,
+      -0.01534336457547457
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.12687365254352528,
+     "ci95": [
+      -0.14541791829165357,
+      -0.10636791762798424
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.10600485291830863,
+     "ci95": [
+      -0.13639443859734596,
+      -0.07432493155184428
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.0423660864597499,
+     "ci95": [
+      -0.057223988481470485,
+      -0.025593704088501038
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": -0.0938350616915494,
+     "ci95": [
+      -0.11119328650748465,
+      -0.07318482672397741
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.0025181555275371596,
+     "ci95": [
+      -0.010427675262047057,
+      0.005426002608947819
+     ],
+     "p_boot": 0.5266,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.030589255569641996,
+     "ci95": [
+      -0.045610648306843846,
+      -0.01881696144458321
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - Beta": {
+     "family": "bounded",
+     "margin": -0.0066651969052870874,
+     "ci95": [
+      -0.021091822531743038,
+      0.006750322433838492
+     ],
+     "p_boot": 0.3672,
+     "p_holm": 0.7344
+    },
+    "IGauss-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": -0.019735629025051063,
+     "ci95": [
+      -0.02832671248534262,
+      -0.010931418567432696
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - Beta": {
+     "family": "bounded",
+     "margin": -0.003631101698109974,
+     "ci95": [
+      -0.01697098355143812,
+      0.008422237860841198
+     ],
+     "p_boot": 0.6122,
+     "p_holm": 0.7344
+    },
+    "BS-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": -0.01670153381787395,
+     "ci95": [
+      -0.02318006217350539,
+      -0.010038350070253374
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - BS-trunc": {
+     "family": "pair",
+     "margin": -0.0030340952071771132,
+     "ci95": [
+      -0.006709299338109515,
+      0.0013478827945080684
+     ],
+     "p_boot": 0.157,
+     "p_holm": 0.157
+    }
+   },
+   "crps": {
+    "BS": 0.23514412533672752,
+    "BS-t": 0.21427532571151087,
+    "Weibull": 0.15063655925295216,
+    "LogNormal": 0.20210553448475163,
+    "IGauss": 0.11078862832073941,
+    "Gaussian": 0.13885972836284427,
+    "LogitNormal": 0.1280061018182533,
+    "Beta": 0.11493566969848933,
+    "BS-trunc": 0.11130456800037934,
+    "IGauss-trunc": 0.10827047279320223
+   }
+  },
+  "3": {
+   "pairs": {
+    "BS-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.04634900762257037,
+     "ci95": [
+      -0.07207131512992235,
+      -0.021993608119710125
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.03334340252982286,
+     "ci95": [
+      -0.07785868824207831,
+      0.004643502973450105
+     ],
+     "p_boot": 0.0878,
+     "p_holm": 0.878
+    },
+    "BS-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": 0.002722684941892775,
+     "ci95": [
+      -0.022585716857762887,
+      0.02624483787674652
+     ],
+     "p_boot": 0.8172,
+     "p_holm": 1.0
+    },
+    "BS-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": -0.02193370754298901,
+     "ci95": [
+      -0.050236513567046275,
+      0.007041978760294563
+     ],
+     "p_boot": 0.1398,
+     "p_holm": 1.0
+    },
+    "BS-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.023833337986627064,
+     "ci95": [
+      -0.07159657624529105,
+      0.011345156974829003
+     ],
+     "p_boot": 0.2614,
+     "p_holm": 1.0
+    },
+    "BS-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.002952316290867739,
+     "ci95": [
+      -0.037615345042346274,
+      0.029799679435403792
+     ],
+     "p_boot": 0.8706,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.014048523697765878,
+     "ci95": [
+      -0.055996949758049926,
+      0.02544039038254143
+     ],
+     "p_boot": 0.508,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.0010429186050183827,
+     "ci95": [
+      -0.06685471074706294,
+      0.06610221132147985
+     ],
+     "p_boot": 0.962,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": 0.035023168866697256,
+     "ci95": [
+      -0.015295472696782202,
+      0.09056174650861394
+     ],
+     "p_boot": 0.1862,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": 0.01036677638181546,
+     "ci95": [
+      -0.042546444786426954,
+      0.07103247291804131
+     ],
+     "p_boot": 0.7372,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": 0.00846714593817742,
+     "ci95": [
+      -0.010454571044188775,
+      0.03450764361174028
+     ],
+     "p_boot": 0.5014,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": 0.029348167633936738,
+     "ci95": [
+      -0.0036909757759243504,
+      0.06375053904956786
+     ],
+     "p_boot": 0.0792,
+     "p_holm": 0.8712000000000001
+    },
+    "IGauss-trunc - Beta": {
+     "family": "bounded",
+     "margin": 0.04378844969488611,
+     "ci95": [
+      0.003268955638113966,
+      0.0971270046206889
+     ],
+     "p_boot": 0.0284,
+     "p_holm": 0.1136
+    },
+    "IGauss-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": 0.0020266634665295114,
+     "ci95": [
+      -0.06629621059315159,
+      0.06953787036310019
+     ],
+     "p_boot": 0.9406,
+     "p_holm": 0.9406
+    },
+    "BS-trunc - Beta": {
+     "family": "bounded",
+     "margin": 0.011487965770081637,
+     "ci95": [
+      -0.008158765234787656,
+      0.03145212061857348
+     ],
+     "p_boot": 0.2628,
+     "p_holm": 0.6384
+    },
+    "BS-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": -0.030273820458274966,
+     "ci95": [
+      -0.08653809086177931,
+      0.011693262364386683
+     ],
+     "p_boot": 0.2128,
+     "p_holm": 0.6384
+    },
+    "IGauss-trunc - BS-trunc": {
+     "family": "pair",
+     "margin": 0.032300483924804474,
+     "ci95": [
+      0.0004161819049991581,
+      0.07360644053879378
+     ],
+     "p_boot": 0.0448,
+     "p_holm": 0.0448
+    }
+   },
+   "crps": {
+    "BS": 0.19447999209740327,
+    "BS-t": 0.18147438700465576,
+    "Weibull": 0.14540829953294013,
+    "LogNormal": 0.17006469201782193,
+    "IGauss": 0.17196432246145996,
+    "Gaussian": 0.15108330076570065,
+    "LogitNormal": 0.17840480493310784,
+    "Beta": 0.13664301870475126,
+    "BS-trunc": 0.1481309844748329,
+    "IGauss-trunc": 0.18043146839963736
+   }
+  },
+  "4": {
+   "pairs": {
+    "BS-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.06547447152694781,
+     "ci95": [
+      -0.10316319590652731,
+      -0.033127573910799936
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.009669502071727497,
+     "ci95": [
+      -0.039525349608044436,
+      0.02036306044589927
+     ],
+     "p_boot": 0.5174,
+     "p_holm": 1.0
+    },
+    "BS-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.02863287271630222,
+     "ci95": [
+      -0.06570354205720293,
+      0.005184079419358305
+     ],
+     "p_boot": 0.0994,
+     "p_holm": 0.6958
+    },
+    "BS-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": 0.018142676012286838,
+     "ci95": [
+      -0.020699504050599046,
+      0.059997066447397406
+     ],
+     "p_boot": 0.3904,
+     "p_holm": 1.0
+    },
+    "BS-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.06682697340955562,
+     "ci95": [
+      -0.10516150359251701,
+      -0.03168949081630721
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": 0.0006522921221990111,
+     "ci95": [
+      -0.039793869817277575,
+      0.036680420051444236
+     ],
+     "p_boot": 0.9508,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - BS": {
+     "family": "vs_conventional",
+     "margin": -0.06647231897458346,
+     "ci95": [
+      -0.08938058028704222,
+      -0.04311837919782734
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - BS-t": {
+     "family": "vs_conventional",
+     "margin": -0.010667349519363151,
+     "ci95": [
+      -0.037279506581197996,
+      0.010330379254842051
+     ],
+     "p_boot": 0.4216,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - Weibull": {
+     "family": "vs_conventional",
+     "margin": -0.029630720163937866,
+     "ci95": [
+      -0.05825395637285731,
+      -0.0034382161040949584
+     ],
+     "p_boot": 0.025,
+     "p_holm": 0.2
+    },
+    "IGauss-trunc - LogNormal": {
+     "family": "vs_conventional",
+     "margin": 0.017144828564651184,
+     "ci95": [
+      -0.014411042826724998,
+      0.04720695646544125
+     ],
+     "p_boot": 0.283,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - IGauss": {
+     "family": "vs_conventional",
+     "margin": -0.06782482085719127,
+     "ci95": [
+      -0.08654768276047345,
+      -0.04563242013018405
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "IGauss-trunc - Gaussian": {
+     "family": "vs_conventional",
+     "margin": -0.0003455553254366422,
+     "ci95": [
+      -0.02475471213285321,
+      0.026785850441470912
+     ],
+     "p_boot": 0.9378,
+     "p_holm": 1.0
+    },
+    "IGauss-trunc - Beta": {
+     "family": "bounded",
+     "margin": 0.010191711300013014,
+     "ci95": [
+      -0.014888530580793275,
+      0.032639614396800784
+     ],
+     "p_boot": 0.3956,
+     "p_holm": 0.7912
+    },
+    "IGauss-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": -0.02569161280410626,
+     "ci95": [
+      -0.04197205284525877,
+      -0.011026403392924508
+     ],
+     "p_boot": 0.0,
+     "p_holm": 0.0
+    },
+    "BS-trunc - Beta": {
+     "family": "bounded",
+     "margin": 0.011189558747648666,
+     "ci95": [
+      -0.022306386990622953,
+      0.04231725208399975
+     ],
+     "p_boot": 0.501,
+     "p_holm": 0.7912
+    },
+    "BS-trunc - LogitNormal": {
+     "family": "bounded",
+     "margin": -0.024693765356470606,
+     "ci95": [
+      -0.06033128668457011,
+      0.010202502851507842
+     ],
+     "p_boot": 0.1644,
+     "p_holm": 0.49319999999999997
+    },
+    "IGauss-trunc - BS-trunc": {
+     "family": "pair",
+     "margin": -0.0009978474476356532,
+     "ci95": [
+      -0.034004801412576446,
+      0.031069348221418346
+     ],
+     "p_boot": 0.9866,
+     "p_holm": 0.9866
+    }
+   },
+   "crps": {
+    "BS": 0.25886358690800276,
+    "BS-t": 0.20305861745278247,
+    "Weibull": 0.22202198809735718,
+    "LogNormal": 0.17524643936876816,
+    "IGauss": 0.2602160887906106,
+    "Gaussian": 0.19273682325885597,
+    "LogitNormal": 0.21808288073752558,
+    "Beta": 0.18219955663340628,
+    "BS-trunc": 0.19338911538105494,
+    "IGauss-trunc": 0.1923912679334193
+   }
+  }
+ },
+ "summary": {
+  "BS-trunc - BS": {
+   "n_favourable": 5,
+   "n_significant": 5,
+   "n_significant_against": 0,
+   "margins": [
+    -0.1679353412806617,
+    -0.2221188689736825,
+    -0.12383955733634816,
+    -0.04634900762257037,
+    -0.06547447152694781
+   ],
+   "official": -0.14143045336413038
+  },
+  "BS-trunc - BS-t": {
+   "n_favourable": 5,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.15044608918690314,
+    -0.1158915908079809,
+    -0.10297075771113152,
+    -0.03334340252982286,
+    -0.009669502071727497
+   ],
+   "official": -0.13562388867286373
+  },
+  "BS-trunc - Weibull": {
+   "n_favourable": 4,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.15055090356485853,
+    -0.031476535205004035,
+    -0.0393319912525728,
+    0.002722684941892775,
+    -0.02863287271630222
+   ],
+   "official": -0.013232413320719364
+  },
+  "BS-trunc - LogNormal": {
+   "n_favourable": 4,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.14668996909194582,
+    -0.1220405668540621,
+    -0.09080096648437229,
+    -0.02193370754298901,
+    0.018142676012286838
+   ],
+   "official": -0.05898840904910762
+  },
+  "BS-trunc - IGauss": {
+   "n_favourable": 4,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.03941235163507696,
+    -0.03948360551330895,
+    0.0005159396796399536,
+    -0.023833337986627064,
+    -0.06682697340955562
+   ],
+   "official": -0.009522412452540987
+  },
+  "BS-trunc - Gaussian": {
+   "n_favourable": 4,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.07559458202292793,
+    -0.040005461840233375,
+    -0.027555160362464883,
+    -0.002952316290867739,
+    0.0006522921221990111
+   ],
+   "official": -0.08922822580888695
+  },
+  "IGauss-trunc - BS": {
+   "n_favourable": 5,
+   "n_significant": 4,
+   "n_significant_against": 0,
+   "margins": [
+    -0.15088831091838203,
+    -0.22362436793060725,
+    -0.12687365254352528,
+    -0.014048523697765878,
+    -0.06647231897458346
+   ],
+   "official": -0.13437087360787617
+  },
+  "IGauss-trunc - BS-t": {
+   "n_favourable": 5,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.13339905882462347,
+    -0.11739708976490558,
+    -0.10600485291830863,
+    -0.0010429186050183827,
+    -0.010667349519363151
+   ],
+   "official": -0.12856430891660955
+  },
+  "IGauss-trunc - Weibull": {
+   "n_favourable": 4,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.13350387320257887,
+    -0.032982034161928735,
+    -0.0423660864597499,
+    0.035023168866697256,
+    -0.029630720163937866
+   ],
+   "official": -0.0061728335644651725
+  },
+  "IGauss-trunc - LogNormal": {
+   "n_favourable": 3,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.12964293872966617,
+    -0.12354606581098682,
+    -0.0938350616915494,
+    0.01036677638181546,
+    0.017144828564651184
+   ],
+   "official": -0.05192882929285341
+  },
+  "IGauss-trunc - IGauss": {
+   "n_favourable": 4,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.0223653212727973,
+    -0.04098910447023365,
+    -0.0025181555275371596,
+    0.00846714593817742,
+    -0.06782482085719127
+   ],
+   "official": -0.0024628326962867955
+  },
+  "IGauss-trunc - Gaussian": {
+   "n_favourable": 4,
+   "n_significant": 3,
+   "n_significant_against": 0,
+   "margins": [
+    -0.05854755166064827,
+    -0.041510960797158075,
+    -0.030589255569641996,
+    0.029348167633936738,
+    -0.0003455553254366422
+   ],
+   "official": -0.08216864605263276
+  },
+  "IGauss-trunc - Beta": {
+   "n_favourable": 3,
+   "n_significant": 1,
+   "n_significant_against": 0,
+   "margins": [
+    -0.06122873217542412,
+    -0.025434837468109293,
+    -0.0066651969052870874,
+    0.04378844969488611,
+    0.010191711300013014
+   ],
+   "official": -0.023892261403492508
+  },
+  "IGauss-trunc - LogitNormal": {
+   "n_favourable": 2,
+   "n_significant": 2,
+   "n_significant_against": 0,
+   "margins": [
+    0.0032820944861120705,
+    0.0004475656355489627,
+    -0.019735629025051063,
+    0.0020266634665295114,
+    -0.02569161280410626
+   ],
+   "official": -0.007564922122536692
+  },
+  "BS-trunc - Beta": {
+   "n_favourable": 3,
+   "n_significant": 2,
+   "n_significant_against": 0,
+   "margins": [
+    -0.07827576253770378,
+    -0.023929338511184586,
+    -0.003631101698109974,
+    0.011487965770081637,
+    0.011189558747648666
+   ],
+   "official": -0.030951841159746696
+  },
+  "BS-trunc - LogitNormal": {
+   "n_favourable": 4,
+   "n_significant": 2,
+   "n_significant_against": 0,
+   "margins": [
+    -0.013764935876167589,
+    0.0019530645924736654,
+    -0.01670153381787395,
+    -0.030273820458274966,
+    -0.024693765356470606
+   ],
+   "official": -0.014624501878790884
+  },
+  "IGauss-trunc - BS-trunc": {
+   "n_favourable": 3,
+   "n_significant": 0,
+   "n_significant_against": 2,
+   "margins": [
+    0.01704703036227966,
+    -0.0015054989569247028,
+    -0.0030340952071771132,
+    0.032300483924804474,
+    -0.0009978474476356532
+   ],
+   "official": 0.007059579756254191
+  }
+ }
+}

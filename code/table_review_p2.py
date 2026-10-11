@@ -206,6 +206,7 @@ def bounded_table():
     w("tab_bounded", L)
     margins_table(b)
     robustness_table()
+    resplit_table()
     hours_table()
     ratio_table()
     quantile_table()
@@ -262,14 +263,22 @@ def robustness_table():
     if not os.path.exists(path):
         return
     r = json.load(open(path))
+    tp = os.path.join(RES, "tuning.json")
+    if os.path.exists(tp):
+        r["tuned"] = json.load(open(tp))
+    #  study_robustness.py adjusts the support-respecting block over five comparisons
+    #  (study_bounded.py adds Beta - logit-normal, hence six in tab_margins)
+    BLOCK = {0: r"\emph{Truncated heads against the conventional heads as fitted (Holm over 12)}",
+             12: r"\emph{Among the support-respecting heads (Holm over 5)}"}
     COLS = [("main", "reported"), ("grid", "fixed-time points"), ("seeds5", "seeds 5--9"),
-            ("lr1e-3", r"lr $10^{-3}$"), ("lr1e-2", r"lr $10^{-2}$")]
+            ("lr1e-3", r"lr $10^{-3}$"), ("lr1e-2", r"lr $10^{-2}$"), ("tuned", "lr per head")]
     COLS = [c for c in COLS if c[0] in r]
     cell = lambda v: (f"${v['margin']:+.3f}" + (r"^{\ast}" if v["p_holm"] < 0.05 else r"\phantom{^{\ast}}") + "$")
     L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
          r"\caption{Pooled CRPS margins under changes of protocol; $^{\ast}$: Holm-adjusted $p<0.05$"
          r" within the block. Fixed-time points: every $50$th (PRONOSTIA) or $10$th (XJTU-SY)"
-         r" acquisition after the healthy window.}",
+         r" acquisition after the healthy window. Lr per head: each head's learning rate chosen from"
+         r" $\{10^{-3},3\times10^{-3},10^{-2}\}$ by its CRPS on the validation bearing.}",
          r"\label{tab:robust}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l " + "r" * len(COLS) + r"@{}}", r"\toprule",
@@ -324,6 +333,39 @@ def robustness_table():
                  + " & ".join(cell(r[c]["pairs"][f"{a} - {r_}"]["pooled"]) for c, _ in BB) + r"\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_robust_bb", L)
+
+
+def resplit_table():
+    """The pooled comparisons on PRONOSTIA under five other partitions of its bearings."""
+    path = os.path.join(RES, "resplit.json")
+    if not os.path.exists(path):
+        return
+    r = json.load(open(path))
+    names = ["official"] + [str(i) for i in range(len(r["splits"]))]
+    cell = lambda v: (f"${v['margin']:+.3f}" + (r"^{\ast}" if v["p_holm"] < 0.05 else r"\phantom{^{\ast}}") + "$")
+    BLOCK_R = {0: r"\emph{Truncated heads against the conventional heads as fitted (Holm over 12)}",
+               12: r"\emph{Among the support-respecting heads (the pair alone; then Holm over 4)}"}
+    L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
+         r"\caption{CRPS margins on PRONOSTIA under five other partitions of its seventeen records,"
+         r" two training bearings per operating condition, each over its eleven held-out bearings;"
+         r" $^{\ast}$: Holm-adjusted $p<0.05$ within the block. Last column: splits, of five, in"
+         r" which the margin favours the row head.}",
+         r"\label{tab:resplit}",
+         r"\begin{adjustbox}{max width=\linewidth}",
+         r"\begin{tabular}{@{}l " + "r" * len(names) + r" c@{}}", r"\toprule",
+         "comparison & official & " + " & ".join(f"split {int(n) + 1}" for n in names[1:])
+         + r" & favourable\\", r"\midrule"]
+    for i, (a, b) in enumerate(PAIR_ORDER):
+        if i in BLOCK_R:
+            if i:
+                L.append(r"\addlinespace")
+            L.append(r"\multicolumn{" + str(len(names) + 2) + r"}{@{}l}{" + BLOCK_R[i] + r"}\\")
+        k = f"{a} - {b}"
+        L.append(f"\\quad {SH[a]} $-$ {SH[b]} & "
+                 + " & ".join(cell(r["per_split"][n]["pairs"][k]) for n in names)
+                 + f" & {r['summary'][k]['n_favourable']}/{len(names) - 1}" + r"\\")
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
+    w("tab_resplit", L)
 
 
 def ratio_table():

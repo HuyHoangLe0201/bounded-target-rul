@@ -101,6 +101,11 @@ python study_quantile.py
 python study_hours_crps.py     # integral CRPS in hours from the stored quantiles (cross-check)
 python study_hours_exact.py fit     # refit every head, keep member parameters (about 30 min)
 python study_hours_exact.py score   # integral CRPS in hours from the exact laws (the paper's values)
+#  each head's learning rate chosen from {1e-3, 3e-3, 1e-2} by its CRPS on the validation
+#  bearing (equal budget); test predictions are taken from the stored runs at the chosen rate
+python study_tuning.py fit; python study_tuning.py score       # about 80 min
+#  PRONOSTIA re-partitioned five times, two training bearings per operating condition
+python study_resplit.py fit; python study_resplit.py score     # about 45 min
 ```
 
 The target `y = R/T_total` is an exact reparametrisation of the RUL at a known

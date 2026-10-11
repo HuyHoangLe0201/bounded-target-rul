@@ -1,0 +1,2102 @@
+[
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "BS",
+  "lr": 0.001,
+  "val_crps": 0.2912373762280618,
+  "val_nll": 0.30569362342357637,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "BS-t",
+  "lr": 0.001,
+  "val_crps": 0.27057748090795697,
+  "val_nll": 0.2943762242794037,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "Weibull",
+  "lr": 0.001,
+  "val_crps": 0.16446914328901377,
+  "val_nll": 0.06107020378112793,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "LogNormal",
+  "lr": 0.001,
+  "val_crps": 0.22931716609494318,
+  "val_nll": 0.21842170655727386,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "IGauss",
+  "lr": 0.001,
+  "val_crps": 0.14933411082076242,
+  "val_nll": 0.12123045325279236,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "Gaussian",
+  "lr": 0.001,
+  "val_crps": 0.1070879994350373,
+  "val_nll": -0.1704600942088291,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.001,
+  "val_crps": 0.11378532412916353,
+  "val_nll": -0.29041537642478943,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "Beta",
+  "lr": 0.001,
+  "val_crps": 0.12032375636147442,
+  "val_nll": -0.21106053292751312,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.001,
+  "val_crps": 0.12588710376774126,
+  "val_nll": -0.1893979549407959,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.001,
+  "val_crps": 0.1299753649969039,
+  "val_nll": -0.13803464649245142,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "BS",
+  "lr": 0.003,
+  "val_crps": 0.29419737664087064,
+  "val_nll": 0.298650798201561,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "BS-t",
+  "lr": 0.003,
+  "val_crps": 0.28418867268691866,
+  "val_nll": 0.312412628531456,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "Weibull",
+  "lr": 0.003,
+  "val_crps": 0.15661712084944357,
+  "val_nll": 0.04860598184168339,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "LogNormal",
+  "lr": 0.003,
+  "val_crps": 0.2720951339247131,
+  "val_nll": 0.2790431022644043,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "IGauss",
+  "lr": 0.003,
+  "val_crps": 0.15167533685834497,
+  "val_nll": 0.10839880723506212,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "Gaussian",
+  "lr": 0.003,
+  "val_crps": 0.08995702649312287,
+  "val_nll": -0.32225698232650757,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.003,
+  "val_crps": 0.12528712278464277,
+  "val_nll": -0.23192678540945053,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "Beta",
+  "lr": 0.003,
+  "val_crps": 0.13496192801901274,
+  "val_nll": -0.1303007870912552,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.003,
+  "val_crps": 0.12687877377441514,
+  "val_nll": -0.188277468085289,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.003,
+  "val_crps": 0.12059916817416243,
+  "val_nll": -0.15387784093618392,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "BS",
+  "lr": 0.01,
+  "val_crps": 0.26649009487151876,
+  "val_nll": 0.24723386764526367,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "BS-t",
+  "lr": 0.01,
+  "val_crps": 0.3082399852583788,
+  "val_nll": 0.44572675228118896,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "Weibull",
+  "lr": 0.01,
+  "val_crps": 0.17966353672056024,
+  "val_nll": 0.19855247493833303,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "LogNormal",
+  "lr": 0.01,
+  "val_crps": 0.3772497840495166,
+  "val_nll": 0.52856085896492,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "IGauss",
+  "lr": 0.01,
+  "val_crps": 0.17048064240649002,
+  "val_nll": 0.1358331635594368,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "Gaussian",
+  "lr": 0.01,
+  "val_crps": 0.10947869753293733,
+  "val_nll": 0.05922219306230545,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.01,
+  "val_crps": 0.15264119299353424,
+  "val_nll": 0.20935055315494538,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "Beta",
+  "lr": 0.01,
+  "val_crps": 0.20904560182743373,
+  "val_nll": 0.7305715799331665,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.01,
+  "val_crps": 0.13377308353207337,
+  "val_nll": 0.1386758029460907,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "pronostia",
+  "validation": "Bearing2_2",
+  "test": [
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5",
+   "Bearing1_6",
+   "Bearing1_7",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5",
+   "Bearing2_6",
+   "Bearing2_7",
+   "Bearing3_3"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.01,
+  "val_crps": 0.11868747251082941,
+  "val_nll": 0.018806468322873117,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "BS",
+  "lr": 0.001,
+  "val_crps": 0.11402590811386615,
+  "val_nll": -0.06198575869202614,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "BS-t",
+  "lr": 0.001,
+  "val_crps": 0.11369509822002147,
+  "val_nll": -0.11819605976343155,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "Weibull",
+  "lr": 0.001,
+  "val_crps": 0.10159584644155523,
+  "val_nll": -0.40176809430122373,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "LogNormal",
+  "lr": 0.001,
+  "val_crps": 0.11743232229165648,
+  "val_nll": -0.06406099423766136,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "IGauss",
+  "lr": 0.001,
+  "val_crps": 0.10801525653347611,
+  "val_nll": -0.1485133484005928,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "Gaussian",
+  "lr": 0.001,
+  "val_crps": 0.11164557898899431,
+  "val_nll": -0.31404207050800326,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.001,
+  "val_crps": 0.09375372052877737,
+  "val_nll": -0.4567797601222992,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "Beta",
+  "lr": 0.001,
+  "val_crps": 0.10013265995967971,
+  "val_nll": -0.3359175086021423,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.001,
+  "val_crps": 0.11307140895201051,
+  "val_nll": -0.2945941865444183,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.001,
+  "val_crps": 0.10206328802158293,
+  "val_nll": -0.3421269178390503,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "BS",
+  "lr": 0.003,
+  "val_crps": 0.1189517013852876,
+  "val_nll": -0.12823320161551238,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "BS-t",
+  "lr": 0.003,
+  "val_crps": 0.09904477283264652,
+  "val_nll": -0.31412318646907805,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "Weibull",
+  "lr": 0.003,
+  "val_crps": 0.08873401831562265,
+  "val_nll": -0.6019773006439209,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "LogNormal",
+  "lr": 0.003,
+  "val_crps": 0.11421204457186186,
+  "val_nll": -0.2031358741223812,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "IGauss",
+  "lr": 0.003,
+  "val_crps": 0.11293683463430809,
+  "val_nll": -0.21498855650424958,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "Gaussian",
+  "lr": 0.003,
+  "val_crps": 0.10386652771282848,
+  "val_nll": -0.38257167041301726,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.003,
+  "val_crps": 0.10092861691411271,
+  "val_nll": -0.6547560572624207,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "Beta",
+  "lr": 0.003,
+  "val_crps": 0.09215118738768159,
+  "val_nll": -0.3694077432155609,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.003,
+  "val_crps": 0.11111950063859513,
+  "val_nll": -0.25409677624702454,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.003,
+  "val_crps": 0.10652071021495937,
+  "val_nll": -0.3237931191921234,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "BS",
+  "lr": 0.01,
+  "val_crps": 0.1078606912038462,
+  "val_nll": -0.26112435236573217,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "BS-t",
+  "lr": 0.01,
+  "val_crps": 0.09476594544200931,
+  "val_nll": -0.4125713050365448,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "Weibull",
+  "lr": 0.01,
+  "val_crps": 0.10484976213736703,
+  "val_nll": -0.5558775901794434,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "LogNormal",
+  "lr": 0.01,
+  "val_crps": 0.09724600718952124,
+  "val_nll": -0.4066634178161621,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "IGauss",
+  "lr": 0.01,
+  "val_crps": 0.10551706132981244,
+  "val_nll": -0.3743770033121109,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "Gaussian",
+  "lr": 0.01,
+  "val_crps": 0.10444072844090731,
+  "val_nll": -0.32477712333202363,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.01,
+  "val_crps": 0.08739703022626161,
+  "val_nll": -0.5213381469249725,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "Beta",
+  "lr": 0.01,
+  "val_crps": 0.09171380452773897,
+  "val_nll": -0.5761927485466003,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.01,
+  "val_crps": 0.0934864425809176,
+  "val_nll": -0.5363251030445099,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing1_1",
+   "Bearing1_2",
+   "Bearing1_3",
+   "Bearing1_4",
+   "Bearing1_5"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.01,
+  "val_crps": 0.0741989912043091,
+  "val_nll": -0.46680083870887756,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "BS",
+  "lr": 0.001,
+  "val_crps": 0.14403710219688606,
+  "val_nll": 0.08877300899475812,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "BS-t",
+  "lr": 0.001,
+  "val_crps": 0.140793270797873,
+  "val_nll": 0.05730469897389412,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "Weibull",
+  "lr": 0.001,
+  "val_crps": 0.12490741240483706,
+  "val_nll": -0.15903759598731995,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "LogNormal",
+  "lr": 0.001,
+  "val_crps": 0.1459618301040172,
+  "val_nll": 0.049824684858322144,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "IGauss",
+  "lr": 0.001,
+  "val_crps": 0.13138424214733563,
+  "val_nll": -0.03675325009971857,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "Gaussian",
+  "lr": 0.001,
+  "val_crps": 0.1081179656636403,
+  "val_nll": -0.40048237442970275,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.001,
+  "val_crps": 0.12053486125203297,
+  "val_nll": -0.25347725450992586,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "Beta",
+  "lr": 0.001,
+  "val_crps": 0.1194179295959751,
+  "val_nll": -0.21632930636405945,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.001,
+  "val_crps": 0.13098185369861376,
+  "val_nll": -0.2235606849193573,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.001,
+  "val_crps": 0.12678610900265722,
+  "val_nll": -0.24435284435749055,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "BS",
+  "lr": 0.003,
+  "val_crps": 0.12957317959662806,
+  "val_nll": 0.062258167564868926,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "BS-t",
+  "lr": 0.003,
+  "val_crps": 0.14129363012751658,
+  "val_nll": 0.05157497995533049,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "Weibull",
+  "lr": 0.003,
+  "val_crps": 0.1209562188372372,
+  "val_nll": -0.17457082420587539,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "LogNormal",
+  "lr": 0.003,
+  "val_crps": 0.13903212995286712,
+  "val_nll": 0.036886414885520934,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "IGauss",
+  "lr": 0.003,
+  "val_crps": 0.11990061006327217,
+  "val_nll": -0.10216548098251224,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "Gaussian",
+  "lr": 0.003,
+  "val_crps": 0.11911631860149145,
+  "val_nll": -0.28511129319667816,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.003,
+  "val_crps": 0.09855717950050208,
+  "val_nll": -0.391554194688797,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "Beta",
+  "lr": 0.003,
+  "val_crps": 0.11663355606102034,
+  "val_nll": -0.2660845398902893,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.003,
+  "val_crps": 0.12716236294069255,
+  "val_nll": -0.24111381769180298,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.003,
+  "val_crps": 0.1276055870945971,
+  "val_nll": -0.25635068118572235,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "BS",
+  "lr": 0.01,
+  "val_crps": 0.1134842997839211,
+  "val_nll": -0.17639483511447906,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "BS-t",
+  "lr": 0.01,
+  "val_crps": 0.08788320828783291,
+  "val_nll": -0.23877380639314652,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "Weibull",
+  "lr": 0.01,
+  "val_crps": 0.100323112504331,
+  "val_nll": -0.3703980952501297,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "LogNormal",
+  "lr": 0.01,
+  "val_crps": 0.10170886793185303,
+  "val_nll": -0.15123957097530366,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "IGauss",
+  "lr": 0.01,
+  "val_crps": 0.10986476019960263,
+  "val_nll": -0.21810496579855682,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "Gaussian",
+  "lr": 0.01,
+  "val_crps": 0.10163122114054855,
+  "val_nll": -0.3466990113258362,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.01,
+  "val_crps": 0.09377696399968452,
+  "val_nll": -0.4199971407651901,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "Beta",
+  "lr": 0.01,
+  "val_crps": 0.09819341819226023,
+  "val_nll": -0.4378825306892395,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.01,
+  "val_crps": 0.11066529683799366,
+  "val_nll": -0.3453846573829651,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing3_1",
+  "test": [
+   "Bearing2_1",
+   "Bearing2_2",
+   "Bearing2_3",
+   "Bearing2_4",
+   "Bearing2_5"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.01,
+  "val_crps": 0.11938429564689564,
+  "val_nll": -0.27694561928510664,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "BS",
+  "lr": 0.001,
+  "val_crps": 0.07587352694052238,
+  "val_nll": -0.6121709167957305,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "BS-t",
+  "lr": 0.001,
+  "val_crps": 0.1273546664835805,
+  "val_nll": -0.006029574573040009,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "Weibull",
+  "lr": 0.001,
+  "val_crps": 0.12464956681523272,
+  "val_nll": -0.15478709414601327,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "LogNormal",
+  "lr": 0.001,
+  "val_crps": 0.10435836283525378,
+  "val_nll": -0.3015276461839676,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "IGauss",
+  "lr": 0.001,
+  "val_crps": 0.07516671841817767,
+  "val_nll": -0.5683491945266723,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "Gaussian",
+  "lr": 0.001,
+  "val_crps": 0.11364489189880907,
+  "val_nll": -0.15395299196243287,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.001,
+  "val_crps": 0.11813938645958945,
+  "val_nll": -0.19616466760635376,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "Beta",
+  "lr": 0.001,
+  "val_crps": 0.09803918388433217,
+  "val_nll": -0.43113012313842775,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.001,
+  "val_crps": 0.08701118477221781,
+  "val_nll": -0.5574218392372131,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.001,
+  "val_crps": 0.07750243000918573,
+  "val_nll": -0.505185580253601,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "BS",
+  "lr": 0.003,
+  "val_crps": 0.07371955125869385,
+  "val_nll": -0.6280718147754669,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "BS-t",
+  "lr": 0.003,
+  "val_crps": 0.12665694433702304,
+  "val_nll": -0.03627399280667305,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "Weibull",
+  "lr": 0.003,
+  "val_crps": 0.12282634024462184,
+  "val_nll": -0.1778624787926674,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "LogNormal",
+  "lr": 0.003,
+  "val_crps": 0.1031650398717214,
+  "val_nll": -0.3568851351737976,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "IGauss",
+  "lr": 0.003,
+  "val_crps": 0.07098103085056934,
+  "val_nll": -0.594258838891983,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "Gaussian",
+  "lr": 0.003,
+  "val_crps": 0.11340045945419623,
+  "val_nll": -0.17259606420993806,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.003,
+  "val_crps": 0.10939572970963837,
+  "val_nll": -0.2818589828908443,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "Beta",
+  "lr": 0.003,
+  "val_crps": 0.09837858543306494,
+  "val_nll": -0.4267860174179077,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.003,
+  "val_crps": 0.08668187021826318,
+  "val_nll": -0.5722492456436157,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.003,
+  "val_crps": 0.0757725996869536,
+  "val_nll": -0.5505206823348999,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "BS",
+  "lr": 0.01,
+  "val_crps": 0.08972796377845974,
+  "val_nll": -0.5361440621316433,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "BS-t",
+  "lr": 0.01,
+  "val_crps": 0.130374052184769,
+  "val_nll": -0.01847272366285324,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "Weibull",
+  "lr": 0.01,
+  "val_crps": 0.12112078343236027,
+  "val_nll": -0.14495195746421813,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "LogNormal",
+  "lr": 0.01,
+  "val_crps": 0.11356454326996224,
+  "val_nll": -0.3541849166154861,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "IGauss",
+  "lr": 0.01,
+  "val_crps": 0.06915763383024795,
+  "val_nll": -0.6542322874069214,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "Gaussian",
+  "lr": 0.01,
+  "val_crps": 0.11649601747373993,
+  "val_nll": -0.14843467772006988,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "LogitNormal",
+  "lr": 0.01,
+  "val_crps": 0.0925829905742881,
+  "val_nll": -0.44269919842481614,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "Beta",
+  "lr": 0.01,
+  "val_crps": 0.10222533771255635,
+  "val_nll": -0.4032361268997192,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "BS-trunc",
+  "lr": 0.01,
+  "val_crps": 0.07459242396506739,
+  "val_nll": -0.6272425770759582,
+  "max_median_dev": 0.0
+ },
+ {
+  "dataset": "xjtu",
+  "validation": "Bearing2_1",
+  "test": [
+   "Bearing3_1",
+   "Bearing3_2",
+   "Bearing3_3",
+   "Bearing3_4",
+   "Bearing3_5"
+  ],
+  "head": "IGauss-trunc",
+  "lr": 0.01,
+  "val_crps": 0.07241846540711762,
+  "val_nll": -0.6071406662464142,
+  "max_median_dev": 0.0
+ }
+]
