@@ -91,7 +91,9 @@ GBS_HEADS=LogitNormal,Beta,BS-trunc,IGauss-trunc GBS_HIDDEN=32,16 GBS_EPOCHS=300
 python study_robustness.py
 #  the six conventional heads trained on w = R/t (support (0, inf), no truncation)
 GBS_TARGET=ratio GBS_HEADS=BS,BS-t,Weibull,LogNormal,IGauss,Gaussian GBS_TAG=_ratio python study_regression.py both
-python study_ratio.py
+GBS_TARGET=ratio GBS_HEADS=Gaussian-trunc0 GBS_TAG=_ratio_g0 python study_regression.py both   # Gaussian truncated at 0
+#  ... and both again with GBS_EVAL=grid (tags _ratio_grid, _ratio_grid_g0)
+python study_ratio.py          # CRPS on the fraction, on w and in hours (t_k * CRPS on w)
 ```
 
 The target `y = R/T_total` is an exact reparametrisation of the RUL at a known

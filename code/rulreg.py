@@ -432,6 +432,41 @@ class TruncatedHead(Head):
         return _numeric_moments(self, p)[1]
 
 
+class LowerTruncatedHead(Head):
+    """A head conditioned on R > 0 and fitted by log f(y) - log(1 - F(0)).
+
+    Used for the Gaussian on the ratio target w = R/t, whose support (0, inf)
+    the untruncated Gaussian overshoots."""
+
+    def __init__(self, base, cdf):
+        self.base, self.cdf = base, cdf
+        self.name = base.name + "-trunc0"
+
+    def params(self, raw):
+        return self.base.params(raw)
+
+    def _logS0(self, p):
+        zero = torch.zeros_like(p[0])
+        return torch.log(torch.clamp(1.0 - self.cdf(zero, *p), 1e-12, 1.0))
+
+    def logpdf(self, t, p):
+        return self.base.logpdf(t, p) - self._logS0(p)
+
+    def ppf(self, q, p):
+        F0 = 1.0 - torch.exp(self._logS0(p))
+        return torch.clamp(self.base.ppf(F0 + q * (1.0 - F0), p), 0.0, None)
+
+    def mean(self, p):
+        return _numeric_moments(self, p)[0]
+
+    def var(self, p):
+        return _numeric_moments(self, p)[1]
+
+
+def _gauss_cdf(t, mu, sig):
+    return _ndtr((t - mu) / sig)
+
+
 class _IGStable(IGHead):
     def ppf(self, q, p, iters=60):
         mu, lam = p
@@ -450,6 +485,7 @@ BOUNDED_HEADS = {
     "Beta": BetaHead,
     "BS-trunc": lambda: TruncatedHead(BSHead(), _bs_cdf),
     "IGauss-trunc": lambda: TruncatedHead(_IGStable(), _ig_cdf_stable),
+    "Gaussian-trunc0": lambda: LowerTruncatedHead(GaussianHead(), _gauss_cdf),
 }
 
 
