@@ -8,9 +8,12 @@ scale through y = w/(1+w), so the two designs are compared at the same points.
 
 Three scores per prediction:
   CRPS_y   on the fraction, against the truncated BS and IG heads trained on y
-  CRPS_w   on w; infinite for the truncated heads trained on y
+  CRPS_w   on w, by the kernel form, so for the heads trained on w only
   CRPS_h   in hours, t_k * CRPS_w (CRPS scales with a positive constant), so
            each inspection is weighted by its own elapsed time
+The truncated heads trained on y have infinite mean on w and in hours, so the
+kernel form does not apply to them; study_hours_crps.py scores every head in
+hours by the integral definition instead, and the paper reports that.
 
 Two protocols: the reported prediction points, and inspections fixed in
 operating time (GBS_EVAL=grid). Bearing-level paired margins, pooled over the

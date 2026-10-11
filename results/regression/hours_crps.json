@@ -1,0 +1,3127 @@
+{
+ "main": {
+  "trimmed": {
+   "heads": {
+    "pronostia/BS-t@restricted": 1.0340179243830676,
+    "pronostia/BS-t@w": 1.751760285928256,
+    "pronostia/BS-trunc": 1.1607334055995115,
+    "pronostia/BS@restricted": 0.8437943007749283,
+    "pronostia/BS@w": 0.9837286196404424,
+    "pronostia/Beta": 7.614361728913733,
+    "pronostia/Gaussian-trunc0@w": 2.1608655471437137,
+    "pronostia/Gaussian@restricted": 3.1072540113404963,
+    "pronostia/Gaussian@w": 2.5215180309542857,
+    "pronostia/IGauss-trunc": 1.0490053655787872,
+    "pronostia/IGauss@restricted": 0.7110681162898179,
+    "pronostia/IGauss@w": 1.487606302606421,
+    "pronostia/LogNormal@restricted": 0.7882508829847631,
+    "pronostia/LogNormal@w": 1.3941933942323539,
+    "pronostia/LogitNormal": 1.4588754046665575,
+    "pronostia/Weibull@restricted": 0.8042725428955825,
+    "pronostia/Weibull@w": 4.0448276686765325,
+    "xjtu/BS-t@restricted": 2.1181323487671384,
+    "xjtu/BS-t@w": 2.0981643017955394,
+    "xjtu/BS-trunc": 2.8321586319111867,
+    "xjtu/BS@restricted": 2.176730859725748,
+    "xjtu/BS@w": 2.0828551939854463,
+    "xjtu/Beta": 154.86764645304171,
+    "xjtu/Gaussian-trunc0@w": 1.9799013960215492,
+    "xjtu/Gaussian@restricted": 2.066926180326251,
+    "xjtu/Gaussian@w": 1.9961593565833367,
+    "xjtu/IGauss-trunc": 2.7985517872402914,
+    "xjtu/IGauss@restricted": 1.9950078978240973,
+    "xjtu/IGauss@w": 1.876117628390884,
+    "xjtu/LogNormal@restricted": 2.15556092145829,
+    "xjtu/LogNormal@w": 2.0413638263806813,
+    "xjtu/LogitNormal": 141.70450282275155,
+    "xjtu/Weibull@restricted": 1.807465631924794,
+    "xjtu/Weibull@w": 1.9835504051676627
+   },
+   "pooled": {
+    "BS-t@restricted": 1.6472265227973584,
+    "BS-t@w": 1.9407161350059747,
+    "BS-trunc": 2.1087347654062905,
+    "BS@restricted": 1.6009826879818037,
+    "BS@w": 1.6077334910916439,
+    "Beta": 91.57850925543782,
+    "Gaussian-trunc0@w": 2.045548551679448,
+    "Gaussian@restricted": 2.4950750334389005,
+    "Gaussian@w": 2.20745101348681,
+    "IGauss-trunc": 2.0416974399137895,
+    "IGauss@restricted": 1.4406940771277814,
+    "IGauss@w": 1.7016963340550229,
+    "LogNormal@restricted": 1.5647203277890738,
+    "LogNormal@w": 1.7557715088580386,
+    "LogitNormal": 81.46432634932543,
+    "Weibull@restricted": 1.37291441608452,
+    "Weibull@w": 2.844400483494025
+   },
+   "pairs": {
+    "BS-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 0.1770047859590689
+     },
+     "xjtu": {
+      "margin": 0.7385986991087364
+     },
+     "pooled": {
+      "margin": 0.5010012743146464
+     }
+    },
+    "BS-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.5910268803287443
+     },
+     "xjtu": {
+      "margin": 0.7246520049349596
+     },
+     "pooled": {
+      "margin": 0.16801863040031567
+     }
+    },
+    "BS-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -2.884094263077021
+     },
+     "xjtu": {
+      "margin": 0.8398485482377425
+     },
+     "pooled": {
+      "margin": -0.7356657180877347
+     }
+    },
+    "BS-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.23345998863284229
+     },
+     "xjtu": {
+      "margin": 0.7830069696810545
+     },
+     "pooled": {
+      "margin": 0.35296325654825195
+     }
+    },
+    "BS-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.3268728970069095
+     },
+     "xjtu": {
+      "margin": 0.9452400721472647
+     },
+     "pooled": {
+      "margin": 0.40703843135126794
+     }
+    },
+    "BS-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -1.3607846253547746
+     },
+     "xjtu": {
+      "margin": 0.8268005619206006
+     },
+     "pooled": {
+      "margin": -0.09871624808051971
+     }
+    },
+    "BS-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -1.0001321415442026
+     },
+     "xjtu": {
+      "margin": 0.8429530075922761
+     },
+     "pooled": {
+      "margin": 0.0631862137268426
+     }
+    },
+    "IGauss-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 0.06527674593834469
+     },
+     "xjtu": {
+      "margin": 0.7043345642702658
+     },
+     "pooled": {
+      "margin": 0.43396394882214523
+     }
+    },
+    "IGauss-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.7027549203494685
+     },
+     "xjtu": {
+      "margin": 0.6903878700964887
+     },
+     "pooled": {
+      "margin": 0.10098130490781454
+     }
+    },
+    "IGauss-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -2.995822303097745
+     },
+     "xjtu": {
+      "margin": 0.8055844133992714
+     },
+     "pooled": {
+      "margin": -0.8027030435802357
+     }
+    },
+    "IGauss-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.34518802865356635
+     },
+     "xjtu": {
+      "margin": 0.7487428348425836
+     },
+     "pooled": {
+      "margin": 0.28592593105575087
+     }
+    },
+    "IGauss-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.4386009370276337
+     },
+     "xjtu": {
+      "margin": 0.9109759373087937
+     },
+     "pooled": {
+      "margin": 0.34000110585876675
+     }
+    },
+    "IGauss-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -1.4725126653754985
+     },
+     "xjtu": {
+      "margin": 0.7925364270821297
+     },
+     "pooled": {
+      "margin": -0.16575357357302084
+     }
+    },
+    "IGauss-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -1.1118601815649267
+     },
+     "xjtu": {
+      "margin": 0.8086888727538051
+     },
+     "pooled": {
+      "margin": -0.0038511117656584576
+     }
+    },
+    "BS-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.31693910482458304
+     },
+     "xjtu": {
+      "margin": 0.6476815906644162
+     },
+     "pooled": {
+      "margin": 0.5077520774244868
+     }
+    },
+    "BS-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.12671548121644396
+     },
+     "xjtu": {
+      "margin": 0.7070229342967568
+     },
+     "pooled": {
+      "margin": 0.4615082426089321
+     }
+    },
+    "BS-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.3564608627039292
+     },
+     "xjtu": {
+      "margin": 1.014017306174854
+     },
+     "pooled": {
+      "margin": 0.7358203493217705
+     }
+    },
+    "BS-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.37248252261474857
+     },
+     "xjtu": {
+      "margin": 0.669804508619027
+     },
+     "pooled": {
+      "margin": 0.5440144376172168
+     }
+    },
+    "BS-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.4496652893096934
+     },
+     "xjtu": {
+      "margin": 0.8281826475223074
+     },
+     "pooled": {
+      "margin": 0.6680406882785093
+     }
+    },
+    "BS-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -1.946520605740985
+     },
+     "xjtu": {
+      "margin": 0.7577919796201985
+     },
+     "pooled": {
+      "margin": -0.38634026803261007
+     }
+    },
+    "IGauss-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.2052110648038589
+     },
+     "xjtu": {
+      "margin": 0.6134174558259453
+     },
+     "pooled": {
+      "margin": 0.4407147519319856
+     }
+    },
+    "IGauss-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.014987441195719799
+     },
+     "xjtu": {
+      "margin": 0.6727587994582859
+     },
+     "pooled": {
+      "margin": 0.39447091711643095
+     }
+    },
+    "IGauss-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.24473282268320504
+     },
+     "xjtu": {
+      "margin": 0.9797531713363832
+     },
+     "pooled": {
+      "margin": 0.6687830238292694
+     }
+    },
+    "IGauss-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.2607544825940243
+     },
+     "xjtu": {
+      "margin": 0.6355403737805561
+     },
+     "pooled": {
+      "margin": 0.4769771121247157
+     }
+    },
+    "IGauss-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.33793724928896923
+     },
+     "xjtu": {
+      "margin": 0.7939185126838364
+     },
+     "pooled": {
+      "margin": 0.601003362786008
+     }
+    },
+    "IGauss-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -2.058248645761709
+     },
+     "xjtu": {
+      "margin": 0.7235278447817276
+     },
+     "pooled": {
+      "margin": -0.4533775935251109
+     }
+    }
+   }
+  },
+  "uniform": {
+   "heads": {
+    "pronostia/BS-t@restricted": 1.0402095696331186,
+    "pronostia/BS-t@w": 1.759354842694284,
+    "pronostia/BS-trunc": 1.1743975062029701,
+    "pronostia/BS@restricted": 0.8492636067423368,
+    "pronostia/BS@w": 0.9945512681546139,
+    "pronostia/Beta": 8.716402213274026,
+    "pronostia/Gaussian-trunc0@w": 2.1614256519587216,
+    "pronostia/Gaussian@restricted": 3.11727131611202,
+    "pronostia/Gaussian@w": 2.522109964886737,
+    "pronostia/IGauss-trunc": 1.0589243805282695,
+    "pronostia/IGauss@restricted": 0.7140486782892069,
+    "pronostia/IGauss@w": 1.4897725611282262,
+    "pronostia/LogNormal@restricted": 0.7917720578145014,
+    "pronostia/LogNormal@w": 1.3992747445591893,
+    "pronostia/LogitNormal": 1.4666345476030638,
+    "pronostia/Weibull@restricted": 0.8079516250286609,
+    "pronostia/Weibull@w": 4.099524531761587,
+    "xjtu/BS-t@restricted": 2.2256289352868084,
+    "xjtu/BS-t@w": 2.20705946907727,
+    "xjtu/BS-trunc": 2.8650491111549083,
+    "xjtu/BS@restricted": 2.3182691885710716,
+    "xjtu/BS@w": 2.188454760872354,
+    "xjtu/Beta": 160.21500108000615,
+    "xjtu/Gaussian-trunc0@w": 2.038628311939851,
+    "xjtu/Gaussian@restricted": 2.1820312855854938,
+    "xjtu/Gaussian@w": 2.047987977364845,
+    "xjtu/IGauss-trunc": 2.8371298820220856,
+    "xjtu/IGauss@restricted": 2.106908471099175,
+    "xjtu/IGauss@w": 1.9640057787284557,
+    "xjtu/LogNormal@restricted": 2.22617073578035,
+    "xjtu/LogNormal@w": 2.1250153905518694,
+    "xjtu/LogitNormal": 147.0413826435944,
+    "xjtu/Weibull@restricted": 1.9550793179265618,
+    "xjtu/Weibull@w": 2.0711412047538174
+   },
+   "pooled": {
+    "BS-t@restricted": 1.7111792710808458,
+    "BS-t@w": 2.0060568188365284,
+    "BS-trunc": 2.1332960703794575,
+    "BS@restricted": 1.6840532917778406,
+    "BS@w": 1.6725591078373772,
+    "Beta": 95.09549259902413,
+    "Gaussian-trunc0@w": 2.0792905111295807,
+    "Gaussian@restricted": 2.5649830049643976,
+    "Gaussian@w": 2.2372707823830487,
+    "IGauss-trunc": 2.0679137873697977,
+    "IGauss@restricted": 1.5058016323275762,
+    "IGauss@w": 1.7527550812722121,
+    "LogNormal@restricted": 1.606498452917659,
+    "LogNormal@w": 1.8056465806324193,
+    "LogitNormal": 84.51236882843236,
+    "Weibull@restricted": 1.4586887430886368,
+    "Weibull@w": 2.9175137437070537
+   },
+   "pairs": {
+    "BS-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 0.1798462380483561,
+      "ci95": [
+       0.009848609157803103,
+       0.3430295104306699
+      ],
+      "p_boot": 0.0364
+     },
+     "xjtu": {
+      "margin": 0.6667234938374774,
+      "ci95": [
+       -0.17363739507232534,
+       1.6163402420608775
+      ],
+      "p_boot": 0.1414
+     },
+     "pooled": {
+      "margin": 0.46073696254207996,
+      "ci95": [
+       -0.0287950579276843,
+       1.0169972689720628
+      ],
+      "p_boot": 0.069,
+      "p_holm": 0.9660000000000001
+     }
+    },
+    "BS-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.5849573364913137,
+      "ci95": [
+       -2.162651547437505,
+       0.31997202379801
+      ],
+      "p_boot": 0.66
+     },
+     "xjtu": {
+      "margin": 0.6495167494347062,
+      "ci95": [
+       -0.019502444877936485,
+       1.4635619287550363
+      ],
+      "p_boot": 0.061
+     },
+     "pooled": {
+      "margin": 0.12723925154292853,
+      "ci95": [
+       -0.6703593598825633,
+       0.801846227784171
+      ],
+      "p_boot": 0.6756,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -2.9251270255586177,
+      "ci95": [
+       -8.9413208873571,
+       0.18043273498912976
+      ],
+      "p_boot": 0.4414
+     },
+     "xjtu": {
+      "margin": 0.7857825183084844,
+      "ci95": [
+       -0.09035257765640742,
+       1.820551386762491
+      ],
+      "p_boot": 0.081
+     },
+     "pooled": {
+      "margin": -0.7842176733275974,
+      "ci95": [
+       -3.5595773787457703,
+       0.9164516497441562
+      ],
+      "p_boot": 0.6762,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.2248772383562191,
+      "ci95": [
+       -1.0940292724264482,
+       0.3023087422471945
+      ],
+      "p_boot": 0.694
+     },
+     "xjtu": {
+      "margin": 0.7328357570227598,
+      "ci95": [
+       0.019675245653035033,
+       1.5481221788532038
+      ],
+      "p_boot": 0.0432
+     },
+     "pooled": {
+      "margin": 0.32764948974703795,
+      "ci95": [
+       -0.23179066791577074,
+       0.8718468227307682
+      ],
+      "p_boot": 0.2408,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.31537505492525636,
+      "ci95": [
+       -1.4211513693455036,
+       0.32904176958729614
+      ],
+      "p_boot": 0.7024
+     },
+     "xjtu": {
+      "margin": 0.8908794213977461,
+      "ci95": [
+       0.1991582733600524,
+       1.8536121937576924
+      ],
+      "p_boot": 0.0016
+     },
+     "pooled": {
+      "margin": 0.380540989107245,
+      "ci95": [
+       -0.2818898202666037,
+       1.0317429108154974
+      ],
+      "p_boot": 0.2442,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -1.347712458683767,
+      "ci95": [
+       -4.287941601285135,
+       0.22330773980157773
+      ],
+      "p_boot": 0.5826
+     },
+     "xjtu": {
+      "margin": 0.8080996355618704,
+      "ci95": [
+       0.033724246755346715,
+       1.7428441879710608
+      ],
+      "p_boot": 0.0404
+     },
+     "pooled": {
+      "margin": -0.10397471200359162,
+      "ci95": [
+       -1.5193696139823478,
+       0.9207075726200196
+      ],
+      "p_boot": 0.9352,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.9870281457557506,
+      "ci95": [
+       -3.0717170694633955,
+       0.20608181981099322
+      ],
+      "p_boot": 0.357
+     },
+     "xjtu": {
+      "margin": 0.8174302762540031,
+      "ci95": [
+       -0.24389514097837509,
+       2.058199949521742
+      ],
+      "p_boot": 0.1454
+     },
+     "pooled": {
+      "margin": 0.054005559249876454,
+      "ci95": [
+       -1.0494358291626267,
+       1.0170276463499788
+      ],
+      "p_boot": 0.8972,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 0.06437311237365527,
+      "ci95": [
+       0.012005110765839235,
+       0.11842844557621117
+      ],
+      "p_boot": 0.014
+     },
+     "xjtu": {
+      "margin": 0.6380744954488488,
+      "ci95": [
+       -0.2414716643075469,
+       1.6600433391251346
+      ],
+      "p_boot": 0.1756
+     },
+     "pooled": {
+      "margin": 0.3953546795324207,
+      "ci95": [
+       -0.11331976431124363,
+       0.9873210511349586
+      ],
+      "p_boot": 0.1438,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.7004304621660146,
+      "ci95": [
+       -2.240775698776465,
+       0.10780435409806796
+      ],
+      "p_boot": 0.6326
+     },
+     "xjtu": {
+      "margin": 0.6208677510460774,
+      "ci95": [
+       -0.11592828090359397,
+       1.5377961477701532
+      ],
+      "p_boot": 0.1172
+     },
+     "pooled": {
+      "margin": 0.06185696853326935,
+      "ci95": [
+       -0.7558636689362024,
+       0.7765365300045223
+      ],
+      "p_boot": 0.8472,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -3.040600151233318,
+      "ci95": [
+       -9.0315362270513,
+       0.03962152206948236
+      ],
+      "p_boot": 0.1278
+     },
+     "xjtu": {
+      "margin": 0.7571335199198556,
+      "ci95": [
+       -0.19415840463102568,
+       1.867968862826743
+      ],
+      "p_boot": 0.1332
+     },
+     "pooled": {
+      "margin": -0.8495999563372563,
+      "ci95": [
+       -3.6618057750384048,
+       0.8685830105082468
+      ],
+      "p_boot": 0.6418,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.34035036403092,
+      "ci95": [
+       -1.1971891257166378,
+       0.13248794076574386
+      ],
+      "p_boot": 0.6572
+     },
+     "xjtu": {
+      "margin": 0.7041867586341312,
+      "ci95": [
+       -0.05621674507593196,
+       1.5941862789324275
+      ],
+      "p_boot": 0.075
+     },
+     "pooled": {
+      "margin": 0.2622672067373787,
+      "ci95": [
+       -0.3214655266862498,
+       0.8574791417860071
+      ],
+      "p_boot": 0.379,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.4308481805999573,
+      "ci95": [
+       -1.4922869711480327,
+       0.11492240870438564
+      ],
+      "p_boot": 0.713
+     },
+     "xjtu": {
+      "margin": 0.8622304230091175,
+      "ci95": [
+       0.16613829129641916,
+       1.9121103368043324
+      ],
+      "p_boot": 0.0022
+     },
+     "pooled": {
+      "margin": 0.31515870609758573,
+      "ci95": [
+       -0.32855848796905546,
+       1.0256786809342764
+      ],
+      "p_boot": 0.349,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -1.4631855843584676,
+      "ci95": [
+       -4.396727051914881,
+       0.0734212762965435
+      ],
+      "p_boot": 0.2718
+     },
+     "xjtu": {
+      "margin": 0.7794506371732416,
+      "ci95": [
+       -0.023081279479562473,
+       1.7644552282071724
+      ],
+      "p_boot": 0.0592
+     },
+     "pooled": {
+      "margin": -0.1693569950132508,
+      "ci95": [
+       -1.616393681037477,
+       0.8537620540916049
+      ],
+      "p_boot": 0.8844,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -1.1025012714304516,
+      "ci95": [
+       -3.178174072362095,
+       0.03117423024774859
+      ],
+      "p_boot": 0.1002
+     },
+     "xjtu": {
+      "margin": 0.7887812778653746,
+      "ci95": [
+       -0.30155793948119947,
+       2.0284763652555915
+      ],
+      "p_boot": 0.1746
+     },
+     "pooled": {
+      "margin": -0.011376723759782804,
+      "ci95": [
+       -1.1596361650047877,
+       0.9784322508561895
+      ],
+      "p_boot": 0.968,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.32513389946063354,
+      "ci95": [
+       0.17857521151733158,
+       0.5368760270760689
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.540255956638337,
+      "ci95": [
+       -0.19206229287818555,
+       1.5914682001245373
+      ],
+      "p_boot": 0.2294
+     },
+     "pooled": {
+      "margin": 0.44924277860161627,
+      "ci95": [
+       0.021114739434291586,
+       1.0555016498091092
+      ],
+      "p_boot": 0.0382,
+      "p_holm": 0.191
+     }
+    },
+    "BS-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.13418793656985126,
+      "ci95": [
+       0.05075338662612058,
+       0.2502794266004194
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.6332646319663687,
+      "ci95": [
+       0.017680646264082008,
+       1.3702511616677286
+      ],
+      "p_boot": 0.0424
+     },
+     "pooled": {
+      "margin": 0.42211679929861134,
+      "ci95": [
+       0.061361549986531295,
+       0.849897173727467
+      ],
+      "p_boot": 0.0134,
+      "p_holm": 0.0804
+     }
+    },
+    "BS-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.3664458811743094,
+      "ci95": [
+       0.1651174876080638,
+       0.6089709868231332
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.9005923877762608,
+      "ci95": [
+       0.18331301464478975,
+       1.7760817532204012
+      ],
+      "p_boot": 0.0036
+     },
+     "pooled": {
+      "margin": 0.67460732729082,
+      "ci95": [
+       0.25588609404118695,
+       1.1852219570814482
+      ],
+      "p_boot": 0.0,
+      "p_holm": 0.0
+     }
+    },
+    "BS-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.38262544838846874,
+      "ci95": [
+       0.18156872499987875,
+       0.6205283278450575
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.6325238747822396,
+      "ci95": [
+       0.0022346073014322437,
+       1.5116839944185867
+      ],
+      "p_boot": 0.0482
+     },
+     "pooled": {
+      "margin": 0.5267976174617981,
+      "ci95": [
+       0.1494364033524798,
+       1.0363794276550504
+      ],
+      "p_boot": 0.001,
+      "p_holm": 0.008
+     }
+    },
+    "BS-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.46034882791376325,
+      "ci95": [
+       0.3131191712018017,
+       0.669491171707192
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.7500678854865002,
+      "ci95": [
+       0.07682485171622751,
+       1.7512960069921095
+      ],
+      "p_boot": 0.0164
+     },
+     "pooled": {
+      "margin": 0.6274944380518808,
+      "ci95": [
+       0.22472319467239132,
+       1.208340437503851
+      ],
+      "p_boot": 0.0,
+      "p_holm": 0.0
+     }
+    },
+    "BS-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -1.9428738099090503,
+      "ci95": [
+       -6.015180408281714,
+       0.2841317256266503
+      ],
+      "p_boot": 0.4242
+     },
+     "xjtu": {
+      "margin": 0.6765167739860735,
+      "ci95": [
+       0.17914850125892037,
+       1.2873767284151916
+      ],
+      "p_boot": 0.0018
+     },
+     "pooled": {
+      "margin": -0.4316869345849404,
+      "ci95": [
+       -2.2558738633523405,
+       0.6838675621075028
+      ],
+      "p_boot": 0.7132,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.2096607737859327,
+      "ci95": [
+       -0.0017352876988075002,
+       0.456711481273434
+      ],
+      "p_boot": 0.0518
+     },
+     "xjtu": {
+      "margin": 0.5116069582497084,
+      "ci95": [
+       -0.1963119654712709,
+       1.5757154808923048
+      ],
+      "p_boot": 0.2972
+     },
+     "pooled": {
+      "margin": 0.38386049559195706,
+      "ci95": [
+       -0.04129642569593353,
+       1.011879205801546
+      ],
+      "p_boot": 0.1,
+      "p_holm": 0.3224
+     }
+    },
+    "IGauss-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.018714810895150404,
+      "ci95": [
+       -0.13579262660726132,
+       0.182196100590646
+      ],
+      "p_boot": 0.842
+     },
+     "xjtu": {
+      "margin": 0.6046156335777401,
+      "ci95": [
+       -0.07045250338458148,
+       1.4074216343539367
+      ],
+      "p_boot": 0.0818
+     },
+     "pooled": {
+      "margin": 0.35673451628895214,
+      "ci95": [
+       -0.03604244757096923,
+       0.829538108676603
+      ],
+      "p_boot": 0.0806,
+      "p_holm": 0.3224
+     }
+    },
+    "IGauss-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.25097275549960857,
+      "ci95": [
+       0.11562140186654528,
+       0.4586577779706161
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.8719433893876324,
+      "ci95": [
+       0.0915137078218601,
+       1.7993689953628458
+      ],
+      "p_boot": 0.0198
+     },
+     "pooled": {
+      "margin": 0.6092250442811606,
+      "ci95": [
+       0.15795507532359052,
+       1.1460237121226378
+      ],
+      "p_boot": 0.0002,
+      "p_holm": 0.002
+     }
+    },
+    "IGauss-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.267152322713768,
+      "ci95": [
+       0.11110317368579588,
+       0.47649404956202834
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.6038748763936109,
+      "ci95": [
+       -0.02839457231840674,
+       1.5761118098436755
+      ],
+      "p_boot": 0.075
+     },
+     "pooled": {
+      "margin": 0.46141533445213884,
+      "ci95": [
+       0.08261899062146863,
+       1.0282527555181251
+      ],
+      "p_boot": 0.0044,
+      "p_holm": 0.0308
+     }
+    },
+    "IGauss-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.34487570223906244,
+      "ci95": [
+       0.1528958286189849,
+       0.5764828741701605
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.7214188870978714,
+      "ci95": [
+       0.041724962236095044,
+       1.7819132285020558
+      ],
+      "p_boot": 0.0268
+     },
+     "pooled": {
+      "margin": 0.5621121550422215,
+      "ci95": [
+       0.15418700895260232,
+       1.1851207466951317
+      ],
+      "p_boot": 0.0004,
+      "p_holm": 0.0036000000000000003
+     }
+    },
+    "IGauss-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -2.0583469355837507,
+      "ci95": [
+       -6.077214195098993,
+       0.07444634540173045
+      ],
+      "p_boot": 0.1714
+     },
+     "xjtu": {
+      "margin": 0.6478677755974448,
+      "ci95": [
+       0.08774712502548149,
+       1.376799648708833
+      ],
+      "p_boot": 0.0098
+     },
+     "pooled": {
+      "margin": -0.4970692175945993,
+      "ci95": [
+       -2.3424737734410193,
+       0.6443790313751909
+      ],
+      "p_boot": 0.6866,
+      "p_holm": 1.0
+     }
+    }
+   }
+  },
+  "pinned": []
+ },
+ "grid": {
+  "trimmed": {
+   "heads": {
+    "pronostia/BS-t@restricted": 1.6609628857989127,
+    "pronostia/BS-t@w": 2.3077388536815118,
+    "pronostia/BS-trunc": 95.6035452161436,
+    "pronostia/BS@restricted": 1.61001555282979,
+    "pronostia/BS@w": 1.3769961537790836,
+    "pronostia/Beta": 35.16303497206161,
+    "pronostia/Gaussian-trunc0@w": 2.2897629343409918,
+    "pronostia/Gaussian@restricted": 3.5442189091792757,
+    "pronostia/Gaussian@w": 2.9353426661825037,
+    "pronostia/IGauss-trunc": 1.5339452270241365,
+    "pronostia/IGauss@restricted": 1.5731895974762744,
+    "pronostia/IGauss@w": 2.073428486791231,
+    "pronostia/LogNormal@restricted": 1.474373397271212,
+    "pronostia/LogNormal@w": 1.9150043042117217,
+    "pronostia/LogitNormal": 2.066472914908967,
+    "pronostia/Weibull@restricted": 1.375366856878344,
+    "pronostia/Weibull@w": 4.7301573416053575,
+    "xjtu/BS-t@restricted": 8.015586287772427,
+    "xjtu/BS-t@w": 7.18075042525631,
+    "xjtu/BS-trunc": 66.12995569083046,
+    "xjtu/BS@restricted": 9.720534932921598,
+    "xjtu/BS@w": 7.437944504006288,
+    "xjtu/Beta": 73.32260290243832,
+    "xjtu/Gaussian-trunc0@w": 5.433470340927964,
+    "xjtu/Gaussian@restricted": 8.43729454537128,
+    "xjtu/Gaussian@w": 5.813482288391877,
+    "xjtu/IGauss-trunc": 66.8307988571446,
+    "xjtu/IGauss@restricted": 9.334758285672187,
+    "xjtu/IGauss@w": 8.108211377830791,
+    "xjtu/LogNormal@restricted": 9.132094168558016,
+    "xjtu/LogNormal@w": 7.077332459309593,
+    "xjtu/LogitNormal": 27.23947973673872,
+    "xjtu/Weibull@restricted": 7.660495607603303,
+    "xjtu/Weibull@w": 5.976025929920493
+   },
+   "pooled": {
+    "BS-t@restricted": 2.2815375963344797,
+    "BS-t@w": 2.370859215801733,
+    "BS-trunc": 167.0591348283876,
+    "BS@restricted": 2.3698333730179217,
+    "BS@w": 2.0951192940001286,
+    "Beta": 95.37599117856288,
+    "Gaussian-trunc0@w": 2.0339524970634235,
+    "Gaussian@restricted": 3.1170750498230366,
+    "Gaussian@w": 2.211969758923283,
+    "IGauss-trunc": 141.8458201743948,
+    "IGauss@restricted": 2.2914371576983554,
+    "IGauss@w": 2.277638308449695,
+    "LogNormal@restricted": 2.3164436786048173,
+    "LogNormal@w": 2.20332435675596,
+    "LogitNormal": 51.92850632003523,
+    "Weibull@restricted": 2.0446383403833512,
+    "Weibull@w": 2.8259277634658964
+   },
+   "pairs": {
+    "BS-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 60.14366439889804
+     },
+     "xjtu": {
+      "margin": 241.83227303374636
+     },
+     "pooled": {
+      "margin": 164.96401553438747
+     }
+    },
+    "BS-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 59.54272217341159
+     },
+     "xjtu": {
+      "margin": 241.79501480131373
+     },
+     "pooled": {
+      "margin": 164.68827561258587
+     }
+    },
+    "BS-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 58.01167778746765
+     },
+     "xjtu": {
+      "margin": 242.12899520172135
+     },
+     "pooled": {
+      "margin": 164.23320706492171
+     }
+    },
+    "BS-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 59.80654551959626
+     },
+     "xjtu": {
+      "margin": 241.8919381031243
+     },
+     "pooled": {
+      "margin": 164.85581047163166
+     }
+    },
+    "BS-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 59.70663228383371
+     },
+     "xjtu": {
+      "margin": 241.83639695974765
+     },
+     "pooled": {
+      "margin": 164.78149651993792
+     }
+    },
+    "BS-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 59.15679569649532
+     },
+     "xjtu": {
+      "margin": 242.35343594297493
+     },
+     "pooled": {
+      "margin": 164.84716506946432
+     }
+    },
+    "BS-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 59.52334600268691
+     },
+     "xjtu": {
+      "margin": 242.39319563899156
+     },
+     "pooled": {
+      "margin": 165.0251823313242
+     }
+    },
+    "IGauss-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 0.13649742268033085
+     },
+     "xjtu": {
+      "margin": 242.13445008271847
+     },
+     "pooled": {
+      "margin": 139.75070088039465
+     }
+    },
+    "IGauss-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.46444480280610184
+     },
+     "xjtu": {
+      "margin": 242.0971918502857
+     },
+     "pooled": {
+      "margin": 139.47496095859304
+     }
+    },
+    "IGauss-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -1.995489188750053
+     },
+     "xjtu": {
+      "margin": 242.4311722506935
+     },
+     "pooled": {
+      "margin": 139.0198924109289
+     }
+    },
+    "IGauss-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.20062145662144512
+     },
+     "xjtu": {
+      "margin": 242.19411515209634
+     },
+     "pooled": {
+      "margin": 139.6424958176388
+     }
+    },
+    "IGauss-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.30053469238397756
+     },
+     "xjtu": {
+      "margin": 242.13857400871976
+     },
+     "pooled": {
+      "margin": 139.5681818659451
+     }
+    },
+    "IGauss-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.8503712797223666
+     },
+     "xjtu": {
+      "margin": 242.65561299194707
+     },
+     "pooled": {
+      "margin": 139.6338504154715
+     }
+    },
+    "IGauss-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.48382097353079484
+     },
+     "xjtu": {
+      "margin": 242.6953726879636
+     },
+     "pooled": {
+      "margin": 139.81186767733138
+     }
+    },
+    "BS-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 60.0449790349483
+     },
+     "xjtu": {
+      "margin": 241.42847123034534
+     },
+     "pooled": {
+      "margin": 164.68930145536973
+     }
+    },
+    "BS-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 59.96929312777065
+     },
+     "xjtu": {
+      "margin": 241.63702024186028
+     },
+     "pooled": {
+      "margin": 164.77759723205315
+     }
+    },
+    "BS-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 60.167233319245035
+     },
+     "xjtu": {
+      "margin": 241.90248947842767
+     },
+     "pooled": {
+      "margin": 165.01449648800428
+     }
+    },
+    "BS-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 60.11400141685081
+     },
+     "xjtu": {
+      "margin": 241.4703969539329
+     },
+     "pooled": {
+      "margin": 164.74269114978276
+     }
+    },
+    "BS-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 60.08402698453817
+     },
+     "xjtu": {
+      "margin": 241.53572284053342
+     },
+     "pooled": {
+      "margin": 164.76769767068924
+     }
+    },
+    "BS-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 58.62673120313867
+     },
+     "xjtu": {
+      "margin": 241.1733007338769
+     },
+     "pooled": {
+      "margin": 163.94205977856458
+     }
+    },
+    "IGauss-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.03781205873061339
+     },
+     "xjtu": {
+      "margin": 241.73064827931742
+     },
+     "pooled": {
+      "margin": 139.47598680137688
+     }
+    },
+    "IGauss-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -0.03787384844704719
+     },
+     "xjtu": {
+      "margin": 241.93919729083237
+     },
+     "pooled": {
+      "margin": 139.5642825780603
+     }
+    },
+    "IGauss-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.16006634302734724
+     },
+     "xjtu": {
+      "margin": 242.20466652739975
+     },
+     "pooled": {
+      "margin": 139.80118183401143
+     }
+    },
+    "IGauss-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.10683444063313376
+     },
+     "xjtu": {
+      "margin": 241.77257400290495
+     },
+     "pooled": {
+      "margin": 139.52937649578993
+     }
+    },
+    "IGauss-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.07686000832046921
+     },
+     "xjtu": {
+      "margin": 241.83789988950545
+     },
+     "pooled": {
+      "margin": 139.55438301669642
+     }
+    },
+    "IGauss-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -1.3804357730790144
+     },
+     "xjtu": {
+      "margin": 241.475477782849
+     },
+     "pooled": {
+      "margin": 138.72874512457173
+     }
+    }
+   }
+  },
+  "uniform": {
+   "heads": {
+    "pronostia/BS-t@restricted": 1.6672803051232827,
+    "pronostia/BS-t@w": 2.3639085802265236,
+    "pronostia/BS-trunc": 96.07755932559326,
+    "pronostia/BS@restricted": 1.615911801390849,
+    "pronostia/BS@w": 1.406640768246065,
+    "pronostia/Beta": 41.84875384469826,
+    "pronostia/Gaussian-trunc0@w": 2.479831972820107,
+    "pronostia/Gaussian@restricted": 3.566481109804141,
+    "pronostia/Gaussian@w": 3.11272203225322,
+    "pronostia/IGauss-trunc": 1.5422383914076947,
+    "pronostia/IGauss@restricted": 1.580273684723634,
+    "pronostia/IGauss@w": 2.075739124398895,
+    "pronostia/LogNormal@restricted": 1.4782875460197207,
+    "pronostia/LogNormal@w": 1.9705095115641875,
+    "pronostia/LogitNormal": 2.126882338464878,
+    "pronostia/Weibull@restricted": 1.3792935808157167,
+    "pronostia/Weibull@w": 4.815896535822311,
+    "xjtu/BS-t@restricted": 8.230812826023985,
+    "xjtu/BS-t@w": 8.021382073663466,
+    "xjtu/BS-trunc": 66.44244879337023,
+    "xjtu/BS@restricted": 9.89808216196905,
+    "xjtu/BS@w": 8.451356937982032,
+    "xjtu/Beta": 74.83380849307852,
+    "xjtu/Gaussian-trunc0@w": 8.724249837996497,
+    "xjtu/Gaussian@restricted": 8.744293899276403,
+    "xjtu/Gaussian@w": 8.330683949911283,
+    "xjtu/IGauss-trunc": 67.14544450052408,
+    "xjtu/IGauss@restricted": 9.46212700422396,
+    "xjtu/IGauss@w": 9.404123463952885,
+    "xjtu/LogNormal@restricted": 9.243459963519028,
+    "xjtu/LogNormal@w": 7.9342565806361485,
+    "xjtu/LogitNormal": 29.191862861102724,
+    "xjtu/Weibull@restricted": 7.9069758773114485,
+    "xjtu/Weibull@w": 8.357006574242565
+   },
+   "pooled": {
+    "BS-t@restricted": 2.360325100701177,
+    "BS-t@w": 2.5616406627522377,
+    "BS-trunc": 167.8853167072634,
+    "BS@restricted": 2.4589565354831744,
+    "BS@w": 2.307584672290579,
+    "Beta": 98.78495600395982,
+    "Gaussian-trunc0@w": 2.6167988772876964,
+    "Gaussian@restricted": 3.221474706025046,
+    "Gaussian@w": 2.6910576981108374,
+    "IGauss-trunc": 142.55289130755148,
+    "IGauss@restricted": 2.357664451259778,
+    "IGauss@w": 2.508962920685323,
+    "LogNormal@restricted": 2.37256473150322,
+    "LogNormal@w": 2.371801899775377,
+    "LogitNormal": 54.7570817646669,
+    "Weibull@restricted": 2.1455704859576716,
+    "Weibull@w": 3.2458104518545667
+   },
+   "pairs": {
+    "BS-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 60.427833982025824,
+      "ci95": [
+       0.11622293958863018,
+       180.89517554101343
+      ],
+      "p_boot": 0.001
+     },
+     "xjtu": {
+      "margin": 242.68765727380054,
+      "ci95": [
+       0.005711928381057463,
+       727.477178792337
+      ],
+      "p_boot": 0.0462
+     },
+     "pooled": {
+      "margin": 165.57773203497283,
+      "ci95": [
+       0.17671833077621293,
+       470.5829376272871
+      ],
+      "p_boot": 0.003,
+      "p_holm": 0.033
+     }
+    },
+    "BS-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 59.80643279845122,
+      "ci95": [
+       0.09427914982088868,
+       179.06787845081732
+      ],
+      "p_boot": 0.002
+     },
+     "xjtu": {
+      "margin": 242.70298775828843,
+      "ci95": [
+       0.0076480948676701105,
+       727.5514326386262
+      ],
+      "p_boot": 0.0468
+     },
+     "pooled": {
+      "margin": 165.32367604451113,
+      "ci95": [
+       0.17561284787255835,
+       470.09942924576063
+      ],
+      "p_boot": 0.0038,
+      "p_holm": 0.038
+     }
+    },
+    "BS-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 58.260956479394956,
+      "ci95": [
+       0.04466061429767796,
+       174.56360561387967
+      ],
+      "p_boot": 0.0078
+     },
+     "xjtu": {
+      "margin": 242.65044275781892,
+      "ci95": [
+       -0.14496687853351214,
+       727.5713042236259
+      ],
+      "p_boot": 0.112
+     },
+     "pooled": {
+      "margin": 164.6395062554088,
+      "ci95": [
+       0.09145721708173518,
+       468.77360490055185
+      ],
+      "p_boot": 0.0234,
+      "p_holm": 0.1808
+     }
+    },
+    "BS-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 60.07292434982409,
+      "ci95": [
+       0.10010707492929946,
+       179.90259344752687
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 242.83661447644153,
+      "ci95": [
+       0.12367090973745623,
+       727.760121766968
+      ],
+      "p_boot": 0.018
+     },
+     "pooled": {
+      "margin": 165.51351480748798,
+      "ci95": [
+       0.24360659565465545,
+       470.501671430343
+      ],
+      "p_boot": 0.0024,
+      "p_holm": 0.0288
+     }
+    },
+    "BS-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 60.0101210896911,
+      "ci95": [
+       0.13081739969380726,
+       179.6249816480152
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 242.64492443096182,
+      "ci95": [
+       -0.011456937488007423,
+       727.4815989980473
+      ],
+      "p_boot": 0.0576
+     },
+     "pooled": {
+      "margin": 165.37635378657802,
+      "ci95": [
+       0.1572895504917041,
+       470.2651114444071
+      ],
+      "p_boot": 0.0012,
+      "p_holm": 0.0168
+     }
+    },
+    "BS-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 59.335553242450786,
+      "ci95": [
+       0.022804012047304305,
+       177.80298095644127
+      ],
+      "p_boot": 0.0254
+     },
+     "xjtu": {
+      "margin": 242.8239765714005,
+      "ci95": [
+       0.12050561433786595,
+       727.7040282171623
+      ],
+      "p_boot": 0.012
+     },
+     "pooled": {
+      "margin": 165.19425900915255,
+      "ci95": [
+       0.20474914022543908,
+       469.82671704515815
+      ],
+      "p_boot": 0.0012,
+      "p_holm": 0.0168
+     }
+    },
+    "BS-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 59.69155241194694,
+      "ci95": [
+       -0.03655097247328538,
+       178.92917733662017
+      ],
+      "p_boot": 0.1032
+     },
+     "xjtu": {
+      "margin": 242.6916258031967,
+      "ci95": [
+       -0.07404153887102212,
+       727.6101448603121
+      ],
+      "p_boot": 0.0832
+     },
+     "pooled": {
+      "margin": 165.26851782997562,
+      "ci95": [
+       0.09154362226247752,
+       470.0865451421774
+      ],
+      "p_boot": 0.019,
+      "p_holm": 0.17099999999999999
+     }
+    },
+    "IGauss-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 0.12382067430027913,
+      "ci95": [
+       0.06640591708784394,
+       0.17574248127965075
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 243.00106300663205,
+      "ci95": [
+       -0.0006164919475947087,
+       728.2747021026537
+      ],
+      "p_boot": 0.0506
+     },
+     "pooled": {
+      "margin": 140.2453066352609,
+      "ci95": [
+       0.05258547577101304,
+       420.21262036308275
+      ],
+      "p_boot": 0.0226,
+      "p_holm": 0.1808
+     }
+    },
+    "IGauss-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.4975805092743237,
+      "ci95": [
+       -1.7648653007158241,
+       0.16820720962857277
+      ],
+      "p_boot": 0.6972
+     },
+     "xjtu": {
+      "margin": 243.01639349111983,
+      "ci95": [
+       -0.032354784266914384,
+       728.4265266049955
+      ],
+      "p_boot": 0.0606
+     },
+     "pooled": {
+      "margin": 139.99125064479924,
+      "ci95": [
+       -0.4381720030107936,
+       420.17081140186076
+      ],
+      "p_boot": 0.2884,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -2.0430568283306005,
+      "ci95": [
+       -6.273312314677748,
+       0.12628922508188786
+      ],
+      "p_boot": 0.5802
+     },
+     "xjtu": {
+      "margin": 242.96384849065043,
+      "ci95": [
+       -0.11297557448471517,
+       728.3599176634094
+      ],
+      "p_boot": 0.091
+     },
+     "pooled": {
+      "margin": 139.30708085569694,
+      "ci95": [
+       -1.9682197345921293,
+       420.02672146709847
+      ],
+      "p_boot": 0.4938,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.2310889579014746,
+      "ci95": [
+       -0.9116492979637398,
+       0.14798740936071317
+      ],
+      "p_boot": 0.696
+     },
+     "xjtu": {
+      "margin": 243.150020209273,
+      "ci95": [
+       0.1029215562535872,
+       728.5281821546641
+      ],
+      "p_boot": 0.0228
+     },
+     "pooled": {
+      "margin": 140.1810894077761,
+      "ci95": [
+       -0.09910075320070422,
+       420.234221811292
+      ],
+      "p_boot": 0.0972,
+      "p_holm": 0.5831999999999999
+     }
+    },
+    "IGauss-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.29389221803445637,
+      "ci95": [
+       -1.1914661628554128,
+       0.17194419029512759
+      ],
+      "p_boot": 0.6928
+     },
+     "xjtu": {
+      "margin": 242.95833016379336,
+      "ci95": [
+       0.10182866603333114,
+       728.2145093806794
+      ],
+      "p_boot": 0.0074
+     },
+     "pooled": {
+      "margin": 140.04392838686618,
+      "ci95": [
+       -0.24264037920257323,
+       420.0811480199053
+      ],
+      "p_boot": 0.2124,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.9684600652747661,
+      "ci95": [
+       -3.049024613204346,
+       0.14195616102890862
+      ],
+      "p_boot": 0.5608
+     },
+     "xjtu": {
+      "margin": 243.13738230423195,
+      "ci95": [
+       0.12158467762108523,
+       728.4622971975159
+      ],
+      "p_boot": 0.0152
+     },
+     "pooled": {
+      "margin": 139.86183360944068,
+      "ci95": [
+       -0.7553779308729298,
+       420.1149957332329
+      ],
+      "p_boot": 0.3474,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.6124608957786135,
+      "ci95": [
+       -1.9677364968409563,
+       0.14830240404443168
+      ],
+      "p_boot": 0.4842
+     },
+     "xjtu": {
+      "margin": 243.00503153602818,
+      "ci95": [
+       -0.01868375951046312,
+       728.4181823412457
+      ],
+      "p_boot": 0.0554
+     },
+     "pooled": {
+      "margin": 139.93609243026378,
+      "ci95": [
+       -0.49546304935018215,
+       420.1074925235523
+      ],
+      "p_boot": 0.3258,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 60.3453480763877,
+      "ci95": [
+       0.02282617561460037,
+       180.91164150631369
+      ],
+      "p_boot": 0.0124
+     },
+     "xjtu": {
+      "margin": 242.4857690417347,
+      "ci95": [
+       -0.3125569545458717,
+       727.4402439317895
+      ],
+      "p_boot": 0.232
+     },
+     "pooled": {
+      "margin": 165.42636017178017,
+      "ci95": [
+       -0.05173205498624507,
+       470.52393074868456
+      ],
+      "p_boot": 0.0734,
+      "p_holm": 0.2936
+     }
+    },
+    "BS-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 60.269390236249386,
+      "ci95": [
+       -0.016819604613927445,
+       180.79646432019473
+      ],
+      "p_boot": 0.1794
+     },
+     "xjtu": {
+      "margin": 242.71243261145824,
+      "ci95": [
+       0.07389680145897251,
+       727.574993419627
+      ],
+      "p_boot": 0.0224
+     },
+     "pooled": {
+      "margin": 165.52499160656222,
+      "ci95": [
+       0.1186540681671885,
+       470.5998050773307
+      ],
+      "p_boot": 0.0068,
+      "p_holm": 0.06799999999999999
+     }
+    },
+    "BS-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 60.469049918571656,
+      "ci95": [
+       0.11571629564715766,
+       181.08160794537184
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 242.93825684331068,
+      "ci95": [
+       0.2724876575054637,
+       727.798300137698
+      ],
+      "p_boot": 0.0004
+     },
+     "pooled": {
+      "margin": 165.73974622130572,
+      "ci95": [
+       0.30910092135449013,
+       470.858236345599
+      ],
+      "p_boot": 0.0,
+      "p_holm": 0.0
+     }
+    },
+    "BS-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 60.415800483666494,
+      "ci95": [
+       0.10323186599597971,
+       180.95611969218666
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 242.5838497366288,
+      "ci95": [
+       -0.05949761132124199,
+       727.4060725021027
+      ],
+      "p_boot": 0.0888
+     },
+     "pooled": {
+      "margin": 165.51275197576018,
+      "ci95": [
+       0.0999714738466271,
+       470.5912817127646
+      ],
+      "p_boot": 0.0092,
+      "p_holm": 0.0828
+     }
+    },
+    "BS-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 60.38358651614196,
+      "ci95": [
+       0.07220643280721066,
+       180.92880338439204
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 242.63330046523546,
+      "ci95": [
+       -0.10188732737219272,
+       727.541823634893
+      ],
+      "p_boot": 0.1078
+     },
+     "pooled": {
+      "margin": 165.52765225600362,
+      "ci95": [
+       0.07930493002824826,
+       470.5569586980406
+      ],
+      "p_boot": 0.0188,
+      "p_holm": 0.11280000000000001
+     }
+    },
+    "BS-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 58.91526166708749,
+      "ci95": [
+       -0.2185300231873346,
+       176.80384025907912
+      ],
+      "p_boot": 0.2668
+     },
+     "xjtu": {
+      "margin": 242.21280091294892,
+      "ci95": [
+       -1.0983483748402316,
+       727.4290233826448
+      ],
+      "p_boot": 0.4
+     },
+     "pooled": {
+      "margin": 164.66384200123832,
+      "ci95": [
+       -0.370180593565982,
+       469.2719207336419
+      ],
+      "p_boot": 0.1326,
+      "p_holm": 0.3978
+     }
+    },
+    "IGauss-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.041334768662150925,
+      "ci95": [
+       -0.1359276572992475,
+       0.2300089152461821
+      ],
+      "p_boot": 0.6638
+     },
+     "xjtu": {
+      "margin": 242.79917477456613,
+      "ci95": [
+       -0.144829629696124,
+       728.180075287956
+      ],
+      "p_boot": 0.161
+     },
+     "pooled": {
+      "margin": 140.0939347720683,
+      "ci95": [
+       -0.07287350591794386,
+       420.1253337272549
+      ],
+      "p_boot": 0.1386,
+      "p_holm": 0.3978
+     }
+    },
+    "IGauss-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -0.03462307147618248,
+      "ci95": [
+       -0.16637253302324337,
+       0.11435198807349868
+      ],
+      "p_boot": 0.631
+     },
+     "xjtu": {
+      "margin": 243.02583834428975,
+      "ci95": [
+       0.044129941444397545,
+       728.2882679477425
+      ],
+      "p_boot": 0.0346
+     },
+     "pooled": {
+      "margin": 140.1925662068503,
+      "ci95": [
+       0.004415385812475934,
+       420.1497777174857
+      ],
+      "p_boot": 0.0456,
+      "p_holm": 0.228
+     }
+    },
+    "IGauss-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.16503661084608967,
+      "ci95": [
+       0.059411155613322074,
+       0.31619494344734317
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 243.2516625761422,
+      "ci95": [
+       0.2539430234379951,
+       728.4810828920116
+      ],
+      "p_boot": 0.003
+     },
+     "pooled": {
+      "margin": 140.40732082159386,
+      "ci95": [
+       0.21568127251508362,
+       420.3521990568296
+      ],
+      "p_boot": 0.0004,
+      "p_holm": 0.0044
+     }
+    },
+    "IGauss-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.11178717594093697,
+      "ci95": [
+       0.018541578278907424,
+       0.21610390870119256
+      ],
+      "p_boot": 0.0134
+     },
+     "xjtu": {
+      "margin": 242.89725546946028,
+      "ci95": [
+       0.022512736326665256,
+       728.1261428588186
+      ],
+      "p_boot": 0.0406
+     },
+     "pooled": {
+      "margin": 140.18032657604826,
+      "ci95": [
+       0.05762993106918528,
+       420.12194223464604
+      ],
+      "p_boot": 0.0122,
+      "p_holm": 0.0976
+     }
+    },
+    "IGauss-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.07957320841639551,
+      "ci95": [
+       -0.09059731568513713,
+       0.25706222821111896
+      ],
+      "p_boot": 0.3808
+     },
+     "xjtu": {
+      "margin": 242.94670619806692,
+      "ci95": [
+       0.04223228363385403,
+       728.2454229988399
+      ],
+      "p_boot": 0.0276
+     },
+     "pooled": {
+      "margin": 140.19522685629175,
+      "ci95": [
+       0.04855640682114127,
+       420.17774379839085
+      ],
+      "p_boot": 0.0146,
+      "p_holm": 0.1022
+     }
+    },
+    "IGauss-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -1.3887516406380729,
+      "ci95": [
+       -4.155260844983553,
+       0.119574482888242
+      ],
+      "p_boot": 0.2784
+     },
+     "xjtu": {
+      "margin": 242.5262066457804,
+      "ci95": [
+       -1.0087298277962042,
+       728.2230727608644
+      ],
+      "p_boot": 0.3476
+     },
+     "pooled": {
+      "margin": 139.33141660152643,
+      "ci95": [
+       -1.6827079274839112,
+       419.9038864280499
+      ],
+      "p_boot": 0.58,
+      "p_holm": 0.58
+     }
+    }
+   }
+  },
+  "pinned": [
+   [
+    "pronostia",
+    "Bearing1_6",
+    90
+   ],
+   [
+    "pronostia",
+    "Bearing1_6",
+    140
+   ],
+   [
+    "xjtu",
+    "Bearing2_2",
+    60
+   ]
+  ],
+  "uniform_excl": {
+   "heads": {
+    "pronostia/BS-t@restricted": 1.6475016657480115,
+    "pronostia/BS-t@w": 2.3469538907013976,
+    "pronostia/BS-trunc": 1.6970981335632354,
+    "pronostia/BS@restricted": 1.5976004141394817,
+    "pronostia/BS@w": 1.3881578799353111,
+    "pronostia/Beta": 42.06334179274105,
+    "pronostia/Gaussian-trunc0@w": 2.461160669627471,
+    "pronostia/Gaussian@restricted": 3.5638297007238084,
+    "pronostia/Gaussian@w": 3.0971538605104127,
+    "pronostia/IGauss-trunc": 1.5344439210164833,
+    "pronostia/IGauss@restricted": 1.5572092598275797,
+    "pronostia/IGauss@w": 2.0626074220206316,
+    "pronostia/LogNormal@restricted": 1.4600608104305572,
+    "pronostia/LogNormal@w": 1.9499188373178244,
+    "pronostia/LogitNormal": 2.1072919899418383,
+    "pronostia/Weibull@restricted": 1.3583666818288398,
+    "pronostia/Weibull@w": 4.810044973778712,
+    "xjtu/BS-t@restricted": 8.238155230630037,
+    "xjtu/BS-t@w": 8.028506448843023,
+    "xjtu/BS-trunc": 9.712456175808452,
+    "xjtu/BS@restricted": 9.907281383425856,
+    "xjtu/BS@w": 8.458945099385236,
+    "xjtu/Beta": 74.91668379260932,
+    "xjtu/Gaussian-trunc0@w": 8.732986495306365,
+    "xjtu/Gaussian@restricted": 8.752528256232091,
+    "xjtu/Gaussian@w": 8.339340984018348,
+    "xjtu/IGauss-trunc": 10.368936246847058,
+    "xjtu/IGauss@restricted": 9.470846447725592,
+    "xjtu/IGauss@w": 9.41293727612802,
+    "xjtu/LogNormal@restricted": 9.251928915565768,
+    "xjtu/LogNormal@w": 7.941535715696838,
+    "xjtu/LogitNormal": 29.222643428968038,
+    "xjtu/Weibull@restricted": 7.913967964682833,
+    "xjtu/Weibull@w": 8.364639752121215
+   },
+   "pooled": {
+    "BS-t@restricted": 2.353833047660838,
+    "BS-t@w": 2.5663981263697973,
+    "BS-trunc": 2.578805659786123,
+    "BS@restricted": 2.4527763249800785,
+    "BS@w": 2.3033905655138227,
+    "Beta": 101.11191048282838,
+    "Gaussian-trunc0@w": 2.622124324143753,
+    "Gaussian@restricted": 3.241962555731967,
+    "Gaussian@w": 2.704277825544065,
+    "IGauss-trunc": 2.6124608251437698,
+    "IGauss@restricted": 2.3502122105291843,
+    "IGauss@w": 2.5120771483655795,
+    "LogNormal@restricted": 2.366748042163923,
+    "LogNormal@w": 2.371052904753459,
+    "LogitNormal": 58.771740559434356,
+    "Weibull@restricted": 2.138234161980198,
+    "Weibull@w": 3.276109979232528
+   },
+   "pairs": {
+    "BS-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 0.20317257275492165,
+      "ci95": [
+       0.0641001549222616,
+       0.33963956783521376
+      ],
+      "p_boot": 0.0022
+     },
+     "xjtu": {
+      "margin": 0.3283929433850447,
+      "ci95": [
+       -0.18832268974035882,
+       0.9255871461893997
+      ],
+      "p_boot": 0.2442
+     },
+     "pooled": {
+      "margin": 0.2754150942723003,
+      "ci95": [
+       -0.025371617811181402,
+       0.6250769766994977
+      ],
+      "p_boot": 0.077,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.4412678135212469,
+      "ci95": [
+       -1.7798171128111313,
+       0.31322141794027014
+      ],
+      "p_boot": 0.7002
+     },
+     "xjtu": {
+      "margin": 0.34510278783721293,
+      "ci95": [
+       -0.13977604051839332,
+       0.9037448251210775
+      ],
+      "p_boot": 0.1928
+     },
+     "pooled": {
+      "margin": 0.01240753341632612,
+      "ci95": [
+       -0.6460168426807981,
+       0.5213281586418331
+      ],
+      "p_boot": 0.9038,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -2.0475669682056075,
+      "ci95": [
+       -6.445903480675614,
+       0.21714318325940035
+      ],
+      "p_boot": 0.6906
+     },
+     "xjtu": {
+      "margin": 0.2928882896436761,
+      "ci95": [
+       -0.29081283315939693,
+       0.8713132628267307
+      ],
+      "p_boot": 0.3258
+     },
+     "pooled": {
+      "margin": -0.6973043194464051,
+      "ci95": [
+       -2.6835653960586785,
+       0.48302907425152763
+      ],
+      "p_boot": 0.6382,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.1614882072843148,
+      "ci95": [
+       -0.8655343019848345,
+       0.25631867852278956
+      ],
+      "p_boot": 0.7034
+     },
+     "xjtu": {
+      "margin": 0.4785294607317817,
+      "ci95": [
+       -0.020535730179950803,
+       1.0211063109647351
+      ],
+      "p_boot": 0.0606
+     },
+     "pooled": {
+      "margin": 0.20775275503266397,
+      "ci95": [
+       -0.2089678766247518,
+       0.5892819568996145
+      ],
+      "p_boot": 0.3122,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.23349822346263494,
+      "ci95": [
+       -1.198828072136172,
+       0.32091512237014724
+      ],
+      "p_boot": 0.6962
+     },
+     "xjtu": {
+      "margin": 0.28689478366820836,
+      "ci95": [
+       -0.10950807466487471,
+       0.8138838772270223
+      ],
+      "p_boot": 0.208
+     },
+     "pooled": {
+      "margin": 0.06672851142054394,
+      "ci95": [
+       -0.4143889736892019,
+       0.4988489941761209
+      ],
+      "p_boot": 0.7334,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.9272790091733925,
+      "ci95": [
+       -3.098540817647536,
+       0.23527429149279874
+      ],
+      "p_boot": 0.6824
+     },
+     "xjtu": {
+      "margin": 0.4625195194133892,
+      "ci95": [
+       0.017511132633132812,
+       1.0337192006992535
+      ],
+      "p_boot": 0.0406
+     },
+     "pooled": {
+      "margin": -0.12547216575794157,
+      "ci95": [
+       -1.1704712693601143,
+       0.5519429333227889
+      ],
+      "p_boot": 0.8536,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.556033122208279,
+      "ci95": [
+       -1.9699322890343933,
+       0.26106623058044925
+      ],
+      "p_boot": 0.6038
+     },
+     "xjtu": {
+      "margin": 0.33267193806617884,
+      "ci95": [
+       -0.17564960569405869,
+       0.9096565767645035
+      ],
+      "p_boot": 0.2268
+     },
+     "pooled": {
+      "margin": -0.04331866435763033,
+      "ci95": [
+       -0.719927512252428,
+       0.4827012605244218
+      ],
+      "p_boot": 0.9572,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - BS@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": 0.13005427582308857,
+      "ci95": [
+       0.08032502272080373,
+       0.1750696972191259
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.4403486477549759,
+      "ci95": [
+       -0.1751424592514362,
+       1.1949891974154323
+      ],
+      "p_boot": 0.1812
+     },
+     "pooled": {
+      "margin": 0.30907025962994666,
+      "ci95": [
+       -0.0467328373695306,
+       0.7436337080922243
+      ],
+      "p_boot": 0.0942,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - BS-t@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.51438611045308,
+      "ci95": [
+       -1.81504350831918,
+       0.16877584578776406
+      ],
+      "p_boot": 0.704
+     },
+     "xjtu": {
+      "margin": 0.4570584922071441,
+      "ci95": [
+       -0.1772663807621181,
+       1.2381217703432459
+      ],
+      "p_boot": 0.1992
+     },
+     "pooled": {
+      "margin": 0.04606269877397237,
+      "ci95": [
+       -0.6640884152911004,
+       0.6625706983395747
+      ],
+      "p_boot": 0.8428,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - Weibull@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -2.12068526513744,
+      "ci95": [
+       -6.5096637426016315,
+       0.12727332267215138
+      ],
+      "p_boot": 0.5872
+     },
+     "xjtu": {
+      "margin": 0.4048439940136074,
+      "ci95": [
+       -0.3156708259737067,
+       1.1421481604482164
+      ],
+      "p_boot": 0.2784
+     },
+     "pooled": {
+      "margin": -0.663649154088759,
+      "ci95": [
+       -2.694230945629527,
+       0.5704785945331723
+      ],
+      "p_boot": 0.6084,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - LogNormal@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.23460650421614784,
+      "ci95": [
+       -0.9241093330800007,
+       0.14925277796905018
+      ],
+      "p_boot": 0.7062
+     },
+     "xjtu": {
+      "margin": 0.5904851651017129,
+      "ci95": [
+       -0.05423805784646217,
+       1.330168316812104
+      ],
+      "p_boot": 0.0792
+     },
+     "pooled": {
+      "margin": 0.24140792039031028,
+      "ci95": [
+       -0.24506919243205696,
+       0.7237156378539364
+      ],
+      "p_boot": 0.3258,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - IGauss@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.3066165203944679,
+      "ci95": [
+       -1.2325713186713108,
+       0.17072518728770386
+      ],
+      "p_boot": 0.7128
+     },
+     "xjtu": {
+      "margin": 0.39885048803813955,
+      "ci95": [
+       0.02701123331838458,
+       0.9576609974971165
+      ],
+      "p_boot": 0.0246
+     },
+     "pooled": {
+      "margin": 0.1003836767781902,
+      "ci95": [
+       -0.3949580980522714,
+       0.540329932472828
+      ],
+      "p_boot": 0.6406,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - Gaussian@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -1.0003973061052256,
+      "ci95": [
+       -3.1432955875313144,
+       0.1426198229561514
+      ],
+      "p_boot": 0.5598
+     },
+     "xjtu": {
+      "margin": 0.5744752237833204,
+      "ci95": [
+       0.008917548869932753,
+       1.27569400992846
+      ],
+      "p_boot": 0.0444
+     },
+     "pooled": {
+      "margin": -0.09181700040029529,
+      "ci95": [
+       -1.1253237070091822,
+       0.644219775016845
+      ],
+      "p_boot": 0.9242,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - Gaussian-trunc0@w": {
+     "family": "vs_w",
+     "pronostia": {
+      "margin": -0.6291514191401122,
+      "ci95": [
+       -2.023088811960486,
+       0.1474718527435996
+      ],
+      "p_boot": 0.483
+     },
+     "xjtu": {
+      "margin": 0.44462764243610997,
+      "ci95": [
+       -0.13698022729012654,
+       1.1091451538460266
+      ],
+      "p_boot": 0.1522
+     },
+     "pooled": {
+      "margin": -0.009663498999983977,
+      "ci95": [
+       -0.7190121486078882,
+       0.5512959450635153
+      ],
+      "p_boot": 0.9724,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.12351231090706725,
+      "ci95": [
+       0.023586263508096977,
+       0.2420815116386794
+      ],
+      "p_boot": 0.0122
+     },
+     "xjtu": {
+      "margin": 0.1278751523319617,
+      "ci95": [
+       -0.45865981445321313,
+       0.8530824576418573
+      ],
+      "p_boot": 0.7386
+     },
+     "pooled": {
+      "margin": 0.12602933480604478,
+      "ci95": [
+       -0.21438875227424872,
+       0.5476468790320302
+      ],
+      "p_boot": 0.529,
+      "p_holm": 1.0
+     }
+    },
+    "BS-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.04786351820084947,
+      "ci95": [
+       -0.016625992035332823,
+       0.1321041792691508
+      ],
+      "p_boot": 0.179
+     },
+     "xjtu": {
+      "margin": 0.35485261433653825,
+      "ci95": [
+       -0.05701848238655333,
+       0.8388083292342949
+      ],
+      "p_boot": 0.1056
+     },
+     "pooled": {
+      "margin": 0.22497261212528533,
+      "ci95": [
+       -0.015944464772950667,
+       0.5074854363079544
+      ],
+      "p_boot": 0.071,
+      "p_holm": 0.568
+     }
+    },
+    "BS-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.2492967193670164,
+      "ci95": [
+       0.1154266781984726,
+       0.42247917091415366
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.5808396686611251,
+      "ci95": [
+       0.1352451675751705,
+       1.1381355901494394
+      ],
+      "p_boot": 0.0034
+     },
+     "pooled": {
+      "margin": 0.4405714978059253,
+      "ci95": [
+       0.17418761890017812,
+       0.7633301621023678
+      ],
+      "p_boot": 0.0,
+      "p_holm": 0.0
+     }
+    },
+    "BS-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.1930551551913768,
+      "ci95": [
+       0.10026743635297652,
+       0.2897388131262998
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.22599275673813737,
+      "ci95": [
+       -0.16308432552500615,
+       0.7237868928038707
+      ],
+      "p_boot": 0.3244
+     },
+     "pooled": {
+      "margin": 0.21205761762220018,
+      "ci95": [
+       -0.013786689700301285,
+       0.5070725713657366
+      ],
+      "p_boot": 0.0756,
+      "p_holm": 0.568
+     }
+    },
+    "BS-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.16459802330923906,
+      "ci95": [
+       0.0678986005280906,
+       0.27527858878984335
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.27552342828525195,
+      "ci95": [
+       -0.22167595007485988,
+       0.9284886817503786
+      ],
+      "p_boot": 0.3698
+     },
+     "pooled": {
+      "margin": 0.22859344925693878,
+      "ci95": [
+       -0.06515915149725664,
+       0.6003414820152655
+      ],
+      "p_boot": 0.1538,
+      "p_holm": 0.8736
+     }
+    },
+    "BS-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -1.3687601915783256,
+      "ci95": [
+       -4.285948359583355,
+       0.2668921734946995
+      ],
+      "p_boot": 0.4446
+     },
+     "xjtu": {
+      "margin": -0.14571447914869026,
+      "ci95": [
+       -1.389194041341101,
+       0.6939043877828925
+      ],
+      "p_boot": 0.878
+     },
+     "pooled": {
+      "margin": -0.6631568959458439,
+      "ci95": [
+       -2.0910441874949814,
+       0.3659738252842896
+      ],
+      "p_boot": 0.3258,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - BS@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.05039401397523417,
+      "ci95": [
+       -0.13544683529463752,
+       0.2413268560033884
+      ],
+      "p_boot": 0.6274
+     },
+     "xjtu": {
+      "margin": 0.23983085670189289,
+      "ci95": [
+       -0.23572180289915765,
+       0.9347892279664082
+      ],
+      "p_boot": 0.502
+     },
+     "pooled": {
+      "margin": 0.15968450016369112,
+      "ci95": [
+       -0.1282525591561108,
+       0.5740455307115789
+      ],
+      "p_boot": 0.4224,
+      "p_holm": 1.0
+     }
+    },
+    "IGauss-trunc - BS-t@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -0.025254778730983595,
+      "ci95": [
+       -0.1663211861565495,
+       0.12651339297392594
+      ],
+      "p_boot": 0.7092
+     },
+     "xjtu": {
+      "margin": 0.4668083187064695,
+      "ci95": [
+       -0.09557094889478282,
+       1.1350159513739213
+      ],
+      "p_boot": 0.1204
+     },
+     "pooled": {
+      "margin": 0.25862777748293164,
+      "ci95": [
+       -0.07344471707978908,
+       0.650701324803641
+      ],
+      "p_boot": 0.1456,
+      "p_holm": 0.8736
+     }
+    },
+    "IGauss-trunc - Weibull@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.17617842243518334,
+      "ci95": [
+       0.06029167928947293,
+       0.3468069752179958
+      ],
+      "p_boot": 0.0
+     },
+     "xjtu": {
+      "margin": 0.6927953730310563,
+      "ci95": [
+       0.08439578788932295,
+       1.4312827189928046
+      ],
+      "p_boot": 0.0162
+     },
+     "pooled": {
+      "margin": 0.4742266631635716,
+      "ci95": [
+       0.12396311016174646,
+       0.9059989589868138
+      ],
+      "p_boot": 0.0008,
+      "p_holm": 0.0088
+     }
+    },
+    "IGauss-trunc - LogNormal@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.11993685825954371,
+      "ci95": [
+       0.01764626111004493,
+       0.23744955357560618
+      ],
+      "p_boot": 0.0168
+     },
+     "xjtu": {
+      "margin": 0.3379484611080686,
+      "ci95": [
+       -0.07867509594975115,
+       0.8965741244013522
+      ],
+      "p_boot": 0.1568
+     },
+     "pooled": {
+      "margin": 0.24571278297984647,
+      "ci95": [
+       -0.0004763629254530237,
+       0.5733985811189305
+      ],
+      "p_boot": 0.0508,
+      "p_holm": 0.508
+     }
+    },
+    "IGauss-trunc - IGauss@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": 0.09147972637740599,
+      "ci95": [
+       -0.08430635844586204,
+       0.2779214324466218
+      ],
+      "p_boot": 0.3346
+     },
+     "xjtu": {
+      "margin": 0.3874791326551831,
+      "ci95": [
+       -0.04603817919156769,
+       1.0428866530991012
+      ],
+      "p_boot": 0.112
+     },
+     "pooled": {
+      "margin": 0.2622486146145851,
+      "ci95": [
+       -0.00523801003745196,
+       0.6467359302506697
+      ],
+      "p_boot": 0.0582,
+      "p_holm": 0.5238
+     }
+    },
+    "IGauss-trunc - Gaussian@restricted": {
+     "family": "vs_restricted",
+     "pronostia": {
+      "margin": -1.441878488510159,
+      "ci95": [
+       -4.333220170746728,
+       0.11579756573746477
+      ],
+      "p_boot": 0.283
+     },
+     "xjtu": {
+      "margin": -0.03375877477875901,
+      "ci95": [
+       -1.3999086457552155,
+       0.9768876225464249
+      ],
+      "p_boot": 0.955
+     },
+     "pooled": {
+      "margin": -0.6295017305881974,
+      "ci95": [
+       -2.1134448282157177,
+       0.4407335361149394
+      ],
+      "p_boot": 0.3582,
+      "p_holm": 1.0
+     }
+    }
+   }
+  }
+ }
+}

@@ -327,70 +327,89 @@ def robustness_table():
 
 
 def ratio_table():
-    """Heads trained on w = R/t, scored on the fraction, on w and in hours, beside
-    the truncated heads trained on the fraction; and the paired margins."""
-    path = os.path.join(RES, "ratio.json")
-    if not os.path.exists(path):
+    """The time-scale comparison: CRPS on the fraction and the integral CRPS in
+    hours for the heads trained on w, the truncated heads and the conventional
+    heads restricted after fitting; and the paired margins."""
+    rp, hp = os.path.join(RES, "ratio.json"), os.path.join(RES, "hours_crps.json")
+    if not (os.path.exists(rp) and os.path.exists(hp)):
         return
-    rr = json.load(open(path))
+    rr = json.load(open(rp))
     r = rr["main"]
+    hj = json.load(open(hp))
+    hc, hg = hj["main"]["uniform"], hj["grid"]["uniform_excl"]
     c = json.load(open(os.path.join(RES, "results_both_causal.json")))["tables"]
+    tr = json.load(open(os.path.join(RES, "review_p2.json")))["trunc"]
     NMR = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull", "LogNormal": "lognormal",
            "IGauss": "IG", "Gaussian": "Gaussian", "Gaussian-trunc0": "Gaussian, truncated at zero",
            "BS-trunc": "BS", "IGauss-trunc": "IG"}
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{Heads trained on $w=R/t$, scored on the fraction ($y$), on $w$ and in hours ($h$), beside"
-         r" the truncated heads trained on the fraction, whose CRPS on $w$ and in hours is infinite."
-         r" Coverage and PIT are the same on every scale. Reported prediction points.}",
+         r"\caption{CRPS on the fraction ($y$) and integral CRPS in hours ($h$) for the heads trained on"
+         r" $w=R/t$, the heads truncated at one and the conventional heads restricted to $(0,1)$ after"
+         r" fitting. Coverage and PIT are the same on both scales. Reported prediction points.}",
          r"\label{tab:ratio}",
          r"\begin{adjustbox}{max width=\linewidth}",
-         r"\begin{tabular}{@{}l rrrrr rrrrr@{}}", r"\toprule",
-         r"& \multicolumn{5}{c}{PRONOSTIA} & \multicolumn{5}{c}{XJTU-SY}\\",
-         r"\cmidrule(lr){2-6}\cmidrule(lr){7-11}",
-         r"head & CRPS$_y$ & CRPS$_w$ & CRPS$_h$ & cov$_{95}$ & PIT-KS"
-         r" & CRPS$_y$ & CRPS$_w$ & CRPS$_h$ & cov$_{95}$ & PIT-KS\\", r"\midrule",
-         r"\multicolumn{11}{@{}l}{\emph{trained on $w$}}\\"]
-    for h in ("BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian", "Gaussian-trunc0"):
-        cells = []
-        for ds, key in (("pronostia", "pronostia/all"), ("xjtu", "xjtu/all")):
-            t = r["tables"][key][h]
-            cells.append(f"{r['heads'][f'{ds}/{h}@y']:.3f} & {r['heads'][f'{ds}/{h}@w']:.3f}"
-                         f" & {r['heads'][f'{ds}/{h}@h']:.2f} & {t['cov95']:.2f} & {t['PIT_KS']:.3f}")
-        L.append(f"\\quad {NMR[h]} & " + " & ".join(cells) + r"\\")
-    L.append(r"\multicolumn{11}{@{}l}{\emph{trained on $y$, truncated at one}}\\")
-    for h in ("BS-trunc", "IGauss-trunc"):
-        cells = []
-        for ds, key in (("pronostia", "pronostia/all"), ("xjtu", "xjtu/all")):
-            t = c[key][h]
-            cells.append(f"{r['heads'][f'{ds}/{h}@y']:.3f} & $\\infty$ & $\\infty$ & {t['cov95']:.2f} & {t['PIT_KS']:.3f}")
-        L.append(f"\\quad {NMR[h]} & " + " & ".join(cells) + r"\\")
+         r"\begin{tabular}{@{}l rrrr rrrr@{}}", r"\toprule",
+         r"& \multicolumn{4}{c}{PRONOSTIA} & \multicolumn{4}{c}{XJTU-SY}\\",
+         r"\cmidrule(lr){2-5}\cmidrule(lr){6-9}",
+         r"head & CRPS$_y$ & CRPS$_h$ & cov$_{95}$ & PIT-KS & CRPS$_y$ & CRPS$_h$ & cov$_{95}$ & PIT-KS\\",
+         r"\midrule"]
+
+    def block(title, items):
+        L.append(r"\multicolumn{9}{@{}l}{\emph{" + title + r"}}\\")
+        for h, cy, ch, cv, pk in items:
+            cells = []
+            for ds in ("pronostia", "xjtu"):
+                cells.append(f"{cy(ds):.3f} & {ch(ds):.2f} & {cv(ds):.2f} & {pk(ds):.3f}")
+            L.append(f"\\quad {NMR[h]} & " + " & ".join(cells) + r"\\")
+
+    key = {"pronostia": "pronostia/all", "xjtu": "xjtu/all"}
+    block("trained on $w$", [(h, (lambda ds, h=h: r["heads"][f"{ds}/{h}@y"]),
+                              (lambda ds, h=h: hc["heads"][f"{ds}/{h}@w"]),
+                              (lambda ds, h=h: r["tables"][key[ds]][h]["cov95"]),
+                              (lambda ds, h=h: r["tables"][key[ds]][h]["PIT_KS"]))
+                             for h in ("BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian", "Gaussian-trunc0")])
+    block("trained on $y$, truncated at one", [(h, (lambda ds, h=h: r["heads"][f"{ds}/{h}@y"]),
+                                                (lambda ds, h=h: hc["heads"][f"{ds}/{h}"]),
+                                                (lambda ds, h=h: c[key[ds]][h]["cov95"]),
+                                                (lambda ds, h=h: c[key[ds]][h]["PIT_KS"]))
+                                               for h in ("BS-trunc", "IGauss-trunc")])
+    block("trained on $y$, restricted to $(0,1)$ after fitting",
+          [(h, (lambda ds, h=h: tr[f"{ds}/{h}"]["CRPS"][1]),
+            (lambda ds, h=h: hc["heads"][f"{ds}/{h}@restricted"]),
+            (lambda ds, h=h: tr[f"{ds}/{h}"]["cov95"][1]),
+            (lambda ds, h=h: tr[f"{ds}/{h}"]["PIT_KS"][1]))
+           for h in ("BS", "BS-t", "Weibull", "LogNormal", "IGauss", "Gaussian")])
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_ratio", L)
 
-    #  pooled margins of the three families under both protocols
     cell = lambda v: (f"${v['margin']:+.3f}$ [${v['ci95'][0]:+.3f}$, ${v['ci95'][1]:+.3f}$]"
                       f" ({pfmt(v['p_holm'])})")
-    TIT = {"fraction": r"\emph{On the fraction: truncated head minus head trained on $w$ (Holm over 14)}",
-           "ratio": r"\emph{On $w$: lowest pooled CRPS minus the other heads trained on $w$ (Holm over 6)}",
-           "hours": r"\emph{In hours: lowest pooled CRPS minus the other heads trained on $w$ (Holm over 6)}"}
     nm = lambda k: NMR[k.split("@")[0]] + (r"$_{\rm tr}$" if k.split("@")[0].endswith("trunc") else "")
     L = [r"\begin{table}[htbp]", r"\centering\scriptsize",
-         r"\caption{Pooled CRPS margins for the heads trained on $w$, with $95\,\%$ bootstrap intervals"
-         r" over bearings and Holm-adjusted $p$, at the reported and the fixed-time prediction points.}",
+         r"\caption{Pooled margins for the time-scale comparison, with $95\,\%$ bootstrap intervals over"
+         r" bearings and Holm-adjusted $p$ within each block. On the fraction: CRPS, at the reported and"
+         r" the fixed-time points. In hours: integral CRPS, at the fixed-time points without the three"
+         r" inspections at which a truncated head collapses onto the bound (\Cref{sec:hours}).}",
          r"\label{tab:ratio_pairs}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l l l@{}}", r"\toprule",
-         r"comparison & reported points & fixed-time points\\", r"\midrule"]
-    for fam in ("fraction", "ratio", "hours"):
-        if fam != "fraction":
-            L.append(r"\addlinespace")
-        L.append(r"\multicolumn{3}{@{}l}{" + TIT[fam] + r"}\\")
-        keys = [k for k, v in rr["main"]["pairs"].items() if v["family"] == fam]
-        for k in keys:
+         r"comparison & reported points & fixed-time points\\", r"\midrule",
+         r"\multicolumn{3}{@{}l}{\emph{On the fraction: truncated head minus head trained on $w$ (Holm over 14)}}\\"]
+    for k, v in rr["main"]["pairs"].items():
+        if v["family"] != "fraction":
+            continue
+        a, b = k.split(" - ")
+        g = rr["grid"]["pairs"].get(k)
+        L.append(f"\\quad {nm(a)} $-$ {nm(b)} & {cell(v['pooled'])} & {cell(g['pooled']) if g else '---'}\\\\")
+    for fam, title in (("vs_w", r"In hours: truncated head minus head trained on $w$ (Holm over 14)"),
+                       ("vs_restricted", r"In hours: truncated head minus restricted conventional head (Holm over 12)")):
+        L.append(r"\addlinespace")
+        L.append(r"\multicolumn{3}{@{}l}{\emph{" + title + r"}}\\")
+        for k, v in hc["pairs"].items():
+            if v["family"] != fam:
+                continue
             a, b = k.split(" - ")
-            g = rr["grid"]["pairs"].get(k)
-            L.append(f"\\quad {nm(a)} $-$ {nm(b)} & {cell(rr['main']['pairs'][k]['pooled'])}"
-                     f" & {cell(g['pooled']) if g else '---'}\\\\")
+            L.append(f"\\quad {nm(a)} $-$ {nm(b)} & {cell(v['pooled'])} & {cell(hg['pairs'][k]['pooled'])}\\\\")
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_ratio_pairs", L)
 
@@ -406,7 +425,7 @@ def quantile_table():
     NMQ = {"BS-trunc": r"BS$_{\rm tr}$", "IGauss-trunc": r"IG$_{\rm tr}$",
            "Quantile": "QR", "Quantile-logit": r"QR$_{(0,1)}$"}
     L = [r"\begin{table}[htbp]", r"\centering\footnotesize",
-         r"\caption{CRPS margins against the quantile heads: QR unconstrained, QR$_{(0,1)}$ kept in"
+         r"\caption{CRPS margins against the quantile-regression (QR) heads: QR unconstrained, QR$_{(0,1)}$ kept in"
          r" $(0,1)$ by a logit link. Holm over the four truncated-minus-quantile margins of each"
          r" protocol; the last row is a single comparison.}",
          r"\label{tab:quantile}",

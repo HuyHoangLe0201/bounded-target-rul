@@ -7,7 +7,7 @@ Code and stored results for
 > (submitted).
 
 Ten likelihood heads predict the remaining fraction of a bearing's life,
-`R_k / T_total ∈ (0,1]`, on one small MLP backbone with one causal feature set,
+`R_k / T_total ∈ (0,1)`, on one small MLP backbone with one causal feature set,
 one training schedule and one set of seeds:
 
 | group | heads |
@@ -51,7 +51,7 @@ tables can be checked without retraining:
   points fixed in operating time; seeds 5–9; learning rates 1e-3 and 1e-2).
 * the analysis outputs (`uncertainty`, `joint`, `bounded`, `review_p2`,
   `review_p2_trunc`, `crps_grid`, `head_shape`, `rho`, `weibull_members`,
-  `backbone`, `hours`, `robustness`).
+  `backbone`, `hours`, `robustness`, `ratio`, `quantile`, `hours_crps`).
 
 ## Reproducing
 
@@ -98,12 +98,25 @@ python study_ratio.py          # CRPS on the fraction, on w and in hours (t_k * 
 GBS_HEADS=Quantile GBS_TAG=_quant python study_regression.py both     # and with GBS_EVAL=grid, tag _quant_grid
 GBS_HEADS=Quantile-logit GBS_TAG=_quantl python study_regression.py both   # kept in (0,1); and _quantl_grid
 python study_quantile.py
+python study_hours_crps.py     # integral CRPS in hours for every head, both protocols
 ```
 
 The target `y = R/T_total` is an exact reparametrisation of the RUL at a known
 elapsed time `t`: `R = t*y/(1-y)`. `study_hours.py` maps every predictive law to
-hours; coverage and PIT are unchanged by the map, the CRPS is not (it is infinite
-in hours for any law with positive density at `y = 1`).
+hours; coverage and PIT are unchanged by the map, the CRPS is not. A law with
+positive density at `y = 1` implies an RUL with infinite mean, so the kernel form
+`E|X-x| - E|X-X'|/2` does not apply, but the integral form
+`int (F(r) - 1{r >= x})^2 dr = t * int_0^1 (F_Y(y) - 1{y >= y*})^2 / (1-y)^2 dy`
+is finite for any law with bounded density near one. `study_hours_crps.py`
+evaluates it from the 101 stored quantiles of every head (truncated, bounded,
+conventional restricted to (0,1), and trained on w), with a trimmed and a uniform
+upper tail, and writes `hours_crps.json`. Where an ensemble member's truncated
+law collapses onto the bound (the 0.995 quantile within 1e-6 of one), the value
+is set by the clip at 1 - 1e-7 and is a lower bound; the script also reports the
+fixed-time comparison without those inspections.
+
+`study_ratio.py` scores the heads trained on w by the kernel form, which their
+finite means allow; the paper reports the integral form from `study_hours_crps.py`.
 
 Seeds are fixed (ensemble members use seeds 0–4); on CPU the refit in
 `study_weibull_members.py` reproduces the stored predictive medians exactly.
