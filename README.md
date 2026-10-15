@@ -2,9 +2,8 @@
 
 Code and stored results for
 
-> H. H. Le and K.-A. Nguyen, *Bounded Target, Truncated Likelihood: A Controlled
-> Comparison of Predictive Distributions for the Remaining-Life Fraction of Bearings*
-> (submitted).
+> H. H. Le and K.-A. Nguyen, *Choosing a Predictive Distribution for Bearing
+> Remaining Useful Life: Support, Scale and Prediction Points* (submitted).
 
 Ten likelihood heads predict the remaining fraction of a bearing's life,
 `R_k / T_total ∈ (0,1)`, on one small MLP backbone with one causal feature set,
