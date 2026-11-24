@@ -18,7 +18,7 @@ NAME = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull",
         "Gaussian": "Gaussian", "Point(MAE)": "point head (MAE loss)"}
 
 CAPTION = (
-    "Paired cluster bootstrap over bearings: P(first), probability of the "
+    "Paired cluster bootstrap over bearings, with MAE the mean over bearings: P(first), probability of the "
     "lowest MAE; brackets, 95\\,\\% interval on the gap to the leader; "
     "$\\dagger$, not separated from it."
 )

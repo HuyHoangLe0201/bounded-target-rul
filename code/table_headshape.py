@@ -19,8 +19,8 @@ NAME = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull",
         "Gaussian": "Gaussian"}
 
 CAPTION = (
-    "Shape of the fitted laws, medians over prediction points: interquartile "
-    "range (IQR) over the median, and mass above $y=1$."
+    "Shape of the fitted laws: median over prediction points of the interquartile "
+    "range (IQR) over the median, and mean mass above $y=1$."
 )
 
 

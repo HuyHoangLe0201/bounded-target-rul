@@ -109,7 +109,7 @@ def main():
     L += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}"]
     w("tab_eropt", L)
     L = [r"\begin{table}[htbp]", r"\centering\small",
-         r"\caption{Official truncation points scored with the archive and the published RUL of Bearing1\_4.}",
+         r"\caption{Official truncation points scored with the archive and the published RUL of Bearing1\_4, with the CRPS computed from the stored quantile grid.}",
          r"\label{tab:b14}",
          r"\begin{adjustbox}{max width=\linewidth}",
          r"\begin{tabular}{@{}l rr rr rr rr rr@{}}", r"\toprule",
@@ -214,7 +214,7 @@ PAIR_ORDER = ([("IGauss-trunc", r) for r in ("BS", "BS-t", "Weibull", "LogNormal
               + [("IGauss-trunc", "BS-trunc"), ("IGauss-trunc", "Beta"), ("IGauss-trunc", "LogitNormal"),
                  ("BS-trunc", "Beta"), ("BS-trunc", "LogitNormal")])
 BLOCK = {0: r"\emph{Truncated heads against the conventional heads as fitted (Holm over 12)}",
-         12: r"\emph{Among the support-respecting heads (Holm over 6)}"}
+         12: r"\emph{Among the support-respecting heads (Holm over 6, one comparison not shown)}"}
 
 
 def margins_table(b):

@@ -6,8 +6,10 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "..", "results", "regression", "backbone.json")
 
+HEADNAME = {"BS": "BS", "BS-t": "BS-$t$", "Weibull": "Weibull", "LogNormal": "lognormal",
+            "IGauss": "inverse Gaussian", "Gaussian": "Gaussian"}
 LABEL = {"MAE": "mean absolute error", "CRPS": "CRPS",
-         "cov95": "coverage (from nominal)", "PIT_KS": "PIT--KS"}
+         "cov95": "coverage (from nominal)", "PIT_KS": "PIT-KS"}
 SPLIT = {"pronostia/all": "PRONOSTIA (all)",
          "pronostia/official": "PRONOSTIA (official)",
          "xjtu/all": "XJTU-SY"}
@@ -27,26 +29,25 @@ def build():
             name = SPLIT[split] if first else ""
             first = False
             if r["n_distinct_winners"] == 1:
-                verdict = f"\\textbf{{{r['winners'][0]}}} in all six"
+                verdict = f"\\textbf{{{HEADNAME.get(r['winners'][0], r['winners'][0])}}} in all six"
             else:
                 verdict = f"{r['n_distinct_winners']} different: " \
-                          + ", ".join(r["winners"])
+                          + ", ".join(HEADNAME.get(x, x) for x in r["winners"])
             rows += (f"{name} & {LABEL[key]} & ${r['tau_min']:+.2f}$ & "
                      f"${r['tau_mean']:+.2f}$ & {verdict}" r"\\" "\n")
         rows += r"\addlinespace" "\n"
+    rows = rows[:-len(r"\addlinespace" "\n")]
     return f"""\\begin{{table}}[htbp]
 \\centering\\small
 \\caption{{Orderings of the heads across six backbones, compared by Kendall's
 $\\tau$; coverage is ranked by distance from nominal.}}
 \\label{{tab:backbone}}
-\\begin{{adjustbox}}{{max width=\\linewidth}}
 \\begin{{tabular}}{{@{{}}l l r r l@{{}}}}
 \\toprule
-split & criterion & $\\tau_{{\\min}}$ & $\\bar\\tau$ & best head across the six\\\\
+subset & criterion & $\\tau_{{\\min}}$ & $\\bar\\tau$ & best head across the six\\\\
 \\midrule
 {rows}\\bottomrule
 \\end{{tabular}}
-\\end{{adjustbox}}
 \\end{{table}}
 """
 
