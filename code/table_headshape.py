@@ -28,6 +28,14 @@ def build():
     with open(SRC) as f:
         d = json.load(f)
     P, X = d.get("pronostia", {}), d.get("xjtu", {})
+    #  mass above one for the positive heads comes from the same stored truncation
+    #  analysis as the support table, so the two tables agree to the last digit
+    with open(os.path.join(HERE, "..", "results", "regression", "review_p2.json")) as f:
+        tr = json.load(f)["trunc"]
+    for tab, ds in ((P, "pronostia"), (X, "xjtu")):
+        for h in ORDER:
+            if h != "Gaussian" and h in tab and f"{ds}/{h}" in tr:
+                tab[h] = dict(tab[h], mass_above_1=tr[f"{ds}/{h}"]["mass_above_1"])
     out = [
         r"\begin{table}[htbp]",
         r"\centering\small",

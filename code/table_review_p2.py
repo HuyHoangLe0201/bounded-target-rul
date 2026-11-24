@@ -259,7 +259,7 @@ def robustness_table():
     #  study_robustness.py adjusts the support-respecting block over five comparisons
     #  (study_bounded.py adds Beta - logit-normal, hence six in tab_margins)
     BLOCK = {0: r"\emph{Truncated heads against the conventional heads as fitted (Holm over 12)}",
-             12: r"\emph{Among the support-respecting heads (Holm over 5)}"}
+             12: r"\emph{Among the support-respecting heads (Holm over 5, Beta against logit-normal not included)}"}
     COLS = [("main", "reported"), ("grid", "fixed-time points"), ("seeds5", "seeds 5--9"),
             ("lr1e-3", r"lr $10^{-3}$"), ("lr1e-2", r"lr $10^{-2}$"), ("tuned", "lr per head")]
     COLS = [c for c in COLS if c[0] in r]
